@@ -10,4 +10,14 @@
             <dist:install-time />
         </dist:delivery>
     </dist:module>
+
+    <application
+        android:hardwareAccelerated="true"
+        android:supportsRtl="true">
+        <provider
+            android:name="com.example.dinamicfeature.di.initialization.HomeInitialization"
+            android:authorities="${applicationId}.home"
+            android:enabled="true"
+            android:exported="false" />
+    </application>
 </manifest>
