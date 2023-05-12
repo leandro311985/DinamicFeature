@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigation_router_login">
+
+    <include-dynamic
+        android:id="@+id/navigation_login"
+        android:name="com.example.dinamicfeature.login"
+        app:graphPackage="${applicationId}.login"
+        app:graphResName="navigation_login"
+        app:moduleName="@string/title_login" />
+
+</navigation>
