@@ -1,7 +1,8 @@
-package com.example.home
+package com.example.dinamicfeature.home
 
 import android.view.View
 import com.example.dinamicfeature.commons.BaseFragment
+import com.example.home.R
 import com.example.home.databinding.FragmentHomeBinding
 
 class HomeFragment : BaseFragment(R.layout.fragment_home){

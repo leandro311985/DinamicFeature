@@ -6,8 +6,8 @@
     <include-dynamic
         android:id="@+id/navigation_login"
         android:name="com.example.dinamicfeature.login"
-        app:graphPackage="${applicationId}.login"
+        app:graphPackage="com.example.dinamicfeature.login"
         app:graphResName="navigation_login"
-        app:moduleName="@string/title_login" />
+        app:moduleName="login" />
 
 </navigation>
