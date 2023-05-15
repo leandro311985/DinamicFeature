@@ -1,4 +1,4 @@
-package com.example.dinamicfeature.commons
+package com.example.dinamicfeature.baseApp.common
 
 import android.view.View
 import androidx.activity.OnBackPressedCallback

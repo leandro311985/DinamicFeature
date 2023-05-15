@@ -24,4 +24,7 @@ android {
 
 dependencies {
     implementation project(":app")
+    api(project(":commons:baseApp"))
+    implementation project(path: ':core:domain')
+
 }

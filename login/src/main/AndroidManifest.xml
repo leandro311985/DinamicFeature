@@ -14,8 +14,8 @@
         android:hardwareAccelerated="true"
         android:supportsRtl="true">
         <provider
-            android:name="com.example.dinamicfeature.di.initialization.HomeInitialization"
-            android:authorities="${applicationId}.home"
+            android:name="com.example.dinamicfeature.di.initialization.LoginInitialization"
+            android:authorities="${applicationId}.login"
             android:enabled="true"
             android:exported="false" />
     </application>

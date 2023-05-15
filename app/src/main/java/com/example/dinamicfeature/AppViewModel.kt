@@ -1,6 +1,6 @@
 package com.example.dinamicfeature
 
-import com.example.dinamicfeature.commons.BaseViewModel
+import com.example.dinamicfeature.baseApp.common.BaseViewModel
 
-class AppViewModel : BaseViewModel() {
+class AppViewModel : com.example.dinamicfeature.baseApp.common.BaseViewModel() {
 }

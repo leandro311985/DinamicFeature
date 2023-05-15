@@ -16,3 +16,8 @@ rootProject.name = "DinamicFeature"
 include ':app'
 include ':login'
 include ':home'
+include ':commons'
+include ':core'
+include ':commons:baseApp'
+include ':core:repository'
+include ':core:domain'

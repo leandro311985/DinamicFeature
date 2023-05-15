@@ -1,14 +1,12 @@
 package com.example.dinamicfeature
 
-import android.content.Context
 import android.os.Bundle
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
-import com.example.dinamicfeature.commons.BaseActivity
+import com.example.dinamicfeature.baseApp.common.BaseActivity
 import com.example.dinamicfeature.databinding.ActivityMainBinding
-import com.google.android.play.core.splitcompat.SplitCompat
 
-class MainActivity : BaseActivity() {
+class MainActivity : com.example.dinamicfeature.baseApp.common.BaseActivity() {
 
   private lateinit var binding: ActivityMainBinding
   private lateinit var navController: NavController

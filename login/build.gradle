@@ -24,9 +24,9 @@ android {
 
 dependencies {
     implementation project(":app")
+    api(project(":commons:baseApp"))
+    implementation project(path: ':core:domain')
 
-    api("com.google.android.material:material:1.8.0")
-    api("androidx.constraintlayout:constraintlayout:2.1.4")
-    api("androidx.appcompat:appcompat:1.6.1")
+
 
 }
