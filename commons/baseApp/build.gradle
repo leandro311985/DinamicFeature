@@ -2,6 +2,7 @@ plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
     id("kotlin-kapt")
+    id 'com.google.gms.google-services'
 
 }
 
@@ -69,6 +70,10 @@ dependencies {
     api("com.squareup.moshi:moshi:1.14.0")
     api("com.squareup.moshi:moshi-kotlin:1.14.0")
     api("com.squareup.moshi:moshi-adapters:1.14.0")
+
+    //FIREBASE
+    api('com.google.firebase:firebase-auth-ktx:22.0.0')
+
     kapt("com.squareup.moshi:moshi-kotlin-codegen:1.14.0")
 
     // OkHttp
@@ -84,4 +89,5 @@ dependencies {
     api("androidx.datastore:datastore:1.0.0")
     api("androidx.datastore:datastore-core:1.0.0")
     api("androidx.datastore:datastore-preferences:1.0.0")
+
 }
