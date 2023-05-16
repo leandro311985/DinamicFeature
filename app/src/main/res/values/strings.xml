@@ -2,4 +2,11 @@
     <string name="app_name">DinamicFeature</string>
     <string name="title_login">login</string>
     <string name="title_home">home</string>
+    <string name="email_hint">email</string>
+    <string name="password_hint">senha</string>
+    <string name="confirm_password_hint">confirmar senha</string>
+    <string name="login_button_text">Entrar</string>
+    <string name="forgot_password_text">Não tem conta? clique aqui</string>
+    <string name="register_button_text">criar conta</string>
+    <string name="login_text">voltar</string>
 </resources>

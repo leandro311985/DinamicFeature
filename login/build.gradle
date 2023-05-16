@@ -17,15 +17,15 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
     viewBinding {
         enabled = true
     }
 }
 
 dependencies {
-    implementation project(":app")
-    api(project(":commons:baseApp"))
-    implementation project(path: ':core:domain')
-
+    implementation(project(":app"))
+    implementation(project(":commons:baseApp"))
+    implementation(project(path: ':core:domain'))
 
 }

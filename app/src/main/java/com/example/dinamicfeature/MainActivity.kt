@@ -6,7 +6,7 @@ import androidx.navigation.fragment.NavHostFragment
 import com.example.dinamicfeature.baseApp.common.BaseActivity
 import com.example.dinamicfeature.databinding.ActivityMainBinding
 
-class MainActivity : com.example.dinamicfeature.baseApp.common.BaseActivity() {
+class MainActivity : BaseActivity() {
 
   private lateinit var binding: ActivityMainBinding
   private lateinit var navController: NavController

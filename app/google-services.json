@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "411963830642",
+    "project_id": "dinamicfeature",
+    "storage_bucket": "dinamicfeature.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:411963830642:android:8b04787e3d5c127a38edeb",
+        "android_client_info": {
+          "package_name": "com.example.dinamicfeature"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "411963830642-unupnbc5bkqm2sit1rih0c7nerbsk9kl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAmh5ZbsolOW_HigE-ujjh3kDwvntGdcPk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "411963830642-unupnbc5bkqm2sit1rih0c7nerbsk9kl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
