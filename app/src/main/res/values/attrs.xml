@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ToolbarApp">
+        <attr name="toolbar_title" format="string"/>
+        <attr name="toolbar_favorite" format="boolean"/>
+    </declare-styleable>
+
+    <!--   Theme attribute for the default ProgressButtonView style. It will come in handy later.   -->
+    <attr name="progressButtonViewDefaultStyle" format="reference" />
+
+    <attr name="progressButtonViewProgressBarStyle" format="reference" />
+    <attr name="progressButtonViewButtonStyle" format="reference" />
+
+    <declare-styleable name="ProgressButtonView">
+        <attr name="android:text" />
+        <attr name="android:enabled" />
+    </declare-styleable>
+</resources>

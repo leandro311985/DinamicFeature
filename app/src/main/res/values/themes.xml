@@ -13,4 +13,25 @@
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <!--  Progress Button  -->
+    <style name="Widget.App.ProgressButtonView" parent="">
+        <item name="android:theme">@style/ThemeOverlay.App.ProgressButtonView</item>
+    </style>
+
+    <style name="ThemeOverlay.App.ProgressButtonView" parent="">
+        <item name="progressButtonViewProgressBarStyle">@style/Widget.App.InnerButtonProgressBar</item>
+        <item name="progressButtonViewButtonStyle">@style/Widget.App.Button</item>
+    </style>
+
+    <!--  Custom Button Style  -->
+    <style name="Widget.App.Button" parent="Widget.MaterialComponents.Button">
+        <item name="android:backgroundTint">#00B1E7</item>
+    </style>
+
+    <!--  Custom Progress Bar Style  -->
+    <style name="Widget.App.InnerButtonProgressBar" parent="Widget.AppCompat.ProgressBar">
+        <item name="android:minHeight">32dp</item>
+        <item name="android:maxHeight">32dp</item>
+    </style>
 </resources>

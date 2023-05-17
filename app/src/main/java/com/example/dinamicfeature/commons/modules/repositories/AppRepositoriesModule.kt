@@ -9,6 +9,7 @@ val userRepositoryModule = module {
 
   single {
     UserRepository(
+      get(),
       get()
     )
   } bind IUserRepository::class
