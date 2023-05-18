@@ -4,9 +4,19 @@
     <string name="title_home">home</string>
     <string name="email_hint">email</string>
     <string name="password_hint">senha</string>
-    <string name="confirm_password_hint">confirmar senha</string>
+    <string name="name_hint">Nome</string>
     <string name="login_button_text">Entrar</string>
     <string name="forgot_password_text">Não tem conta? clique aqui</string>
     <string name="register_button_text">criar conta</string>
     <string name="login_text">voltar</string>
+    <string name="invalid_password">Email invalido</string>
+    <string name="enter_email">Digite seu Email</string>
+    <string name="enter_password">Digite sua senha</string>
+    <string name="password">a senha deve ser maior que 8 caracteres</string>
+
+    <string name="success">sucesso</string>
+    <string name="auth_invalid">Autenticação inválida</string>
+    <string name="error_auth_caracter">Falha na autenticação, a senha deve ter pelo menos 6 caracteres</string>
+    <string name="error_auth_email">Falha na autenticação, e-mail inválido inserido</string>
+    <string name="error_auth_email_exist">Falha na autenticação, e-mail já registrado.</string>
 </resources>

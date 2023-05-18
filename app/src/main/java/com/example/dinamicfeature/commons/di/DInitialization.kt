@@ -1,6 +1,7 @@
 package com.example.dinamicfeature.commons.di
 
 import com.example.dinamicfeature.commons.modules.ModuleInitialization
+import com.example.dinamicfeature.commons.modules.db.databaseModule
 import com.example.dinamicfeature.commons.modules.firebase.networkModule
 import com.example.dinamicfeature.commons.modules.repositories.userRepositoryModule
 import com.example.dinamicfeature.commons.modules.usecases.userUseCaseModule
@@ -19,6 +20,7 @@ class DInitialization : ModuleInitialization() {
     listModules.addAll(returnUserRepositoryModules())
     listModules.addAll(returnUseCasesModules())
     listModules.addAll(returnFirebaseModules())
+    listModules.addAll(returnDbModules())
 
     return listModules
   }
@@ -46,6 +48,12 @@ private fun returnUseCasesModules(): List<Module> {
 private fun returnFirebaseModules(): List<Module> {
   return listOf(
     networkModule
+  )
+}
+
+private fun returnDbModules(): List<Module> {
+  return listOf(
+    databaseModule
   )
 }
 

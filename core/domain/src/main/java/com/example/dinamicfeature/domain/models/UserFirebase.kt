@@ -1,11 +1,9 @@
 package com.example.dinamicfeature.domain.models
 
-import android.net.Uri
-
 data class UserFirebase(
-  var name: String?,
-  var email: String?,
-  var photoUrl: Uri?,
-  var emailVerified: Boolean?,
-  var uid: String?
+  var id: String = "",
+  val first_name: String = "",
+  val last_name: String = "",
+  val job_title: String = "",
+  val email: String = "",
 )

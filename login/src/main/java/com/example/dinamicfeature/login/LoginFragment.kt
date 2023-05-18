@@ -25,6 +25,7 @@ class LoginFragment : BaseFragment(R.layout.fragment_login) {
   }
   override fun initView(view: View) {
     setViewBinding(view)
+    checkIsLogged()
     getText()
     setCollectors()
   }
@@ -33,8 +34,12 @@ class LoginFragment : BaseFragment(R.layout.fragment_login) {
     binding = FragmentLoginBinding.bind(view)
   }
 
+  private fun checkIsLogged(){
+    viewModel.isLogged()
+  }
+
   private fun getText() = binding.apply {
-    forgotPasswordTextView.setOnClickListener { Toast.makeText(requireContext(), "botao cadstrar", Toast.LENGTH_SHORT).show() }
+    forgotPasswordTextView.setOnClickListener { findNavController().navigate(R.id.action_loginFragment_to_create_fragment) }
 
     loginButton.setOnClickListener {
 
@@ -55,6 +60,13 @@ class LoginFragment : BaseFragment(R.layout.fragment_login) {
         launch {
           viewModel.user.collect { result ->
             if (result) findNavController().navigate(R.id.action_loginFragment_to_home) else Toast.makeText(requireContext(), "Falido login", Toast.LENGTH_SHORT).show()
+          }
+        }
+
+        launch {
+          viewModel.isLogged.collect { result ->
+            Toast.makeText(requireContext(), result.toString(), Toast.LENGTH_SHORT).show()
+            if (result) findNavController().navigate(R.id.action_loginFragment_to_home)
           }
         }
       }

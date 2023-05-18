@@ -26,7 +26,7 @@ class ToolbarApp @JvmOverloads constructor(
     attrs?.let { attributeSet ->
       val attibutes = context.obtainStyledAttributes(attributeSet, R.styleable.ToolbarApp)
       val titleId = attibutes.getResourceId(R.styleable.ToolbarApp_toolbar_title, 0)
-      setBackgroundResource(R.color.purple_500)
+      setBackgroundResource(R.color.ColorApp)
       if (titleId != 0){
         title = context.getString(titleId)
       }
