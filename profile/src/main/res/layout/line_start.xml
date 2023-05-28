@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/xIdBusStartStaticContent"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/DEFAULT_100DP"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@drawable/time_line_"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/xIdBusStartContentContainer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/startTitleData"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/DEFAULT_90DP"
+                android:drawablePadding="8dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:layout_marginBottom="@dimen/DEFAULT_30DP"
+                android:paddingLeft="6dp"
+                android:paddingTop="6dp"
+                android:paddingRight="6dp"
+                android:text="14 de maio"
+                android:textColor="@color/DEFAULT_2777B4"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/startName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/DEFAULT_90DP"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:paddingLeft="6dp"
+                android:paddingRight="6dp"
+                android:textColor="@color/DEFAULT_2777B4"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:visibility="visible"
+                tools:text="Carla Marine"
+
+                />
+
+            <TextView
+                android:id="@+id/startDescriptionTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/DEFAULT_90DP"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:paddingLeft="6dp"
+                android:paddingRight="6dp"
+                android:textColor="@color/DEFAULT_2777B4"
+                android:textSize="12sp"
+                android:visibility="visible"
+                tools:text="Conversou pelo chat as 19:00" />
+
+
+        </LinearLayout>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+
+</LinearLayout>

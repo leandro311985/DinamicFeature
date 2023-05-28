@@ -3,7 +3,7 @@
     <style name="Theme.DinamicFeature" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/purple_500</item>
-        <item name="colorPrimaryVariant">@color/ColorApp</item>
+        <item name="colorPrimaryVariant">@color/DEFAULT_BLUE_SPLASH</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
@@ -12,6 +12,7 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+        <item name="android:windowFullscreen">true</item>
     </style>
 
     <!--  Progress Button  -->
@@ -33,5 +34,9 @@
     <style name="Widget.App.InnerButtonProgressBar" parent="Widget.AppCompat.ProgressBar">
         <item name="android:minHeight">32dp</item>
         <item name="android:maxHeight">32dp</item>
+    </style>
+
+    <style name="SearchViewStyle" parent="Widget.AppCompat.SearchView">
+        <item name="android:textColorHint">@color/black</item>
     </style>
 </resources>

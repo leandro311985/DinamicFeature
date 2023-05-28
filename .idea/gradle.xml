@@ -18,6 +18,9 @@
             <option value="$PROJECT_DIR$/core/repository" />
             <option value="$PROJECT_DIR$/home" />
             <option value="$PROJECT_DIR$/login" />
+            <option value="$PROJECT_DIR$/mysignature" />
+            <option value="$PROJECT_DIR$/profile" />
+            <option value="$PROJECT_DIR$/searchpeople" />
           </set>
         </option>
       </GradleProjectSettings>

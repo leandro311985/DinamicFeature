@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@id/navigation_search_people"
+    app:moduleName="@string/title_searchpeople"
+    app:startDestination="@id/search_fragment">
+
+    <fragment
+        android:id="@+id/search_fragment"
+        android:name="com.example.dinamicfeature.searchpeople.SearchFragment"
+        android:label="@string/title_searchpeople"
+        tools:layout="@layout/fragment_search_people">
+
+    </fragment>
+
+</navigation>

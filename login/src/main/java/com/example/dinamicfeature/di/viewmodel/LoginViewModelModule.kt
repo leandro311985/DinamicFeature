@@ -10,6 +10,6 @@ import org.koin.dsl.module
 @ExperimentalCoroutinesApi
 val loginViewModelModule = module {
   viewModel { LoginViewModel(get(),get()) }
-  viewModel { CreateAccountViewModel(get()) }
+  viewModel { CreateAccountViewModel(get(),get(),get()) }
 
 }

@@ -1,8 +1,11 @@
 package com.example.dinamicfeature.login
 
 import androidx.lifecycle.viewModelScope
-import com.example.dinamicfeature.baseApp.common.BaseViewModel
-import com.example.dinamicfeature.baseApp.common.UiState
+import com.example.dinamicfeature.baseApp.commons.BaseViewModel
+import com.example.dinamicfeature.baseApp.commons.UiState
+import com.example.dinamicfeature.baseApp.constants.Constants
+import com.example.dinamicfeature.domain.models.UserFirebase
+import com.example.dinamicfeature.domain.useCases.users.GetDataUseCase
 import com.example.dinamicfeature.domain.useCases.users.IsLoginUserUseCase
 import com.example.dinamicfeature.domain.useCases.users.LoginUserUseCase
 import kotlinx.coroutines.delay
@@ -12,8 +15,8 @@ import kotlinx.coroutines.launch
 
 class LoginViewModel(
   private val loginUserUseCase: LoginUserUseCase,
-  private val isLoginUserUseCase: IsLoginUserUseCase
-) : BaseViewModel() {
+  private val isLoginUserUseCase: IsLoginUserUseCase,
+  ) : BaseViewModel() {
 
   private val _user = MutableSharedFlow<Boolean>()
   val user = _user.asSharedFlow()
@@ -51,4 +54,5 @@ class LoginViewModel(
       _isLogged.emit(result)
     }
   }
+
 }

@@ -27,5 +27,5 @@ dependencies {
     implementation(project(":app"))
     implementation(project(":commons:baseApp"))
     implementation(project(path: ':core:domain'))
-
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
 }

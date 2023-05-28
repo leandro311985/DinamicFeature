@@ -3,7 +3,33 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/ColorApp">
+    android:background="@color/DEFAULT_TEXT_LOGIN">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/loading_container_home"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation="@dimen/DEFAULT_50DP"
+        android:visibility="gone"
+        android:clickable="true"
+        android:background="@color/DEFAULT_99000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" >
+
+        <androidx.core.widget.ContentLoadingProgressBar
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            android:elevation="@dimen/DEFAULT_50DP"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnHome"
@@ -14,5 +40,14 @@
         android:layout_marginStart="@dimen/DEFAULT_40DP"
         android:layout_marginEnd="@dimen/DEFAULT_40DP"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/text_location"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:textColor="@color/black"
+        android:layout_marginTop="@dimen/DEFAULT_40DP"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnHome" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

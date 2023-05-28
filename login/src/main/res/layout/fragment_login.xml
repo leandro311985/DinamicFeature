@@ -1,78 +1,126 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/ColorApp">
+    android:layout_height="match_parent">
 
-    <com.example.dinamicfeature.commons.custumView.ToolbarApp
-        android:id="@+id/toolbarLogin"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/loading_container"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        app:toolbar_title="@string/title_login"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
-
-
-    <ImageView
-        android:id="@+id/logo_image_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="@dimen/DEFAULT_30DP"
-        android:src="@drawable/baseline_alternate_email_24"
+        android:layout_height="match_parent"
+        android:background="@color/DEFAULT_99000000"
+        android:clickable="true"
+        android:elevation="@dimen/DEFAULT_50DP"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbarLogin" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <EditText
+        <androidx.core.widget.ContentLoadingProgressBar
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:elevation="@dimen/DEFAULT_50DP"
+            android:indeterminate="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/title_logo"
+        android:layout_width="@dimen/DEFAULT_200DP"
+        android:layout_height="@dimen/DEFAULT_200DP"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/DEFAULT_30DP"
+        android:src="@drawable/ic_login"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/email_edit_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="32dp"
+        android:layout_marginHorizontal="@dimen/DEFAULT_50DP"
         android:layout_marginTop="@dimen/DEFAULT_30DP"
+        android:background="@drawable/border_edit_text"
         android:hint="@string/email_hint"
-        android:textColorHint="@color/white"
         android:inputType="textEmailAddress"
         android:maxLines="1"
-        app:layout_constraintTop_toBottomOf="@+id/logo_image_view" />
+        android:textAlignment="center"
+        android:textColorHint="@color/DEFAULT_TEXT_LOGIN"
+        app:layout_constraintTop_toBottomOf="@id/title_logo" />
 
-    <EditText
+    <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/password_edit_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="32dp"
-        android:layout_marginTop="@dimen/DEFAULT_30DP"
+        android:layout_marginHorizontal="@dimen/DEFAULT_50DP"
+        android:layout_marginTop="@dimen/DEFAULT_10DP"
+        android:background="@drawable/border_edit_text"
         android:hint="@string/password_hint"
-        android:textColorHint="@color/white"
         android:inputType="textPassword"
         android:maxLines="1"
-        app:layout_constraintTop_toBottomOf="@+id/email_edit_text" />
+        android:textAlignment="center"
+        android:textColorHint="@color/DEFAULT_TEXT_LOGIN"
+        app:layout_constraintTop_toBottomOf="@id/email_edit_text" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/login_button"
         style="@style/Widget.App.ProgressButtonView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password_edit_text"
-        android:layout_marginTop="@dimen/DEFAULT_30DP"
-        android:text="Progress Button" />
-
-
-    <TextView
-        android:id="@+id/forgot_password_text_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/login_button"
-        android:gravity="center"
+        android:layout_marginStart="@dimen/DEFAULT_50DP"
+        android:layout_marginTop="@dimen/DEFAULT_50DP"
+        android:layout_marginEnd="@dimen/DEFAULT_50DP"
+        android:background="@color/DEFAULT_BLUE_SPLASH"
+        android:text="LOGIN"
         android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/password_edit_text" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/login_social_button"
+        style="@style/Widget.App.ProgressButtonView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/DEFAULT_50DP"
+        android:layout_marginTop="@dimen/DEFAULT_5DP"
+        android:layout_marginEnd="@dimen/DEFAULT_50DP"
+        android:background="@color/DEFAULT_041E50"
+        android:text="LOGIN REDE SOCIAL"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/login_button" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/forgot_password_text_view"
+        android:layout_width="@dimen/DEFAULT_0DP"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/login_button"
+        android:layout_marginTop="@dimen/DEFAULT_20DP"
         android:text="@string/forgot_password_text"
-        app:layout_constraintTop_toBottomOf="@+id/login_button" />
+        android:textColor="@color/DEFAULT_TEXT_LOGIN"
+        app:layout_constraintEnd_toEndOf="@id/login_social_button"
+        app:layout_constraintStart_toStartOf="@id/login_social_button"
+        app:layout_constraintTop_toBottomOf="@id/login_social_button" />
+
+    <com.google.android.material.divider.MaterialDivider
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/black"
+        android:layout_marginStart="@dimen/DEFAULT_50DP"
+        android:layout_marginEnd="@dimen/DEFAULT_50DP"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/forgot_password_text_view"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,22 +1,43 @@
 <resources>
-    <string name="app_name">DinamicFeature</string>
+    <string name="app_name">Potlid</string>
     <string name="title_login">login</string>
     <string name="title_home">home</string>
-    <string name="email_hint">email</string>
-    <string name="password_hint">senha</string>
+    <string name="email_hint">usuario@exemplo.com</string>
+    <string name="password_hint">digite sua senha aqui</string>
+    <string name="email_create_hint">E-mail</string>
     <string name="name_hint">Nome</string>
     <string name="login_button_text">Entrar</string>
-    <string name="forgot_password_text">Não tem conta? clique aqui</string>
+    <string name="forgot_password_text">Não tem conta?</string>
     <string name="register_button_text">criar conta</string>
     <string name="login_text">voltar</string>
     <string name="invalid_password">Email invalido</string>
+    <string name="name_empty">O campo nome está vazio</string>
     <string name="enter_email">Digite seu Email</string>
     <string name="enter_password">Digite sua senha</string>
+    <string name="enter_password_check">A senha não confere</string>
+    <string name="enter_password_confirme">Repita a senha</string>
+    <string name="text_register">*Ao acessar voçê concorda com nossos termos e privacidade.</string>
+    <string name="password_register">Senha</string>
+    <string name="confirm_register">CONFIRMAR</string>
     <string name="password">a senha deve ser maior que 8 caracteres</string>
+    <string name="error_photo">voçê precisa selecionar uma foto no seu perfil</string>
+    <string name="search_people">Procurar pessoas</string>
 
     <string name="success">sucesso</string>
+    <string name="my_signature">Assinatura</string>
     <string name="auth_invalid">Autenticação inválida</string>
     <string name="error_auth_caracter">Falha na autenticação, a senha deve ter pelo menos 6 caracteres</string>
     <string name="error_auth_email">Falha na autenticação, e-mail inválido inserido</string>
     <string name="error_auth_email_exist">Falha na autenticação, e-mail já registrado.</string>
+
+    <string name="HOME">Home</string>
+    <string name="USER_PROFILE">Perfil</string>
+    <string name="STORE">Loja</string>
+    <string name="HOME_PRODUCT_HOME_FRAGMENT_LABEL">home</string>
+    <string name="HOME_ADD_PRODUCT">Adicionar Produto</string>
+    <string name="title_profile">profile</string>
+    <string name="title_mysignature">mysignature</string>
+    <string name="title_searchpeople">searchpeople</string>
+
+
 </resources>

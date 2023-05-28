@@ -32,11 +32,19 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    viewBinding {
+        enabled = true
+    }
 }
 
 dependencies {
     //FIREBASE
     api('com.google.firebase:firebase-auth-ktx:22.0.0')
+    api('com.google.firebase:firebase-core:21.1.1')
+    api('com.google.firebase:firebase-storage-ktx:20.2.0')
+
+    //play service auth
+    api('com.google.android.gms:play-services-auth:20.5.0')
 
     kapt("com.squareup.moshi:moshi-kotlin-codegen:1.14.0")
 
@@ -92,10 +100,8 @@ dependencies {
     api("com.squareup.moshi:moshi-adapters:1.14.0")
     kapt("com.squareup.moshi:moshi-kotlin-codegen:1.14.0")
 
-    //Glide
-    api("com.github.bumptech.glide:glide:4.13.2")
-    kapt("com.github.bumptech.glide:compiler:4.13.2")
-    api("com.github.bumptech.glide:okhttp3-integration:4.13.2")
+    api('com.squareup.picasso:picasso:2.8')
+
 
     //Preferences Datastore
     api("androidx.datastore:datastore:1.0.0")
@@ -112,6 +118,8 @@ dependencies {
     //Paperdb
     api("io.github.pilgr:paperdb:2.7.1")
 
+    api('com.google.android.gms:play-services-location:21.0.1')
 
+    api('de.hdodenhof:circleimageview:3.1.0')
 
 }
