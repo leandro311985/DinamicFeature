@@ -12,11 +12,16 @@
     <color name="DEFAULT_AAB09F">#aab09f</color>
     <color name="DEFAULT_041E50">#041E50</color>
     <color name="DEFAULT_99000000">#99000000</color>
+    <color name="DEFAULT_TOOLBAR_MEMBERSHIP">#A2DAFD</color>
     <color name="DEFAULT_ORANGE">#eb6332</color>
     <color name="DEFAULT_RED">#c13316</color>
     <color name="DEFAULT_GREEN_SPLASH">#4D7700</color>
     <color name="DEFAULT_BLUE_SPLASH">#509AE2</color>
     <color name="DEFAULT_TEXT_LOGIN">#70C3C9</color>
     <color name="DEFAULT_TAMARELO">#DAA520</color>
+    <color name="DEFAULT_CARD1">#F0F6FA</color>
+    <color name="DEFAULT_CARD2">#5A93E1</color>
+    <color name="DEFAULT_CARD3">#71AEF0</color>
+    <color name="DEFAULT_CARD4">#91CAF6</color>
 
 </resources>

@@ -4,25 +4,34 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <include
+        android:id="@+id/signature_toolbar"
+        layout="@layout/toolbar_layout_signature"
+        android:layout_width="@dimen/DEFAULT_0DP"
+        android:layout_height="@dimen/DEFAULT_56DP"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/loading_container_signature"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/DEFAULT_99000000"
+        android:clickable="true"
         android:elevation="@dimen/DEFAULT_50DP"
         android:visibility="gone"
-        android:clickable="true"
-        android:background="@color/DEFAULT_99000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" >
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.core.widget.ContentLoadingProgressBar
             style="?android:attr/progressBarStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:indeterminate="true"
             android:elevation="@dimen/DEFAULT_50DP"
+            android:indeterminate="true"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -30,166 +39,66 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/container_one"
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/appCompatTextView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/gradiente_signature"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/txtTitle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Assine o app do Amor"
-            android:textAlignment="center"
-            android:layout_marginTop="@dimen/DEFAULT_16DP"
-            android:textColor="@color/white"
-            android:textSize="@dimen/DEFAULT_20SP"
-            android:layout_marginStart="@dimen/DEFAULT_40DP"
-            android:layout_marginEnd="@dimen/DEFAULT_40DP"
-            app:layout_constraintTop_toTopOf="@id/container_one"
-            app:layout_constraintStart_toStartOf="@id/container_one"
-            app:layout_constraintEnd_toEndOf="@id/container_one" />
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/img_home"
-            android:layout_width="80dp"
-            android:layout_height="100dp"
-            android:src="@drawable/ic_user_bottom"
-            android:layout_marginTop="@dimen/DEFAULT_16DP"
-            app:layout_constraintTop_toBottomOf="@id/txtTitle"
-            app:layout_constraintStart_toStartOf="@id/container_one"
-            app:layout_constraintEnd_toEndOf="@id/container_one" />
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/txtSubTitle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Define sua idade e distância"
-            android:textAlignment="center"
-            android:layout_marginTop="@dimen/DEFAULT_16DP"
-            android:textColor="@color/white"
-            android:textSize="@dimen/DEFAULT_20SP"
-            android:layout_marginStart="@dimen/DEFAULT_40DP"
-            android:layout_marginEnd="@dimen/DEFAULT_40DP"
-            app:layout_constraintTop_toBottomOf="@id/img_home"
-            app:layout_constraintStart_toStartOf="@id/container_one"
-            app:layout_constraintEnd_toEndOf="@id/container_one" />
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/txtSubTitleUser"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Define sua idade e distância"
-            android:textAlignment="center"
-            android:layout_marginTop="@dimen/DEFAULT_8DP"
-            android:textColor="@color/white"
-            android:textSize="@dimen/DEFAULT_12SP"
-            android:layout_marginStart="@dimen/DEFAULT_40DP"
-            android:layout_marginEnd="@dimen/DEFAULT_40DP"
-            android:layout_marginBottom="@dimen/DEFAULT_40DP"
-            app:layout_constraintTop_toBottomOf="@id/txtSubTitle"
-            app:layout_constraintStart_toStartOf="@id/container_one"
-            app:layout_constraintEnd_toEndOf="@id/container_one"
-            app:layout_constraintBottom_toBottomOf="@id/container_one"/>
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.appcompat.widget.LinearLayoutCompat
-        android:id="@+id/linearContainer"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/DEFAULT_100DP"
-        android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@id/container_one"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
-
-        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            android:layout_width="@dimen/DEFAULT_100DP"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="16dp">
-
-            <!-- Título -->
-            <TextView
-                android:id="@+id/titleTextView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Descrição"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <!-- Valor em reais -->
-            <TextView
-                android:id="@+id/valueTextView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="R$ 0,00"
-                android:textSize="16sp"
-                android:textColor="@color/black" />
-
-            <!-- Descrição -->
-            <TextView
-                android:id="@+id/descriptionTextView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce euismod leo vitae lacinia fermentum."
-                android:textSize="14sp" />
-
-        </LinearLayout>
-
-
-        <androidx.cardview.widget.CardView
-            xmlns:card_view="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/card_view2"
-            android:layout_gravity="center"
-            android:layout_width="wrap_content"
-            android:layout_height="100dp"
-            card_view:cardCornerRadius="4dp">
-
-            <TextView
-                android:id="@+id/info_text2"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="@dimen/DEFAULT_20DP"
-                android:text="texto aqui"/>
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            xmlns:card_view="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/card_view3"
-            android:layout_gravity="center"
-            android:layout_width="wrap_content"
-            android:layout_height="100dp"
-            card_view:cardCornerRadius="4dp">
-
-            <TextView
-                android:id="@+id/info_text3"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="@dimen/DEFAULT_20DP"
-                android:text="texto aqui"/>
-        </androidx.cardview.widget.CardView>
-
-
-    </androidx.appcompat.widget.LinearLayoutCompat>
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/DEFAULT_40DP"
-        android:layout_marginEnd="@dimen/DEFAULT_40DP"
-        android:layout_marginStart="@dimen/DEFAULT_40DP"
-        android:text="CONTINUAR"
+        android:layout_height="@dimen/DEFAULT_60DP"
+        android:background="@color/DEFAULT_TEXT_LOGIN"
+        android:gravity="center"
+        android:text="SEU PLANO DE ASSINATURA É GRATUITO"
         android:textColor="@color/white"
-        android:background="@color/DEFAULT_041E50"
+        app:layout_constraintTop_toBottomOf="@+id/signature_toolbar" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txtDescription"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginStart="@dimen/DEFAULT_20DP"
+        android:layout_marginEnd="@dimen/DEFAULT_20DP"
+        android:gravity="center"
+        android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+        android:textColor="@color/DEFAULT_TEXT_LOGIN"
+        android:textSize="@dimen/DEFAULT_15SP"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearContainer" />
+        app:layout_constraintTop_toBottomOf="@+id/appCompatTextView" />
 
+    <include
+        android:id="@+id/itemPlain"
+        layout="@layout/item_plain"
+        android:layout_width="@dimen/DEFAULT_0DP"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtDescription" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txtDescription2"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginStart="@dimen/DEFAULT_20DP"
+        android:layout_marginTop="@dimen/DEFAULT_40DP"
+        android:layout_marginEnd="@dimen/DEFAULT_20DP"
+        android:gravity="center"
+        android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry.the printing and typesetting industry."
+        android:textColor="@color/DEFAULT_TEXT_LOGIN"
+        android:textSize="@dimen/DEFAULT_15SP"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/itemPlain" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/DEFAULT_60DP"
+        android:layout_marginStart="@dimen/DEFAULT_20DP"
+        android:layout_marginEnd="@dimen/DEFAULT_20DP"
+        android:background="@color/DEFAULT_TEXT_LOGIN"
+        android:gravity="center"
+        android:text="NEED HELP?CONTACT US"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtDescription2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

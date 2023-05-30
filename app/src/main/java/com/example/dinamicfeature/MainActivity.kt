@@ -40,8 +40,7 @@ class MainActivity : BaseActivity() {
   }
 
   private fun setTopLevelDestinations() {
-    topLevelDestination.add(getString(R.string.HOME))
-    topLevelDestination.add(getString(R.string.HOME_PRODUCT_HOME_FRAGMENT_LABEL))
+    topLevelDestination.add(getString(R.string.title_mysignature))
     topLevelDestination.add(getString(R.string.title_profile))
     topLevelDestination.add(getString(R.string.title_searchpeople))
   }

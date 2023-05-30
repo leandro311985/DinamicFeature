@@ -29,7 +29,7 @@ class SplashFragment : BaseFragment(R.layout.fragment_splash) {
 
   private fun delayPost(){
     lifecycleScope.launch {
-      kotlinx.coroutines.delay(2500)
+      kotlinx.coroutines.delay(3500)
       findNavController().navigate(R.id.action_splash_to_loginFragment)
     }
   }

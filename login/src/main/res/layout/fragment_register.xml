@@ -54,7 +54,7 @@
             android:layout_height="@dimen/DEFAULT_100DP"
             android:layout_marginStart="@dimen/DEFAULT_50DP"
             android:layout_marginTop="@dimen/DEFAULT_32DP"
-            android:src="@drawable/ic_user_bottom"
+            android:src="@drawable/ic_person"
             app:layout_constraintStart_toStartOf="@id/container"
             app:layout_constraintTop_toTopOf="@id/container" />
 

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="@dimen/DEFAULT_230DP"
+        android:layout_height="@dimen/DEFAULT_60DP"
+        app:cardBackgroundColor="@color/DEFAULT_CARD1"
+        android:layout_marginStart="@dimen/DEFAULT_20DP"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/info_text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="50 $ Monthly/Annual 300$"
+            android:textColor="@color/DEFAULT_TEXT_LOGIN" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView1"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/DEFAULT_60DP"
+        app:cardBackgroundColor="@color/DEFAULT_TEXT_LOGIN"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="@dimen/DEFAULT_20DP"
+
+        app:layout_constraintStart_toEndOf="@id/cardView"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/info_text1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="BUSINESS"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView2"
+        android:layout_width="@dimen/DEFAULT_230DP"
+        android:layout_height="@dimen/DEFAULT_60DP"
+        app:cardBackgroundColor="@color/DEFAULT_CARD1"
+        android:layout_marginStart="@dimen/DEFAULT_20DP"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cardView">
+
+    <TextView
+        android:id="@+id/info_text2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="25 $ Monthly/Annual 200$"
+        android:textColor="@color/DEFAULT_TEXT_LOGIN" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView3"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/DEFAULT_60DP"
+        app:cardBackgroundColor="@color/DEFAULT_CARD3"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="@dimen/DEFAULT_20DP"
+        app:layout_constraintStart_toEndOf="@id/cardView"
+        app:layout_constraintTop_toBottomOf="@id/cardView1">
+
+        <TextView
+            android:id="@+id/info_text3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="BUSINESS"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView4"
+        android:layout_width="@dimen/DEFAULT_230DP"
+        android:layout_height="@dimen/DEFAULT_60DP"
+        app:cardBackgroundColor="@color/DEFAULT_CARD1"
+        android:layout_marginStart="@dimen/DEFAULT_20DP"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cardView3">
+
+        <TextView
+            android:id="@+id/info_text4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="100 $ Monthly/Annual 100$"
+            android:textColor="@color/DEFAULT_TEXT_LOGIN" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView5"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/DEFAULT_60DP"
+        app:cardBackgroundColor="@color/DEFAULT_CARD2"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="@dimen/DEFAULT_20DP"
+        app:layout_constraintStart_toEndOf="@id/cardView"
+        app:layout_constraintTop_toBottomOf="@id/cardView3">
+
+        <TextView
+            android:id="@+id/info_text5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="BUSINESS"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+    </androidx.cardview.widget.CardView>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,14 +1,15 @@
 package com.example.dinamicfeature.searchpeople
 
+import android.net.Uri
 import android.os.Bundle
 import android.view.View
-import android.widget.SearchView
+import android.widget.Toast
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.navigation.fragment.findNavController
 import com.example.dinamicfeature.baseApp.commons.BaseFragment
 import com.example.dinamicfeature.searchpeople.databinding.FragmentSearchPeopleBinding
-import com.squareup.picasso.Picasso
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -25,6 +26,9 @@ class SearchFragment : BaseFragment(R.layout.fragment_search_people) {
   override fun initView(view: View) {
     setViewBinding(view)
     viewModel.getPhoto()
+   binding.searchView.setOnClickListener {
+      findNavController().navigate(R.id.action_search_fragment_to_search_fragment_list)
+    }
     setCollectors()
   }
 
@@ -45,25 +49,8 @@ class SearchFragment : BaseFragment(R.layout.fragment_search_people) {
     }
   }
 
-  private fun setElements(photo:String) = binding.apply{
-    Picasso.get()
-      .load(photo)
-      .resize(50, 50)
-      .centerCrop()
-      .into(containerUserr.logoImageView)
-
-
-    searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
-      override fun onQueryTextSubmit(query: String?): Boolean {
-        // Lógica a ser executada quando o usuário envia a busca (por exemplo, iniciar uma pesquisa)
-        return true
-      }
-
-      override fun onQueryTextChange(newText: String?): Boolean {
-        // Lógica a ser executada quando o texto da busca é alterado (por exemplo, filtrar resultados)
-        return true
-      }
-    })
+  private fun setElements(photo: String) = binding.apply {
+    containerUserr.logoImageView.setImageURI(Uri.parse(photo))
 
   }
 }

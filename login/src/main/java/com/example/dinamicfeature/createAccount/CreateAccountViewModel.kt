@@ -25,6 +25,7 @@ class CreateAccountViewModel(
 ) : BaseViewModel() {
 
   private lateinit var firebaseStorage: FirebaseStorage
+//  private lateinit var dbFirebase: DataBaseReference
   private val _register = MutableSharedFlow<UiState<String>>()
   val register = _register.asSharedFlow()
 

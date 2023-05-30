@@ -1,6 +1,5 @@
 package com.example.dinamicfeature.domain.repositories.users
 
-import android.net.Uri
 import com.example.dinamicfeature.baseApp.commons.UiState
 import com.example.dinamicfeature.domain.models.UserFirebase
 

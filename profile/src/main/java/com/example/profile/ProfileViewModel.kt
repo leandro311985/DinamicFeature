@@ -2,7 +2,6 @@ package com.example.profile
 
 import androidx.lifecycle.viewModelScope
 import com.example.dinamicfeature.baseApp.commons.BaseViewModel
-import com.example.dinamicfeature.baseApp.constants.Constants
 import com.example.dinamicfeature.baseApp.constants.Constants.DATA_USER
 import com.example.dinamicfeature.baseApp.constants.Constants.SAVE_PHOTO
 import com.example.dinamicfeature.domain.models.UserFirebase

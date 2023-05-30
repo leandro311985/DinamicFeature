@@ -39,16 +39,18 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <SearchView
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/searchView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_marginTop="@dimen/DEFAULT_10DP"
         android:layout_marginStart="@dimen/DEFAULT_10DP"
         android:layout_marginEnd="@dimen/DEFAULT_10DP"
         android:background="@drawable/border_edit_text"
-        android:queryHint="Região"
-        style="@style/SearchViewStyle"
+        android:hint="Região"
+        android:textSize="@dimen/DEFAULT_20SP"
+        android:gravity="start|center"
+        android:textColorHint="@color/DEFAULT_TEXT_LOGIN"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/search_toolbar" />
