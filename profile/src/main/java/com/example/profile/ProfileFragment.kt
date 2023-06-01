@@ -52,15 +52,14 @@ class ProfileFragment : BaseFragment(R.layout.fragment_profile) {
   }
 
   private fun setElements(photo: String) = binding.apply {
+
     profileToolbar.toolbarTitle.text = "Meu Perfil"
     if (photo.isEmpty()) {
       return@apply
     } else {
       Picasso.get()
         .load(photo)
-        .resize(250, 200)
-        .centerCrop()
-        .placeholder(com.example.dinamicfeature.R.drawable.norris)
+        .placeholder(com.example.dinamicfeature.R.drawable.ic_person)
         .into(ImageProfile)
     }
   }
@@ -71,7 +70,6 @@ class ProfileFragment : BaseFragment(R.layout.fragment_profile) {
       Profile(ContextCompat.getDrawable(requireContext(), com.example.dinamicfeature.R.drawable.ic_user_bottom),"Carla Marine","14 de Maio","Conversou pelo chat as 19:00"),
       Profile(ContextCompat.getDrawable(requireContext(), com.example.dinamicfeature.R.drawable.ic_user_bottom),"Maria das graças","27 de Maio","Acabou de adicionar voçê a lista de favoritos"),
       Profile(ContextCompat.getDrawable(requireContext(), com.example.dinamicfeature.R.drawable.ic_user_bottom),"Maria das graças","29 de Maio","Acabou de adicionar voçê a lista de favoritos"),
-      Profile(ContextCompat.getDrawable(requireContext(), com.example.dinamicfeature.R.drawable.ic_user_bottom),"juliana","29 de Maio","Acabou de adicionar voçê a lista de favoritos"),
     )
     binding.rcTimeLine.layoutManager = LinearLayoutManager(requireContext())
 

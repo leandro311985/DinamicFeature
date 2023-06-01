@@ -11,7 +11,6 @@
         android:layout_height="@dimen/DEFAULT_50DP"
         android:layout_marginStart="@dimen/DEFAULT_30DP"
         android:layout_marginTop="@dimen/DEFAULT_20DP"
-        android:src="@drawable/norris"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -19,11 +18,12 @@
         android:id="@+id/name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/DEFAULT_30DP"
+        android:layout_marginTop="@dimen/DEFAULT_20DP"
         android:layout_marginStart="@dimen/DEFAULT_10DP"
         android:text="CHUCK ROBERTO"
         android:textColor="@color/DEFAULT_2777B4"
         android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/view"
         app:layout_constraintStart_toEndOf="@+id/logo_image_view"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -31,10 +31,9 @@
         android:id="@+id/localization"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/DEFAULT_10DP"
-        android:textColor="@color/DEFAULT_2777B4"
         android:text="Localização"
-        app:layout_constraintStart_toEndOf="@+id/logo_image_view"
+        android:textColor="@color/DEFAULT_2777B4"
+        app:layout_constraintStart_toStartOf="@+id/name"
         app:layout_constraintTop_toBottomOf="@id/name" />
 
     <View

@@ -25,12 +25,14 @@ class CreateAccountViewModel(
 ) : BaseViewModel() {
 
   private lateinit var firebaseStorage: FirebaseStorage
-//  private lateinit var dbFirebase: DataBaseReference
   private val _register = MutableSharedFlow<UiState<String>>()
   val register = _register.asSharedFlow()
 
   private val _success = MutableSharedFlow<Boolean>()
   val success = _success.asSharedFlow()
+
+  private val _successDbFirebase = MutableSharedFlow<Boolean>()
+  val successDbFirebase = _successDbFirebase.asSharedFlow()
 
   private val _error = MutableSharedFlow<Exception>()
   val error = _error.asSharedFlow()
@@ -38,22 +40,25 @@ class CreateAccountViewModel(
   private val _userData = MutableSharedFlow<UserFirebase>()
   val userData = _userData.asSharedFlow()
 
-  var state : Boolean? = null
+  var state: Boolean? = null
 
-  fun createAccount(email: String, password: String,name:String) {
+  fun createAccount(email: String, password: String, name: String) {
     viewModelScope.launch {
-     val result = createUserUseCase( email = email,
+      val result = createUserUseCase(
+        email = email,
         password = password,
         user = UserFirebase(),
-        name = name)
+        name = name
+      )
 
       delay(1000)
       _register.emit(result)
     }
   }
+
   fun savePhoto(uriFile: Uri?, fileName: String, success: (Uri) -> Unit, error: (Exception?) -> Unit) {
     viewModelScope.launch {
-        firebaseStorage = FirebaseStorage.getInstance()
+      firebaseStorage = FirebaseStorage.getInstance()
       val ref = firebaseStorage.getReference(fileName)
       val task = uriFile?.let { ref.putFile(it) }
       generateUrlDownload(ref, task, success, error)
@@ -67,7 +72,7 @@ class CreateAccountViewModel(
     error: (Exception?) -> Unit
   ) {
     task?.continueWithTask { taskExecuted ->
-      if(taskExecuted.isSuccessful) {
+      if (taskExecuted.isSuccessful) {
 
         reference.downloadUrl
 
@@ -97,10 +102,11 @@ class CreateAccountViewModel(
     }
   }
 
-  fun savePhotoDb(url:Uri){
+  fun savePhotoDb(url: Uri) {
     viewModelScope.launch {
       val result = savePhotoUseCase(url)
       _success.emit(result)
     }
   }
+
 }

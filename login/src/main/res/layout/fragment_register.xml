@@ -58,13 +58,18 @@
             app:layout_constraintStart_toStartOf="@id/container"
             app:layout_constraintTop_toTopOf="@id/container" />
 
-        <androidx.appcompat.widget.AppCompatImageView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/description_image_view"
             android:layout_width="@dimen/DEFAULT_0DP"
             android:layout_height="@dimen/DEFAULT_100DP"
             android:layout_marginTop="@dimen/DEFAULT_32DP"
             android:layout_marginEnd="@dimen/DEFAULT_50DP"
-            android:src="@drawable/alert"
+            android:paddingTop="@dimen/DEFAULT_18SP"
+            android:paddingStart="@dimen/DEFAULT_30DP"
+            android:textSize="@dimen/DEFAULT_15SP"
+            android:text="Toque aqui para escolher sua foto de perfil"
+            android:layout_marginStart="@dimen/DEFAULT_20DP"
+            android:background="@drawable/ic_alert"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/logo_image_view"
             app:layout_constraintTop_toTopOf="@id/container" />

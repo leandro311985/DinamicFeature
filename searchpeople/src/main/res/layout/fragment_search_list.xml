@@ -7,6 +7,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/searchViewList"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="@dimen/DEFAULT_10DP"
+        android:layout_marginStart="@dimen/DEFAULT_20DP"
+        android:layout_marginEnd="@dimen/DEFAULT_10DP"
+        android:background="@drawable/border_edit_text"
+        android:padding="@dimen/DEFAULT_10DP"
+        android:hint="Procurar Região"
+        android:textSize="@dimen/DEFAULT_20SP"
+        android:gravity="start|center"
+        android:textColorHint="@color/DEFAULT_TEXT_LOGIN"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/search_toolbar" />
+
     <include
         android:id="@+id/search_toolbar"
         layout="@layout/toolbar_layout_search"
@@ -22,8 +39,9 @@
         android:id="@+id/idRVCourses"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginStart="@dimen/DEFAULT_20DP"
         tools:listitem="@layout/item_region"
-        app:layout_constraintTop_toBottomOf="@id/search_toolbar"
+        app:layout_constraintTop_toBottomOf="@id/searchViewList"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

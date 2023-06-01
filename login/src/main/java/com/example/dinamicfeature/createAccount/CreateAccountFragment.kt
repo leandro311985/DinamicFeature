@@ -197,6 +197,7 @@ class CreateAccountFragment : BaseFragment(R.layout.fragment_register) {
             userData = dataUser
             viewModel.savePhoto(uri_Imagem,userData?.id?:"",{
               viewModel.savePhotoDb(it)
+//              viewModel.dataBase(userData?.id?:"",uri_Imagem.toString())
             },{
               Toast.makeText(requireContext(), it?.message, Toast.LENGTH_SHORT).show()
             })

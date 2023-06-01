@@ -28,6 +28,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:itemIconSize="@dimen/DEFAULT_25DP"
+        android:background="@color/DEFAULT_TEXT_LOGIN"
         app:itemIconTint="@color/color_state_bottom_navigation"
         app:itemTextColor="@color/color_state_bottom_navigation"
         app:labelVisibilityMode="selected"

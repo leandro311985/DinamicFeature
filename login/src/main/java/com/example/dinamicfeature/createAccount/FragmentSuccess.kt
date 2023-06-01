@@ -26,7 +26,7 @@ class FragmentSuccess : BaseFragment(R.layout.fragment_success) {
   }
 
   private fun setElement() {
-    binding.containerSuccess.setOnClickListener {
+    binding.textOk.setOnClickListener {
       findNavController().navigate(R.id.action_success_to_profile)
     }
   }

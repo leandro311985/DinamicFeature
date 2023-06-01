@@ -10,4 +10,14 @@
         </dist:delivery>
         <dist:fusing dist:include="true" />
     </dist:module>
+
+    <application
+        android:hardwareAccelerated="true"
+        android:supportsRtl="true">
+        <provider
+            android:name="com.example.dinamicfeature.di.initialization.SignatureInitialization"
+            android:authorities="${applicationId}.mysignature"
+            android:enabled="true"
+            android:exported="false" />
+    </application>
 </manifest>

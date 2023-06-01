@@ -16,38 +16,40 @@ class UserRepository(
   private val context: Context,
   private val auth: FirebaseAuth,
   private val database: UserDataBase
-  ) : IUserRepository {
+) : IUserRepository {
 
   private val userEmpty = UserFirebase()
   override suspend fun registerUser(
     email: String,
     password: String,
-    user: UserFirebase, name:String
+    user: UserFirebase, name: String
   ): UiState<String> {
     var result = UiState.Success("")
-    auth.createUserWithEmailAndPassword(email,password)
+    auth.createUserWithEmailAndPassword(email, password)
       .addOnCompleteListener {
-        if (it.isSuccessful){
-          val user = UserFirebase(it.result.user?.uid ?: "",name,
-          "","",it.result.user?.email ?: "")
-          database.saveUserData(DATA_USER,user)
+        if (it.isSuccessful) {
+          val user = UserFirebase(
+            it.result.user?.uid ?: "", name,
+            "", "", it.result.user?.email ?: ""
+          )
+          database.saveUserData(DATA_USER, user)
           result = UiState.Success("success")
-        }else{
+        } else {
           try {
             throw it.exception ?: java.lang.Exception("Autenticação inválida")
           } catch (e: FirebaseAuthWeakPasswordException) {
-           UiState.Success("Falha na autenticação, a senha deve ter pelo menos 6 caracteres")
+            UiState.Success("Falha na autenticação, a senha deve ter pelo menos 6 caracteres")
           } catch (e: FirebaseAuthInvalidCredentialsException) {
             UiState.Success("Falha na autenticação, e-mail inválido inserido")
           } catch (e: FirebaseAuthUserCollisionException) {
             UiState.Success("Falha na autenticação, e-mail já registrado.")
           } catch (e: Exception) {
-          UiState.Success(e.message)
+            UiState.Success(e.message)
           }
         }
       }
       .addOnFailureListener {
-          result = UiState.Success(it.message.toString())
+        result = UiState.Success(it.message.toString())
       }
     return result
   }
@@ -70,37 +72,39 @@ class UserRepository(
       }
   }
 
-  override suspend fun logout():Boolean {
+  override suspend fun logout(): Boolean {
     auth.signOut()
-    database.saveUserData(DATA_USER,userEmpty)
+    database.saveUserData(DATA_USER, userEmpty)
     return true
   }
 
   override suspend fun loginUser(email: String, password: String, result: (UiState<Boolean>) -> Unit) {
-    auth.signInWithEmailAndPassword(email,password)
+    auth.signInWithEmailAndPassword(email, password)
       .addOnCompleteListener { task ->
         if (task.isSuccessful) {
-          val user = UserFirebase(task.result.user?.uid ?: "",task.result.user?.displayName?:"",
-            "","",task.result.user?.email ?: "")
-          database.saveUserData(DATA_USER,user)
-            if (task == null){
-              result.invoke(UiState.Failure("Failed to store local session"))
-            }else{
-              result.invoke(UiState.Success(true))
-            }
+          val user = UserFirebase(
+            task.result.user?.uid ?: "", task.result.user?.displayName ?: "",
+            "", "", task.result.user?.email ?: ""
+          )
+          database.saveUserData(DATA_USER, user)
+          if (task == null) {
+            result.invoke(UiState.Failure("Failed to store local session"))
+          } else {
+            result.invoke(UiState.Success(true))
+          }
         }
       }.addOnFailureListener {
         result.invoke(UiState.Failure("Authentication failed, Check email and password"))
       }
   }
 
-  override suspend fun isLoginUser():Boolean {
+  override suspend fun isLoginUser(): Boolean {
     val currentUser = auth.currentUser
     return currentUser != null
   }
 
-  override suspend fun savePhoto(photo: String) : Boolean {
-    database.savePhoto(Constants.SAVE_PHOTO,photo)
+  override suspend fun savePhoto(photo: String): Boolean {
+    database.savePhoto(Constants.SAVE_PHOTO, photo)
     return true
   }
 
@@ -109,7 +113,7 @@ class UserRepository(
   }
 
   override suspend fun getDataUser(key: String): UserFirebase? {
-   return database.getUser(key)
+    return database.getUser(key)
   }
 
   private fun getJson(rawResource: Int): String {

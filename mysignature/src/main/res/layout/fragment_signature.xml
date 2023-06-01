@@ -68,6 +68,7 @@
         layout="@layout/item_plain"
         android:layout_width="@dimen/DEFAULT_0DP"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/DEFAULT_20DP"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/txtDescription" />
@@ -77,7 +78,7 @@
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:layout_marginStart="@dimen/DEFAULT_20DP"
-        android:layout_marginTop="@dimen/DEFAULT_40DP"
+        android:layout_marginTop="@dimen/DEFAULT_50DP"
         android:layout_marginEnd="@dimen/DEFAULT_20DP"
         android:gravity="center"
         android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry.the printing and typesetting industry."
@@ -88,15 +89,18 @@
         app:layout_constraintTop_toBottomOf="@id/itemPlain" />
 
     <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/btn_help"
         android:layout_width="match_parent"
         android:layout_height="@dimen/DEFAULT_60DP"
         android:layout_marginStart="@dimen/DEFAULT_20DP"
+        android:layout_marginTop="@dimen/DEFAULT_40DP"
         android:layout_marginEnd="@dimen/DEFAULT_20DP"
         android:background="@color/DEFAULT_TEXT_LOGIN"
         android:gravity="center"
         android:text="NEED HELP?CONTACT US"
         android:textColor="@color/white"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/txtDescription2" />
