@@ -38,10 +38,12 @@ android {
 }
 
 dependencies {
+
     //FIREBASE
     api('com.google.firebase:firebase-auth-ktx:22.0.0')
     api('com.google.firebase:firebase-core:21.1.1')
     api('com.google.firebase:firebase-storage-ktx:20.2.0')
+    api('com.google.firebase:firebase-database-ktx:20.2.2')
 
     //play service auth
     api('com.google.android.gms:play-services-auth:20.5.0')

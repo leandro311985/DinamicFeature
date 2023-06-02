@@ -24,7 +24,6 @@ class MainApplication : Application() {
 
   private fun setupKoin() {
     startKoin {
-//      androidLogger(if (BuildConfig.DEBUG) Level.ERROR else Level.NONE)
       androidLogger()
       androidContext(this@MainApplication)
       modules(

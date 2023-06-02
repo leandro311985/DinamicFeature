@@ -11,11 +11,14 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.google.firebase.auth.FirebaseAuthUserCollisionException
 import com.google.firebase.auth.FirebaseAuthWeakPasswordException
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 
 class UserRepository(
   private val context: Context,
   private val auth: FirebaseAuth,
-  private val database: UserDataBase
+  private val database: UserDataBase,
 ) : IUserRepository {
 
   private val userEmpty = UserFirebase()

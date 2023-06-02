@@ -1,43 +1,133 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation_app"
-    app:startDestination="@id/navigation_login">
+    app:startDestination="@id/splash_fragment">
 
 
-    <include-dynamic
-        android:id="@id/navigation_login"
-        android:name="com.example.dinamicfeature.login"
-        app:graphPackage="com.example.dinamicfeature.login"
-        app:graphResName="navigation_login"
-        app:moduleName="login" />
+    <fragment
+        android:id="@+id/splash_fragment"
+        android:name="com.example.dinamicfeature.login.splash.SplashFragment"
+        android:label="splash"
+        tools:layout="@layout/fragment_splash">
 
-    <include-dynamic
-        android:id="@id/navigation_home"
-        android:name="com.example.dinamicfeature.home"
-        app:graphPackage="com.example.dinamicfeature.home"
-        app:graphResName="navigation_home"
-        app:moduleName="home" />
+        <action
+            android:id="@+id/action_splash_to_loginFragment"
+            app:destination="@id/navigation_login"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
 
-  <include-dynamic
-        android:id="@id/navigation_profile"
-        android:name="com.example.dinamicfeature.profile"
-        app:graphPackage="com.example.dinamicfeature.profile"
-        app:graphResName="navigation_profile"
-        app:moduleName="@string/title_profile" />
+    </fragment>
 
-    <include-dynamic
-        android:id="@id/navigation_signature"
-        android:name="com.example.dinamicfeature.mysignature"
-        app:graphPackage="com.example.dinamicfeature.mysignature"
-        app:graphResName="navigation_signature"
-        app:moduleName="@string/title_mysignature" />
+    <fragment
+        android:id="@+id/navigation_login"
+        android:name="com.example.dinamicfeature.login.LoginFragment"
+        android:label="@string/title_login"
+        tools:layout="@layout/fragment_login">
 
-    <include-dynamic
-        android:id="@id/navigation_search_people"
-        android:name="com.example.dinamicfeature.searchepeople"
-        app:graphPackage="com.example.dinamicfeature.searchpeople"
-        app:graphResName="navigation_search_people"
-        app:moduleName="@string/title_searchpeople" />
+        <action
+            android:id="@+id/action_loginFragment_to_profile"
+            app:destination="@id/navigation_profile"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+        <action
+            android:id="@+id/login_fragment_to_navigation_create"
+            app:destination="@id/navigation_create_account"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.example.dinamicfeature.profile.ProfileFragment"
+        android:label="@string/title_profile"
+        tools:layout="@layout/fragment_profile">
+
+        <action
+            android:id="@+id/login_login_to_navigation_profile"
+            app:destination="@id/navigation_profile"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_create_account"
+        android:name="com.example.dinamicfeature.login.createAccount.CreateAccountFragment"
+        android:label="create_account"
+        tools:layout="@layout/fragment_register">
+
+        <action
+            android:id="@+id/action_create_login_fragment_to_success"
+            app:destination="@id/navigation_success"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_success"
+        android:name="com.example.dinamicfeature.login.createAccount.FragmentSuccess"
+        android:label="create_account_success"
+        tools:layout="@layout/fragment_success">
+
+        <action
+            android:id="@+id/action_success_to_profile"
+            app:destination="@id/navigation_profile"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_search_people"
+        android:name="com.example.dinamicfeature.searchpeople.SearchFragment"
+        android:label="@string/title_searchpeople"
+        tools:layout="@layout/fragment_search_people">
+
+        <action
+            android:id="@+id/action_search_fragment_to_search_fragment_list"
+            app:destination="@id/search_fragment_list"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/search_fragment_list"
+        android:name="com.example.dinamicfeature.searchpeople.SearchListFragment"
+        android:label="fragment_search_list"
+        tools:layout="@layout/fragment_search_list">
+
+
+    </fragment>
+
+     <fragment
+        android:id="@+id/navigation_signature"
+        android:name="com.example.dinamicfeature.mysignature.MySignatureFragment"
+        android:label="@string/title_mysignature"
+        tools:layout="@layout/fragment_signature">
+
+
+    </fragment>
+
+
 
 </navigation>

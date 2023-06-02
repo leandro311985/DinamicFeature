@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'com.google.gms.google-services'
+    id("kotlin-parcelize")
 
 }
 
@@ -36,7 +37,6 @@ android {
         jvmTarget = '1.8'
     }
 
-    dynamicFeatures = [':login', ':home', ':profile', ':mysignature', ':searchpeople']
 }
 
 dependencies {

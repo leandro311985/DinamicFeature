@@ -2,8 +2,10 @@ package com.example.dinamicfeature.commons.di
 
 import com.example.dinamicfeature.commons.modules.ModuleInitialization
 import com.example.dinamicfeature.commons.modules.db.databaseModule
-import com.example.dinamicfeature.commons.modules.firebase.networkModule
+import com.example.dinamicfeature.commons.modules.firebase.firebaseModule
+import com.example.dinamicfeature.commons.modules.repositories.mainRepositoryModule
 import com.example.dinamicfeature.commons.modules.repositories.userRepositoryModule
+import com.example.dinamicfeature.commons.modules.usecases.mainUseCaseModule
 import com.example.dinamicfeature.commons.modules.usecases.userUseCaseModule
 import com.example.dinamicfeature.commons.modules.viewmodel.appViewModelModule
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -35,19 +37,21 @@ private fun returnViewModelModules(): List<Module> {
 private fun returnUserRepositoryModules(): List<Module> {
   return listOf(
     userRepositoryModule,
+    mainRepositoryModule
   )
 }
 
 private fun returnUseCasesModules(): List<Module> {
   return listOf(
-    userUseCaseModule
+    userUseCaseModule,
+    mainUseCaseModule
   )
 
 }
 
 private fun returnFirebaseModules(): List<Module> {
   return listOf(
-    networkModule
+    firebaseModule
   )
 }
 
@@ -56,6 +60,7 @@ private fun returnDbModules(): List<Module> {
     databaseModule
   )
 }
+
 
 
 
