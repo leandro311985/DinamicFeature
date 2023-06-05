@@ -21,7 +21,6 @@ class LoginFragment : BaseFragment(R.layout.fragment_login) {
 
   private lateinit var binding: FragmentLoginBinding
   private val viewModel: LoginViewModel by viewModel()
-
   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
     super.onViewCreated(view, savedInstanceState)
     initView(view)

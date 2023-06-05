@@ -109,11 +109,6 @@ class CreateAccountFragment : BaseFragment(R.layout.fragment_register) {
       checkPermission()
     }
 
-    oe9xsToolbar.toolbarTitle.text = "Criar conta"
-    oe9xsToolbar.toolbarBackButton.setOnClickListener {
-      findNavController().navigateUp()
-    }
-
     backTextView.setOnClickListener {
       findNavController().navigateUp()
     }

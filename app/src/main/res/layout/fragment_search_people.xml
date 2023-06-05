@@ -4,15 +4,6 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <include
-        android:id="@+id/search_toolbar"
-        layout="@layout/toolbar_layout_profile"
-        android:layout_width="@dimen/DEFAULT_0DP"
-        android:layout_height="@dimen/DEFAULT_56DP"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/loading_container_search"
         android:layout_width="match_parent"
@@ -43,18 +34,18 @@
         android:id="@+id/searchView"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_marginTop="@dimen/DEFAULT_10DP"
+        android:layout_marginTop="@dimen/DEFAULT_20DP"
         android:layout_marginStart="@dimen/DEFAULT_10DP"
         android:layout_marginEnd="@dimen/DEFAULT_10DP"
         android:background="@drawable/border_edit_text"
-        android:padding="@dimen/DEFAULT_10DP"
-        android:hint="Região"
-        android:textSize="@dimen/DEFAULT_20SP"
         android:gravity="start|center"
+        android:hint="Região"
+        android:padding="@dimen/DEFAULT_10DP"
         android:textColorHint="@color/DEFAULT_TEXT_LOGIN"
+        android:textSize="@dimen/DEFAULT_20SP"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/search_toolbar" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/image"

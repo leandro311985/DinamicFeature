@@ -32,12 +32,14 @@
 
     <string name="HOME">Home</string>
     <string name="USER_PROFILE">Perfil</string>
+    <string name="SPLASH">splash</string>
     <string name="STORE">Loja</string>
     <string name="HOME_PRODUCT_HOME_FRAGMENT_LABEL">home</string>
     <string name="HOME_ADD_PRODUCT">Adicionar Produto</string>
-    <string name="title_profile">profile</string>
-    <string name="title_mysignature">mysignature</string>
-    <string name="title_searchpeople">searchpeople</string>
+    <string name="title_profile">Meu Perfil</string>
+    <string name="title_createUser">create_account</string>
+    <string name="title_mysignature">Assinatura</string>
+    <string name="title_searchpeople">Procurar Pessoas</string>
     <string name="preference_file_key">com.example.android.while_in_use_location.PREFERENCE_FILE_KEY</string>
     <string name="no_location_text">No current location</string>
     <string name="start_location_updates_button_text">Start receiving location updates</string>

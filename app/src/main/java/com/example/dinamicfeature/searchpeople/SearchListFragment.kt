@@ -32,7 +32,6 @@ class SearchListFragment : BaseFragment(R.layout.fragment_search_list) {
   }
 
   private fun setElement() {
-    binding.searchToolbar.toolbarTitle.text = "Região"
     courseRV = binding.idRVCourses
     courseList = ArrayList()
 

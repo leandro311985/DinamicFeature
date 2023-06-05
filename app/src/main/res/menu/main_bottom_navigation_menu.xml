@@ -2,24 +2,26 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <item
-        android:id="@+id/navigation_profile"
-        android:enabled="true"
-        android:icon="@drawable/round_person_24"
-        android:title="@string/USER_PROFILE"
-        app:labelVisibilityMode="selected"/>
+    <group android:checkableBehavior="single">
 
-    <item
-        android:id="@+id/navigation_search_people"
-        android:enabled="true"
-        android:icon="@drawable/baseline_person_search_24"
-        android:title="@string/search_people" />
+        <item
+            android:id="@+id/navigation_profile"
+            android:icon="@drawable/round_person_24"
+            android:title="@string/USER_PROFILE"
+            app:labelVisibilityMode="selected"/>
 
-    <item
-        android:id="@+id/navigation_signature"
-        android:enabled="true"
-        android:icon="@drawable/baseline_credit_card_24"
-        android:title="@string/my_signature"
-         />
+        <item
+            android:id="@+id/navigation_search_people"
+            android:icon="@drawable/baseline_person_search_24"
+            android:title="@string/search_people" />
+
+        <item
+            android:id="@+id/navigation_signature"
+            android:icon="@drawable/baseline_credit_card_24"
+            android:title="@string/my_signature"
+            />
+
+    </group>
+
 
 </menu>

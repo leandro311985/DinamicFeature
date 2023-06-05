@@ -4,15 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <include
-        android:id="@+id/signature_toolbar"
-        layout="@layout/toolbar_layout_profile"
-        android:layout_width="@dimen/DEFAULT_0DP"
-        android:layout_height="@dimen/DEFAULT_56DP"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/loading_container_signature"
         android:layout_width="match_parent"
@@ -47,7 +38,7 @@
         android:gravity="center"
         android:text="SEU PLANO DE ASSINATURA É GRATUITO"
         android:textColor="@color/white"
-        app:layout_constraintTop_toBottomOf="@+id/signature_toolbar" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/txtDescription"

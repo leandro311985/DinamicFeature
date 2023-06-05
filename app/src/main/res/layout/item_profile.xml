@@ -65,7 +65,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/DEFAULT_10DP"
         android:layout_marginBottom="@dimen/DEFAULT_5DP"
-        android:autoSizeTextType="uniform"
+        app:autoSizeTextType="uniform"
         android:maxLines="2"
         android:text="Brazil\nSão paulo"
         android:layout_marginEnd="@dimen/DEFAULT_5DP"

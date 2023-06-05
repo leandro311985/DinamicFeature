@@ -11,27 +11,19 @@
         android:id="@+id/searchViewList"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_marginTop="@dimen/DEFAULT_10DP"
         android:layout_marginStart="@dimen/DEFAULT_20DP"
+        android:layout_marginTop="@dimen/DEFAULT_40DP"
         android:layout_marginEnd="@dimen/DEFAULT_10DP"
         android:background="@drawable/border_edit_text"
-        android:padding="@dimen/DEFAULT_10DP"
-        android:hint="Procurar Região"
-        android:textSize="@dimen/DEFAULT_20SP"
         android:gravity="start|center"
+        android:hint="Procurar Região"
+        android:padding="@dimen/DEFAULT_10DP"
         android:textColorHint="@color/DEFAULT_TEXT_LOGIN"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/search_toolbar" />
-
-    <include
-        android:id="@+id/search_toolbar"
-        layout="@layout/toolbar_layout_profile"
-        android:layout_width="@dimen/DEFAULT_0DP"
-        android:layout_height="@dimen/DEFAULT_56DP"
+        android:textSize="@dimen/DEFAULT_20SP"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 
 
     <!--on below line we are creating a recycler view-->

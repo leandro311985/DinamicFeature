@@ -1,13 +1,11 @@
 package com.example.dinamicfeature.searchpeople
 
 
-import android.content.ContentValues.TAG
 import android.location.Address
 import android.location.Geocoder
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.Toast
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
@@ -17,10 +15,7 @@ import com.example.dinamicfeature.baseApp.commons.BaseFragment
 import com.example.dinamicfeature.databinding.FragmentSearchPeopleBinding
 import com.example.dinamicfeature.domain.models.LocationData
 import com.example.dinamicfeature.domain.models.UserFirebase
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import com.squareup.picasso.Picasso
@@ -81,7 +76,12 @@ class SearchFragment : BaseFragment(R.layout.fragment_search_people) {
           viewModel.userData.collect { dataUser ->
             userData = dataUser
             getPhotoFirebase(userData?.id?:"")
-            binding.containerUserr.name.text = userData?.first_name?.toUpperCase() ?: "Chuck norris"
+            var name = userData?.first_name?.toUpperCase()
+            if (name == "") {
+              binding.containerUserr.name.text = "Chuck norris"
+            }else{
+              binding.containerUserr.name.text = name
+            }
           }
         }
       }

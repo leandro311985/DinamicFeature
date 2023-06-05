@@ -18,13 +18,16 @@ import android.util.Log
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.view.isVisible
+import androidx.drawerlayout.widget.DrawerLayout
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI.setupWithNavController
+import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import androidx.viewbinding.BuildConfig
 import com.example.dinamicfeature.baseApp.commons.BaseActivity
@@ -43,6 +46,8 @@ class MainActivity : BaseActivity() {
   private val viewModel: AppViewModel by viewModel()
 
   private lateinit var navController: NavController
+  private lateinit var drawerLayout: DrawerLayout
+  private lateinit var appBarConfiguration: AppBarConfiguration
   private val topLevelDestination = mutableListOf<String>()
   private val topLevelLocation = mutableListOf<String>()
   private var foregroundOnlyLocationServiceBound = false
@@ -68,6 +73,7 @@ class MainActivity : BaseActivity() {
     super.onCreate(savedInstanceState)
     binding = ActivityMainBinding.inflate(layoutInflater)
     setContentView(binding.root)
+
     initView()
   }
 
@@ -80,8 +86,17 @@ class MainActivity : BaseActivity() {
     setCollectors()
   }
 
+  private fun hideActionBar(isHide:Boolean){
+    val action = supportActionBar
+    if (isHide)  action?.hide() else  action?.show()
+    supportActionBar?.setDisplayHomeAsUpEnabled(true)
+    supportActionBar?.setHomeAsUpIndicator(R.drawable.baseline_menu_24)
+  }
+
   override fun onSupportNavigateUp(): Boolean {
-    return navController.navigateUp() || super.onSupportNavigateUp()
+    // Abre o Navigation Drawer quando o ícone de menu for clicado
+    drawerLayout.openDrawer(binding.navigationView)
+    return true
   }
 
   private fun setUiComponents() {
@@ -91,19 +106,25 @@ class MainActivity : BaseActivity() {
   }
 
   private fun setTopLevelDestinations() {
-    topLevelDestination.add(getString(R.string.title_mysignature))
-    topLevelDestination.add(getString(R.string.title_profile))
-    topLevelDestination.add(getString(R.string.title_searchpeople))
+    topLevelDestination.add(getString(R.string.SPLASH))
+    topLevelDestination.add(getString(R.string.title_login))
+    topLevelDestination.add(getString(R.string.title_createUser))
   }
 
   private fun setupNavigation() {
-    binding.bottomNavigation.setupWithNavController(navController)
-    setupWithNavController(binding.bottomNavigation, navController)
+    binding.navigationView.setupWithNavController(navController)
+    drawerLayout = binding.activityMain
+    setupWithNavController(binding.navigationView, navController)
+    appBarConfiguration = AppBarConfiguration(navController.graph,drawerLayout)
+    setupActionBarWithNavController(navController, appBarConfiguration)
 
     navController.addOnDestinationChangedListener { _, destination, _ ->
-      binding.bottomNavigation.isVisible =
-        topLevelDestination.contains(destination.label)
 
+      if (topLevelDestination.contains(destination.label)){
+        hideActionBar(true)
+      }else{
+        hideActionBar(false)
+      }
       if (topLevelLocation.contains(destination.label)) {
         subscribeLocationService()
       } else {

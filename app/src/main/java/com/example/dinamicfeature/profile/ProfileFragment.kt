@@ -55,7 +55,6 @@ class ProfileFragment : BaseFragment(R.layout.fragment_profile) {
 
   private fun setElements(photo: String) = binding.apply {
 
-    profileToolbar.toolbarTitle.text = "Meu Perfil"
     if (photo.isEmpty()) {
       return@apply
     } else {
