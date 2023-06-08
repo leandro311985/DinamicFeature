@@ -109,6 +109,8 @@ class MainActivity : BaseActivity() {
     topLevelDestination.add(getString(R.string.SPLASH))
     topLevelDestination.add(getString(R.string.title_login))
     topLevelDestination.add(getString(R.string.title_createUser))
+    topLevelDestination.add(getString(R.string.title_details))
+    topLevelDestination.add(getString(R.string.title_success_account))
   }
 
   private fun setupNavigation() {

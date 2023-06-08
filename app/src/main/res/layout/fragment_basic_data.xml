@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/DEFAULT_10DP"
+            android:layout_marginTop="@dimen/DEFAULT_10DP"
+            android:src="@drawable/baseline_arrow_back_ios_new_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/txt_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/DEFAULT_20DP"
+            android:layout_marginTop="@dimen/DEFAULT_20DP"
+            android:src="@drawable/txt_dados_basico"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/back" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/DEFAULT_20DP"
+            android:layout_marginTop="@dimen/DEFAULT_30DP"
+            android:text="@string/title_dados_basicos"
+            android:textSize="@dimen/DEFAULT_20SP"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_title" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edit_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/DEFAULT_20DP"
+            android:layout_marginTop="@dimen/DEFAULT_10DP"
+            android:layout_marginEnd="@dimen/DEFAULT_20DP"
+            android:textSize="@dimen/DEFAULT_20SP"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/title_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/DEFAULT_20DP"
+            android:layout_marginTop="@dimen/DEFAULT_30DP"
+            android:text="@string/title_data_nascimento"
+            android:textSize="@dimen/DEFAULT_20SP"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edit_title" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edit_data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/DEFAULT_20DP"
+            android:layout_marginTop="@dimen/DEFAULT_10DP"
+            android:layout_marginEnd="@dimen/DEFAULT_20DP"
+            android:textSize="@dimen/DEFAULT_20SP"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title_data" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/title_pais"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/DEFAULT_20DP"
+            android:layout_marginTop="@dimen/DEFAULT_30DP"
+            android:text="@string/title_pais"
+            android:textSize="@dimen/DEFAULT_20SP"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edit_data" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edit_pais"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/DEFAULT_20DP"
+            android:layout_marginTop="@dimen/DEFAULT_10DP"
+            android:layout_marginEnd="@dimen/DEFAULT_20DP"
+            android:textSize="@dimen/DEFAULT_20SP"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title_pais" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/title_estado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/DEFAULT_20DP"
+            android:layout_marginTop="@dimen/DEFAULT_30DP"
+            android:text="@string/title_estado"
+            android:textSize="@dimen/DEFAULT_20SP"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edit_pais" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edit_estado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/DEFAULT_20DP"
+            android:layout_marginTop="@dimen/DEFAULT_10DP"
+            android:layout_marginEnd="@dimen/DEFAULT_20DP"
+            android:textSize="@dimen/DEFAULT_20SP"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title_estado" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/title_cidade"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/DEFAULT_20DP"
+            android:layout_marginTop="@dimen/DEFAULT_30DP"
+            android:text="@string/title_estado"
+            android:textSize="@dimen/DEFAULT_20SP"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edit_estado" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edit_cidade"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/DEFAULT_20DP"
+            android:layout_marginTop="@dimen/DEFAULT_10DP"
+            android:layout_marginEnd="@dimen/DEFAULT_20DP"
+            android:textSize="@dimen/DEFAULT_20SP"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title_cidade" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.core.widget.NestedScrollView>

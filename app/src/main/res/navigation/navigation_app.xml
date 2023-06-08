@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/splash_fragment"
-        android:name="com.example.dinamicfeature.login.splash.SplashFragment"
+        android:name="com.example.dinamicfeature.login.presentation.splash.SplashFragment"
         android:label="splash"
         tools:layout="@layout/fragment_splash">
 
@@ -33,7 +33,7 @@
 
     <fragment
         android:id="@+id/navigation_login"
-        android:name="com.example.dinamicfeature.login.LoginFragment"
+        android:name="com.example.dinamicfeature.login.presentation.LoginFragment"
         android:label="@string/title_login"
         tools:layout="@layout/fragment_login">
 
@@ -57,7 +57,7 @@
 
     <fragment
         android:id="@+id/navigation_profile"
-        android:name="com.example.dinamicfeature.profile.ProfileFragment"
+        android:name="com.example.dinamicfeature.profile.presentation.ProfileFragment"
         android:label="@string/title_profile"
         tools:layout="@layout/fragment_profile">
 
@@ -69,13 +69,14 @@
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right" />
 
+
     </fragment>
 
     <fragment
         android:id="@+id/navigation_create_account"
-        android:name="com.example.dinamicfeature.login.createAccount.CreateAccountFragment"
+        android:name="com.example.dinamicfeature.login.presentation.createAccount.CreateAccountFragment"
         android:label="create_account"
-        tools:layout="@layout/fragment_register">
+        tools:layout="@layout/fragment_create_account">
 
         <action
             android:id="@+id/action_create_login_fragment_to_success"
@@ -89,8 +90,8 @@
 
     <fragment
         android:id="@+id/navigation_success"
-        android:name="com.example.dinamicfeature.login.createAccount.FragmentSuccess"
-        android:label="create_account_success"
+        android:name="com.example.dinamicfeature.login.presentation.createAccount.FragmentSuccess"
+        android:label="@string/title_success_account"
         tools:layout="@layout/fragment_success">
 
         <action
@@ -105,7 +106,7 @@
 
     <fragment
         android:id="@+id/navigation_search_people"
-        android:name="com.example.dinamicfeature.searchpeople.SearchFragment"
+        android:name="com.example.dinamicfeature.searchpeople.presentation.SearchFragment"
         android:label="@string/title_searchpeople"
         tools:layout="@layout/fragment_search_people">
 
@@ -117,11 +118,19 @@
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right" />
 
+        <action
+            android:id="@+id/action_search_to_navigation_details"
+            app:destination="@id/navigation_details"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
     </fragment>
 
     <fragment
         android:id="@+id/search_fragment_list"
-        android:name="com.example.dinamicfeature.searchpeople.SearchListFragment"
+        android:name="com.example.dinamicfeature.searchpeople.presentation.SearchListFragment"
         android:label="Região"
         tools:layout="@layout/fragment_search_list">
 
@@ -133,6 +142,19 @@
         android:name="com.example.dinamicfeature.mysignature.MySignatureFragment"
         android:label="@string/title_mysignature"
         tools:layout="@layout/fragment_signature">
+
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_details"
+        android:name="com.example.dinamicfeature.details.presentetion.DetailsFragment"
+        android:label="@string/title_details"
+        tools:layout="@layout/fragment_signature">
+
+        <argument
+            android:name="photo"
+            app:argType="string" />
 
 
     </fragment>

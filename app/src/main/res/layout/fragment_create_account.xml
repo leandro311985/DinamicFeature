@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/loading_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/DEFAULT_99000000"
+        android:clickable="true"
+        android:elevation="@dimen/DEFAULT_50DP"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.core.widget.ContentLoadingProgressBar
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:elevation="@dimen/DEFAULT_50DP"
+            android:indeterminate="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/DEFAULT_0DP"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/logo_image_view"
+            android:layout_width="@dimen/DEFAULT_100DP"
+            android:layout_height="@dimen/DEFAULT_100DP"
+            android:layout_marginStart="@dimen/DEFAULT_50DP"
+            android:layout_marginTop="@dimen/DEFAULT_32DP"
+            android:src="@drawable/ic_person"
+            app:layout_constraintStart_toStartOf="@id/container"
+            app:layout_constraintTop_toTopOf="@id/container" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/description_image_view"
+            android:layout_width="@dimen/DEFAULT_0DP"
+            android:layout_height="@dimen/DEFAULT_100DP"
+            android:layout_marginStart="@dimen/DEFAULT_20DP"
+            android:layout_marginTop="@dimen/DEFAULT_32DP"
+            android:layout_marginEnd="@dimen/DEFAULT_50DP"
+            android:background="@drawable/ic_alert"
+            android:paddingStart="@dimen/DEFAULT_30DP"
+            android:paddingTop="@dimen/DEFAULT_18SP"
+            android:text="Toque aqui para escolher sua foto de perfil"
+            android:textSize="@dimen/DEFAULT_15SP"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/logo_image_view"
+            app:layout_constraintTop_toTopOf="@id/container" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/name_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/logo_image_view"
+            android:layout_marginHorizontal="@dimen/DEFAULT_50DP"
+            android:layout_marginTop="@dimen/DEFAULT_32DP"
+            android:background="@drawable/border_edit_text"
+            android:hint="@string/name_hint"
+            android:inputType="textPersonName"
+            android:maxLines="1"
+            android:textColor="@color/DEFAULT_TEXT_LOGIN"
+            android:textColorHint="@color/DEFAULT_TEXT_LOGIN"
+            app:layout_constraintEnd_toEndOf="@id/container"
+            app:layout_constraintStart_toStartOf="@id/container"
+            app:layout_constraintTop_toBottomOf="@id/logo_image_view" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/email_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/name_text"
+            android:layout_marginHorizontal="@dimen/DEFAULT_50DP"
+            android:layout_marginTop="@dimen/DEFAULT_16DP"
+            android:background="@drawable/border_edit_text"
+            android:hint="@string/email_create_hint"
+            android:inputType="textEmailAddress"
+            android:maxLines="1"
+            android:textColor="@color/DEFAULT_TEXT_LOGIN"
+            android:textColorHint="@color/DEFAULT_TEXT_LOGIN"
+            app:layout_constraintEnd_toEndOf="@id/container"
+            app:layout_constraintStart_toStartOf="@id/container"
+            app:layout_constraintTop_toBottomOf="@id/name_text" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/password_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/email_text"
+            android:layout_marginHorizontal="@dimen/DEFAULT_50DP"
+            android:layout_marginTop="@dimen/DEFAULT_16DP"
+            android:background="@drawable/border_edit_text"
+            android:hint="@string/password_register"
+            android:inputType="textPassword"
+            android:maxLines="1"
+            android:textColor="@color/DEFAULT_TEXT_LOGIN"
+            android:textColorHint="@color/DEFAULT_TEXT_LOGIN"
+            app:layout_constraintEnd_toEndOf="@id/container"
+            app:layout_constraintStart_toStartOf="@id/container"
+            app:layout_constraintTop_toBottomOf="@id/email_text" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/password_confirme_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/password_text"
+            android:layout_marginHorizontal="@dimen/DEFAULT_50DP"
+            android:layout_marginTop="@dimen/DEFAULT_16DP"
+            android:background="@drawable/border_edit_text"
+            android:hint="@string/enter_password_confirme"
+            android:inputType="textPassword"
+            android:maxLines="1"
+            android:textColor="@color/DEFAULT_TEXT_LOGIN"
+            android:textColorHint="@color/DEFAULT_TEXT_LOGIN"
+            app:layout_constraintEnd_toEndOf="@id/container"
+            app:layout_constraintStart_toStartOf="@id/container"
+            app:layout_constraintTop_toBottomOf="@id/password_text" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/register_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/password_confirme_edit_text"
+            android:layout_marginHorizontal="@dimen/DEFAULT_32DP"
+            android:layout_marginStart="@dimen/DEFAULT_50DP"
+            android:layout_marginTop="@dimen/DEFAULT_32DP"
+            android:layout_marginEnd="@dimen/DEFAULT_50DP"
+            android:background="@color/DEFAULT_BLUE_SPLASH"
+            android:text="@string/confirm_register"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="@id/container"
+            app:layout_constraintStart_toStartOf="@id/container"
+            app:layout_constraintTop_toBottomOf="@id/password_confirme_edit_text" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/back_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/register_button"
+            android:layout_marginHorizontal="@dimen/DEFAULT_50DP"
+            android:layout_marginTop="@dimen/DEFAULT_16DP"
+            android:gravity="center"
+            android:text="@string/text_register"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="@id/container"
+            app:layout_constraintStart_toStartOf="@id/container"
+            app:layout_constraintTop_toBottomOf="@id/register_button" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

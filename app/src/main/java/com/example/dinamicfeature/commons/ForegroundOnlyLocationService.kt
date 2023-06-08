@@ -41,7 +41,7 @@ class ForegroundOnlyLocationService : Service() {
 
   private lateinit var notificationManager: NotificationManager
 
-  // TODO: Step 1.1, Review variables (no changes).
+
   // FusedLocationProviderClient - Main class for receiving location updates.
   private lateinit var fusedLocationProviderClient: FusedLocationProviderClient
 
