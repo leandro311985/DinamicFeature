@@ -1,7 +1,7 @@
 package com.example.dinamicfeature
 
 import android.app.Application
-import com.example.dinamicfeature.commons.modules.ModuleInitializer
+import com.example.dinamicfeature.di.modules.ModuleInitializer
 import com.google.firebase.FirebaseApp
 import io.paperdb.Paper
 import org.koin.android.ext.koin.androidContext

@@ -30,12 +30,15 @@
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/title"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:textColor="@color/DEFAULT_TEXT_REGISTER"
             android:layout_marginStart="@dimen/DEFAULT_20DP"
+            android:layout_marginEnd="@dimen/DEFAULT_20DP"
             android:layout_marginTop="@dimen/DEFAULT_30DP"
             android:text="@string/title_dados_basicos"
             android:textSize="@dimen/DEFAULT_20SP"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/txt_title" />
 
@@ -54,6 +57,7 @@
             android:id="@+id/title_data"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/DEFAULT_TEXT_REGISTER"
             android:layout_marginStart="@dimen/DEFAULT_20DP"
             android:layout_marginTop="@dimen/DEFAULT_30DP"
             android:text="@string/title_data_nascimento"
@@ -76,6 +80,7 @@
             android:id="@+id/title_pais"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/DEFAULT_TEXT_REGISTER"
             android:layout_marginStart="@dimen/DEFAULT_20DP"
             android:layout_marginTop="@dimen/DEFAULT_30DP"
             android:text="@string/title_pais"
@@ -98,6 +103,7 @@
             android:id="@+id/title_estado"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/DEFAULT_TEXT_REGISTER"
             android:layout_marginStart="@dimen/DEFAULT_20DP"
             android:layout_marginTop="@dimen/DEFAULT_30DP"
             android:text="@string/title_estado"
@@ -120,9 +126,10 @@
             android:id="@+id/title_cidade"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/DEFAULT_TEXT_REGISTER"
             android:layout_marginStart="@dimen/DEFAULT_20DP"
             android:layout_marginTop="@dimen/DEFAULT_30DP"
-            android:text="@string/title_estado"
+            android:text="@string/title_cidade"
             android:textSize="@dimen/DEFAULT_20SP"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/edit_estado" />

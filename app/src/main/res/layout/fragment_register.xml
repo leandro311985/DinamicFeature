@@ -4,37 +4,28 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <include
-        android:id="@+id/toolbar"
-        layout="@layout/item_toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbar">
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:id="@+id/container">
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/imageView1"
-                android:layout_width="@dimen/DEFAULT_150DP"
+                android:layout_width="@dimen/DEFAULT_120DP"
                 android:layout_height="@dimen/DEFAULT_150DP"
-                android:layout_marginStart="@dimen/DEFAULT_20DP"
+                android:layout_marginStart="@dimen/DEFAULT_40DP"
                 android:layout_marginTop="@dimen/DEFAULT_40DP"
-                android:src="@drawable/img_dados_basico"
+                android:src="@drawable/img_1_register"
                 app:layout_constraintBottom_toTopOf="@id/txt_image1"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="@id/container" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/txt_image1"
@@ -60,14 +51,14 @@
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/imageView2"
-                android:layout_width="@dimen/DEFAULT_150DP"
+                android:layout_width="@dimen/DEFAULT_120DP"
                 android:layout_height="@dimen/DEFAULT_150DP"
                 android:layout_below="@id/imageView1"
                 android:layout_marginTop="@dimen/DEFAULT_40DP"
-                android:layout_marginEnd="@dimen/DEFAULT_20DP"
-                android:src="@drawable/img_perfil_fisico"
+                android:layout_marginEnd="@dimen/DEFAULT_40DP"
+                android:src="@drawable/img_2_register"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="@id/container" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/txt_image2"
@@ -103,7 +94,7 @@
                 android:layout_width="@dimen/DEFAULT_180DP"
                 android:layout_height="@dimen/DEFAULT_150DP"
                 android:layout_marginStart="@dimen/DEFAULT_20DP"
-                android:layout_marginTop="@dimen/DEFAULT_40DP"
+                android:layout_marginTop="@dimen/DEFAULT_60DP"
                 android:src="@drawable/img_perfilgeral"
                 app:layout_constraintBottom_toTopOf="@id/txt_image3"
                 app:layout_constraintStart_toStartOf="parent"
@@ -133,12 +124,12 @@
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/imageView4"
-                android:layout_width="@dimen/DEFAULT_150DP"
+                android:layout_width="@dimen/DEFAULT_120DP"
                 android:layout_height="@dimen/DEFAULT_150DP"
                 android:layout_below="@id/imageView3"
-                android:layout_marginTop="@dimen/DEFAULT_40DP"
-                android:layout_marginEnd="@dimen/DEFAULT_20DP"
-                android:src="@drawable/img_bem_estar_potlid"
+                android:layout_marginTop="@dimen/DEFAULT_60DP"
+                android:layout_marginEnd="@dimen/DEFAULT_40DP"
+                android:src="@drawable/img_4_register"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 

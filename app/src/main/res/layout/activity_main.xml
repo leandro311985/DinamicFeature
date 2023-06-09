@@ -26,6 +26,9 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
+        app:itemIconTint="@color/DEFAULT_2777B4"
+        app:itemTextColor="@color/DEFAULT_TEXT_LOGIN"
+        app:headerLayout="@layout/header_navigation_drawer"
         app:menu="@menu/main_bottom_navigation_menu"/>
 
 

@@ -11,6 +11,6 @@ class MainDataBase {
   }
 
   fun getLocation(id: String): LocationData {
-    return Paper.book().read(id)
+    return Paper.book().read(id,LocationData())
   }
 }

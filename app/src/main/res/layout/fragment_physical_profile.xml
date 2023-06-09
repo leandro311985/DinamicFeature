@@ -35,6 +35,7 @@
             android:layout_marginStart="@dimen/DEFAULT_20DP"
             android:layout_marginTop="@dimen/DEFAULT_30DP"
             android:text="Sua altura 120 cm"
+            android:textColor="@color/DEFAULT_TEXT_REGISTER"
             android:textSize="@dimen/DEFAULT_20SP"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/txt_title" />
@@ -44,6 +45,7 @@
             android:id="@+id/seekBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            style="@style/SeekBarStyle"
             android:layout_marginStart="@dimen/DEFAULT_20DP"
             android:layout_marginTop="@dimen/DEFAULT_10DP"
             android:layout_marginEnd="@dimen/DEFAULT_20DP"
@@ -60,6 +62,7 @@
             android:layout_marginStart="@dimen/DEFAULT_20DP"
             android:layout_marginTop="@dimen/DEFAULT_30DP"
             android:text="Seu tipo corporal"
+            android:textColor="@color/DEFAULT_TEXT_REGISTER"
             android:textSize="@dimen/DEFAULT_20SP"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/seekBar" />
@@ -125,7 +128,8 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/DEFAULT_20DP"
             android:layout_marginTop="@dimen/DEFAULT_50DP"
-            android:text="Sua aparencia"
+            android:textColor="@color/DEFAULT_TEXT_REGISTER"
+            android:text="Sua aparência"
             android:textSize="@dimen/DEFAULT_20SP"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/chip_group_filter" />

@@ -21,6 +21,17 @@
             android:title="@string/my_signature"
             />
 
+        <item
+            android:id="@+id/navigation_Register_fragment"
+            android:icon="@drawable/baseline_content_paste_24"
+            android:title="@string/register" />
+
+        <item
+            android:id="@+id/sair"
+            android:icon="@drawable/baseline_logout_24"
+            android:title="@string/logout"
+            />
+
     </group>
 
 

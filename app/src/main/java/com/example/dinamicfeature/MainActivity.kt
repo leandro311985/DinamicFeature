@@ -9,15 +9,15 @@ import android.content.Intent
 import android.content.IntentFilter
 import android.content.ServiceConnection
 import android.content.pm.PackageManager
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.location.Location
 import android.net.Uri
 import android.os.Bundle
 import android.os.IBinder
 import android.provider.Settings
 import android.util.Log
-import android.widget.Toast
 import androidx.core.app.ActivityCompat
-import androidx.core.view.isVisible
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
@@ -31,7 +31,6 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import androidx.viewbinding.BuildConfig
 import com.example.dinamicfeature.baseApp.commons.BaseActivity
-import com.example.dinamicfeature.commons.ForegroundOnlyLocationService
 import com.example.dinamicfeature.databinding.ActivityMainBinding
 import com.example.dinamicfeature.domain.models.LocationData
 import com.google.android.material.snackbar.Snackbar
@@ -73,7 +72,6 @@ class MainActivity : BaseActivity() {
     super.onCreate(savedInstanceState)
     binding = ActivityMainBinding.inflate(layoutInflater)
     setContentView(binding.root)
-
     initView()
   }
 
@@ -86,11 +84,11 @@ class MainActivity : BaseActivity() {
     setCollectors()
   }
 
-  private fun hideActionBar(isHide:Boolean){
+  private fun hideActionBar(isHide: Boolean) {
     val action = supportActionBar
-    if (isHide)  action?.hide() else  action?.show()
-    supportActionBar?.setDisplayHomeAsUpEnabled(true)
-    supportActionBar?.setHomeAsUpIndicator(R.drawable.baseline_menu_24)
+    if (isHide) action?.hide() else action?.show()
+    action?.setDisplayHomeAsUpEnabled(true)
+    action?.setHomeAsUpIndicator(R.drawable.baseline_menu_24)
   }
 
   override fun onSupportNavigateUp(): Boolean {
@@ -111,20 +109,24 @@ class MainActivity : BaseActivity() {
     topLevelDestination.add(getString(R.string.title_createUser))
     topLevelDestination.add(getString(R.string.title_details))
     topLevelDestination.add(getString(R.string.title_success_account))
+    topLevelDestination.add("InitJourneyFragment")
+    topLevelDestination.add("BasicDataFragment")
+    topLevelDestination.add("PhysicalProfileFragment")
+    topLevelDestination.add("ProfileGeralFragment")
   }
 
   private fun setupNavigation() {
     binding.navigationView.setupWithNavController(navController)
     drawerLayout = binding.activityMain
     setupWithNavController(binding.navigationView, navController)
-    appBarConfiguration = AppBarConfiguration(navController.graph,drawerLayout)
+    appBarConfiguration = AppBarConfiguration(navController.graph, drawerLayout)
     setupActionBarWithNavController(navController, appBarConfiguration)
 
     navController.addOnDestinationChangedListener { _, destination, _ ->
 
-      if (topLevelDestination.contains(destination.label)){
+      if (topLevelDestination.contains(destination.label)) {
         hideActionBar(true)
-      }else{
+      } else {
         hideActionBar(false)
       }
       if (topLevelLocation.contains(destination.label)) {
@@ -296,8 +298,8 @@ class MainActivity : BaseActivity() {
         launch {
           viewModel.locationSaved.collect { result ->
 
-            }
           }
+        }
       }
     }
   }

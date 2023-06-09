@@ -36,6 +36,7 @@
             android:layout_marginStart="@dimen/DEFAULT_20DP"
             android:layout_marginTop="@dimen/DEFAULT_30DP"
             android:text="Qual sua preferencia?"
+            android:textColor="@color/DEFAULT_TEXT_REGISTER"
             android:textSize="@dimen/DEFAULT_20SP"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/txt_title" />
@@ -116,6 +117,7 @@
             android:layout_marginStart="@dimen/DEFAULT_20DP"
             android:layout_marginTop="@dimen/DEFAULT_50DP"
             android:text="Qual se objetivo?"
+            android:textColor="@color/DEFAULT_TEXT_REGISTER"
             android:textSize="@dimen/DEFAULT_20SP"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/chip_group_filter" />
