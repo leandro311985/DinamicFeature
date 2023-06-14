@@ -4,34 +4,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <include
         android:id="@+id/loading_container_profile"
+        layout="@layout/fragment_loading"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/DEFAULT_99000000"
-        android:clickable="true"
-        android:elevation="@dimen/DEFAULT_50DP"
-        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <androidx.core.widget.ContentLoadingProgressBar
-            style="?android:attr/progressBarStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:elevation="@dimen/DEFAULT_50DP"
-            android:indeterminate="true"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </include>
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/ImageProfile"
+        android:id="@+id/imageProfile"
         android:layout_width="@dimen/DEFAULT_0DP"
         android:layout_height="@dimen/DEFAULT_250DP"
         android:scaleType="centerCrop"
@@ -46,7 +32,7 @@
         android:layout_height="@dimen/DEFAULT_60DP"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ImageProfile">
+        app:layout_constraintTop_toBottomOf="@id/imageProfile">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView1"

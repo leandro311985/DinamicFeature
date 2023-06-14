@@ -124,5 +124,8 @@ dependencies {
 
     api('de.hdodenhof:circleimageview:3.1.0')
 
+    api('net.danlew:android.joda:2.12.5')
+
+
 
 }

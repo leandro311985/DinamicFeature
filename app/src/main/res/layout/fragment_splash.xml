@@ -4,11 +4,52 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bem-vindo ao"
+        android:layout_marginStart="@dimen/DEFAULT_20DP"
+        android:layout_marginTop="@dimen/DEFAULT_100DP"
+        android:elevation="@dimen/DEFAULT_20SP"
+        android:textColor="@color/white"
+        android:textSize="@dimen/DEFAULT_28SP"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/appCompatImageView2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        android:src="@drawable/ic_splash_1080"/>
+        android:src="@drawable/splash"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="@dimen/DEFAULT_350DP"
+        android:layout_height="@dimen/DEFAULT_290DP"
+        android:src="@drawable/ic_logo_completo"
+        android:layout_marginBottom="@dimen/DEFAULT_40DP"
+        android:layout_marginEnd="@dimen/DEFAULT_40DP"
+        android:layout_marginStart="@dimen/DEFAULT_40DP"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="@dimen/DEFAULT_20SP"
+        android:text="Descubra o novo!"
+        android:textColor="@color/white"
+        android:textSize="@dimen/DEFAULT_28SP"
+        android:layout_marginEnd="@dimen/DEFAULT_20DP"
+        android:layout_marginBottom="@dimen/DEFAULT_100DP"
+        app:layout_constraintBottom_toBottomOf="@+id/appCompatImageView2"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 
 

@@ -12,16 +12,17 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/container"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/container">
+            android:layout_height="wrap_content">
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/imageView1"
-                android:layout_width="@dimen/DEFAULT_120DP"
+                android:layout_width="@dimen/DEFAULT_140DP"
                 android:layout_height="@dimen/DEFAULT_150DP"
                 android:layout_marginStart="@dimen/DEFAULT_40DP"
                 android:layout_marginTop="@dimen/DEFAULT_40DP"
+                android:scaleType="center"
                 android:src="@drawable/img_1_register"
                 app:layout_constraintBottom_toTopOf="@id/txt_image1"
                 app:layout_constraintStart_toStartOf="parent"
@@ -41,10 +42,10 @@
 
             <include
                 android:id="@+id/container_barra"
-                layout="@layout/item_barra_cadstro"
+                layout="@layout/item_barra_cadstro2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/DEFAULT_20DP"
+                android:layout_marginTop="@dimen/DEFAULT_30DP"
                 app:layout_constraintEnd_toEndOf="@+id/imageView1"
                 app:layout_constraintStart_toStartOf="@+id/imageView1"
                 app:layout_constraintTop_toBottomOf="@id/txt_image1" />
@@ -54,9 +55,10 @@
                 android:layout_width="@dimen/DEFAULT_120DP"
                 android:layout_height="@dimen/DEFAULT_150DP"
                 android:layout_below="@id/imageView1"
-                android:layout_marginTop="@dimen/DEFAULT_40DP"
+                android:layout_marginTop="@dimen/DEFAULT_50DP"
                 android:layout_marginEnd="@dimen/DEFAULT_40DP"
                 android:src="@drawable/img_2_register"
+                app:layout_constraintBottom_toTopOf="@id/txt_image2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@id/container" />
 

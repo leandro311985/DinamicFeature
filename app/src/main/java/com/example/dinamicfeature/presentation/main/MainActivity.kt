@@ -1,16 +1,14 @@
-package com.example.dinamicfeature
+package com.example.dinamicfeature.presentation.main
 
 import android.Manifest
 import android.content.BroadcastReceiver
 import android.content.ComponentName
-import android.content.ContentValues.TAG
+import android.content.ContentValues
 import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
 import android.content.ServiceConnection
 import android.content.pm.PackageManager
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import android.location.Location
 import android.net.Uri
 import android.os.Bundle
@@ -26,10 +24,11 @@ import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.NavigationUI.setupWithNavController
+import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import androidx.viewbinding.BuildConfig
+import com.example.dinamicfeature.R
 import com.example.dinamicfeature.baseApp.commons.BaseActivity
 import com.example.dinamicfeature.databinding.ActivityMainBinding
 import com.example.dinamicfeature.domain.models.LocationData
@@ -38,6 +37,7 @@ import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 private const val REQUEST_FOREGROUND_ONLY_PERMISSIONS_REQUEST_CODE = 34
+
 
 class MainActivity : BaseActivity() {
 
@@ -118,7 +118,7 @@ class MainActivity : BaseActivity() {
   private fun setupNavigation() {
     binding.navigationView.setupWithNavController(navController)
     drawerLayout = binding.activityMain
-    setupWithNavController(binding.navigationView, navController)
+    NavigationUI.setupWithNavController(binding.navigationView, navController)
     appBarConfiguration = AppBarConfiguration(navController.graph, drawerLayout)
     setupActionBarWithNavController(navController, appBarConfiguration)
 
@@ -152,7 +152,7 @@ class MainActivity : BaseActivity() {
   private fun subscribeLocationService() {
     if (foregroundPermissionApproved()) {
       foregroundOnlyLocationService?.subscribeToLocationUpdates()
-        ?: Log.d(TAG, "Service Not Bound")
+        ?: Log.d(ContentValues.TAG, "Service Not Bound")
     } else {
       requestForegroundPermissions()
     }
@@ -162,7 +162,7 @@ class MainActivity : BaseActivity() {
     super.onStart()
 
     val serviceIntent = Intent(this, ForegroundOnlyLocationService::class.java)
-    bindService(serviceIntent, foregroundOnlyServiceConnection, Context.BIND_AUTO_CREATE)
+    bindService(serviceIntent, foregroundOnlyServiceConnection, BIND_AUTO_CREATE)
   }
 
   override fun onResume() {
@@ -219,7 +219,7 @@ class MainActivity : BaseActivity() {
         }
         .show()
     } else {
-      Log.d(TAG, "Request foreground only permission")
+      Log.d(ContentValues.TAG, "Request foreground only permission")
       ActivityCompat.requestPermissions(
         this@MainActivity,
         arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
@@ -235,14 +235,14 @@ class MainActivity : BaseActivity() {
     grantResults: IntArray
   ) {
     super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-    Log.d(TAG, "onRequestPermissionResult")
+    Log.d(ContentValues.TAG, "onRequestPermissionResult")
 
     when (requestCode) {
       REQUEST_FOREGROUND_ONLY_PERMISSIONS_REQUEST_CODE -> when {
         grantResults.isEmpty() ->
           // Se a interação do usuário foi interrompida, a solicitação de permissão
           // é cancelado e você recebe matrizes vazias.
-          Log.d(TAG, "User interaction was cancelled.")
+          Log.d(ContentValues.TAG, "User interaction was cancelled.")
         grantResults[0] == PackageManager.PERMISSION_GRANTED ->
           // Permission was granted.
           foregroundOnlyLocationService?.subscribeToLocationUpdates()
@@ -304,4 +304,3 @@ class MainActivity : BaseActivity() {
     }
   }
 }
-

@@ -1,4 +1,4 @@
-package com.example.dinamicfeature
+package com.example.dinamicfeature.presentation.main
 
 import android.app.Notification
 import android.app.NotificationChannel
@@ -16,6 +16,7 @@ import android.os.Looper
 import android.util.Log
 import androidx.core.app.NotificationCompat
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
+import com.example.dinamicfeature.R
 import com.example.extension.SharedPreferenceUtil
 import com.example.extension.toText
 import com.google.android.gms.location.FusedLocationProviderClient

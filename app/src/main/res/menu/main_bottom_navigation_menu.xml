@@ -12,7 +12,7 @@
 
         <item
             android:id="@+id/navigation_search_people"
-            android:icon="@drawable/baseline_person_search_24"
+            android:icon="@drawable/baseline_search_24"
             android:title="@string/search_people" />
 
         <item
@@ -27,7 +27,7 @@
             android:title="@string/register" />
 
         <item
-            android:id="@+id/sair"
+            android:id="@+id/navigation_Logout"
             android:icon="@drawable/baseline_logout_24"
             android:title="@string/logout"
             />

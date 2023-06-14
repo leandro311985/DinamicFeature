@@ -45,7 +45,6 @@
             android:id="@+id/seekBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/SeekBarStyle"
             android:layout_marginStart="@dimen/DEFAULT_20DP"
             android:layout_marginTop="@dimen/DEFAULT_10DP"
             android:layout_marginEnd="@dimen/DEFAULT_20DP"
@@ -76,47 +75,52 @@
             android:layout_marginTop="@dimen/DEFAULT_20DP"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/title_data"
-            app:singleSelection="true">
+            app:layout_constraintTop_toBottomOf="@id/title_data">
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip2"
-                style="@style/Widget.MaterialComponents.Chip.Filter"
+                app:chipBackgroundColor="@color/chip_selector"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Magro" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip3"
-                style="@style/Widget.MaterialComponents.Chip.Filter"
+                app:chipBackgroundColor="@color/chip_selector"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Acima do peso" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip4"
-                style="@style/Widget.MaterialComponents.Chip.Filter"
+                app:chipBackgroundColor="@color/chip_selector"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Muscular" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip5"
-                style="@style/Widget.MaterialComponents.Chip.Filter"
+                app:chipBackgroundColor="@color/chip_selector"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Atlético" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip6"
-                style="@style/Widget.MaterialComponents.Chip.Filter"
+                app:chipBackgroundColor="@color/chip_selector"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Mediano" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip7"
-                style="@style/Widget.MaterialComponents.Chip.Filter"
+                app:chipBackgroundColor="@color/chip_selector"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Outro" />
@@ -148,28 +152,32 @@
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chipAp2"
-                style="@style/Widget.MaterialComponents.Chip.Filter"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                app:chipBackgroundColor="@color/chip_selector"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Atraente" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chipAp3"
-                style="@style/Widget.MaterialComponents.Chip.Filter"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                app:chipBackgroundColor="@color/chip_selector"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Pouco atraente" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip4Ap"
-                style="@style/Widget.MaterialComponents.Chip.Filter"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                app:chipBackgroundColor="@color/chip_selector"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Mediano" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip5Ap"
-                style="@style/Widget.MaterialComponents.Chip.Filter"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                app:chipBackgroundColor="@color/chip_selector"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Muito atraente" />

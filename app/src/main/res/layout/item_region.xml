@@ -7,8 +7,6 @@
     android:layout_height="80dp"
     android:layout_gravity="center">
 
-    <!--on below line we are creating
-        a linear layout for grid view item-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -23,7 +21,7 @@
             android:padding="4dp"
             android:textSize="20sp"
             android:layout_marginStart="@dimen/DEFAULT_20DP"
-            android:text="@string/app_name"
+            tools:text="@string/app_name"
             android:textAlignment="textStart"
             android:textColor="@color/DEFAULT_TEXT_LOGIN"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -48,11 +46,7 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/DEFAULT_TEXT_LOGIN"
-         />
+
 
 
 </androidx.cardview.widget.CardView>

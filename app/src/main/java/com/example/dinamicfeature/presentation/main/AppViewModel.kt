@@ -1,4 +1,4 @@
-package com.example.dinamicfeature
+package com.example.dinamicfeature.presentation.main
 
 import androidx.lifecycle.viewModelScope
 import com.example.dinamicfeature.domain.models.LocationData

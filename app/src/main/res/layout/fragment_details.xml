@@ -1,22 +1,155 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/imageViewPhoto"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container_photo"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:scaleType="centerCrop"
-        android:src="@drawable/woman" />
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imageViewPhoto"
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            android:layout_weight="1"
+            android:scaleType="centerCrop"
+            android:src="@drawable/woman"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/sinilization"
+            android:layout_width="@dimen/DEFAULT_12DP"
+            android:layout_height="@dimen/DEFAULT_12DP"
+            android:layout_marginTop="@dimen/DEFAULT_8DP"
+            android:layout_marginEnd="@dimen/DEFAULT_12DP"
+            android:scaleType="centerCrop"
+            android:src="@drawable/bolinha_verde"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/back"
+            android:layout_width="@dimen/DEFAULT_24DP"
+            android:layout_height="@dimen/DEFAULT_24DP"
+            android:layout_marginTop="@dimen/DEFAULT_8DP"
+            android:layout_marginEnd="@dimen/DEFAULT_12DP"
+            android:scaleType="centerCrop"
+            android:layout_marginStart="@dimen/DEFAULT_10DP"
+            android:src="@drawable/baseline_white_arrow_back_ios_24"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nome"
+        android:layout_marginStart="@dimen/DEFAULT_10DP"
+        android:textStyle="normal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/container_photo" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Clara silva"
+        android:layout_marginStart="@dimen/DEFAULT_10DP"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/name"
+        app:layout_constraintTop_toBottomOf="@id/container_photo" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/idade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Idade"
+        android:layout_marginStart="@dimen/DEFAULT_10DP"
+        android:textStyle="normal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/name" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="26 anos"
+        android:layout_marginStart="@dimen/DEFAULT_10DP"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/idade"
+        app:layout_constraintTop_toBottomOf="@id/name" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/cidade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cidade"
+        android:layout_marginStart="@dimen/DEFAULT_10DP"
+        android:textStyle="normal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/idade" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="São paulo"
+        android:layout_marginStart="@dimen/DEFAULT_10DP"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/cidade"
+        app:layout_constraintTop_toBottomOf="@id/idade" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/olhos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Olhos"
+        android:layout_marginStart="@dimen/DEFAULT_10DP"
+        android:textStyle="normal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cidade" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Verdes"
+        android:layout_marginStart="@dimen/DEFAULT_10DP"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/olhos"
+        app:layout_constraintTop_toBottomOf="@id/cidade" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/cabelos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cabelos"
+        android:layout_marginStart="@dimen/DEFAULT_10DP"
+        android:textStyle="normal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/olhos" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Médio, castanho claro,ondulado"
+        android:layout_marginStart="@dimen/DEFAULT_10DP"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/cabelos"
+        app:layout_constraintTop_toBottomOf="@id/olhos" />
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="@dimen/DEFAULT_80DP"
         android:layout_height="250dp"
-        android:layout_gravity="bottom|right">
+        app:layout_constraintBottom_toBottomOf="@id/container_photo"
+        app:layout_constraintEnd_toEndOf="parent">
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/floating_action_button1"
@@ -53,17 +186,15 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_margin="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/floating_action_button3"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:srcCompat="@drawable/ic_botao_checked" />
-
-
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
     <!-- Título da foto -->
 
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

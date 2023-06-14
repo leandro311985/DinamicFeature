@@ -6,11 +6,13 @@ import androidx.navigation.fragment.findNavController
 import com.example.dinamicfeature.R
 import com.example.dinamicfeature.baseApp.commons.BaseFragment
 import com.example.dinamicfeature.databinding.FragmentRegisterBinding
+import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
 class RegisterFragment : BaseFragment(R.layout.fragment_register) {
 
   private lateinit var binding: FragmentRegisterBinding
 
+  private val viewModel: RegisterViewModel by sharedViewModel()
 
   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
     super.onViewCreated(view, savedInstanceState)

@@ -4,31 +4,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <include
         android:id="@+id/loading_container"
+        layout="@layout/fragment_loading"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/DEFAULT_99000000"
-        android:clickable="true"
-        android:elevation="@dimen/DEFAULT_50DP"
-        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <androidx.core.widget.ContentLoadingProgressBar
-            style="?android:attr/progressBarStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:elevation="@dimen/DEFAULT_50DP"
-            android:indeterminate="true"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </include>
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -39,6 +25,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <include
+            android:id="@+id/container_toolbar"
+            layout="@layout/item_toolbar"
+            android:layout_width="@dimen/DEFAULT_0DP"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/logo_image_view"
             android:layout_width="@dimen/DEFAULT_100DP"
@@ -47,7 +42,7 @@
             android:layout_marginTop="@dimen/DEFAULT_32DP"
             android:src="@drawable/ic_person"
             app:layout_constraintStart_toStartOf="@id/container"
-            app:layout_constraintTop_toTopOf="@id/container" />
+            app:layout_constraintTop_toBottomOf="@id/container_toolbar"  />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/description_image_view"
@@ -63,7 +58,7 @@
             android:textSize="@dimen/DEFAULT_15SP"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/logo_image_view"
-            app:layout_constraintTop_toTopOf="@id/container" />
+            app:layout_constraintTop_toBottomOf="@id/container_toolbar"/>
 
         <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/name_text"

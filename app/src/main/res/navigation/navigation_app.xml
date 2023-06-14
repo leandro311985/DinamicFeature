@@ -57,9 +57,7 @@
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right"
-            app:popUpTo="@id/navigation_login"
-            app:popUpToInclusive="true"/>
+            app:popExitAnim="@anim/slide_out_right" />
 
     </fragment>
 
@@ -250,9 +248,16 @@
 
     <fragment
         android:id="@+id/navigation_Profile_geral"
-        android:name="com.example.dinamicfeature.presentation.register.presentation.ProfileGeralFragment"
+        android:name="com.example.dinamicfeature.presentation.register.presentation.ProfileGeneralFragment"
         android:label="ProfileGeralFragment"
         tools:layout="@layout/fragment_geral_profile">
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_Logout"
+        android:name="com.example.dinamicfeature.presentation.login.presentation.logout.LogoutFragment"
+        android:label="ProfileGeralFragment"
+        tools:layout="@layout/fragment_logout">
     </fragment>
 
 

@@ -40,7 +40,14 @@ class LoginFragment : BaseFragment(R.layout.fragment_login) {
   }
 
   private fun loading(isVisible: Boolean) = binding.apply {
-    loadingContainer.isVisible = isVisible
+    loadingContainer.loadingContainer.isVisible = isVisible
+    titleLogo.isVisible = !isVisible
+    emailEditText.isVisible = !isVisible
+    passwordEditText.isVisible = !isVisible
+    loginButton.isVisible = !isVisible
+    loginSocialButton.isVisible = !isVisible
+    forgotPasswordTextView.isVisible = !isVisible
+    divider.isVisible = !isVisible
   }
 
   private fun checkIsLogged() {

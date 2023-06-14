@@ -4,6 +4,7 @@ import com.example.dinamicfeature.di.modules.ModuleInitialization
 import com.example.dinamicfeature.di.modules.db.databaseModule
 import com.example.dinamicfeature.di.modules.firebase.firebaseModule
 import com.example.dinamicfeature.di.modules.repositories.mainRepositoryModule
+import com.example.dinamicfeature.di.modules.repositories.moshiModule
 import com.example.dinamicfeature.di.modules.repositories.userRepositoryModule
 import com.example.dinamicfeature.di.modules.usecases.mainUseCaseModule
 import com.example.dinamicfeature.di.modules.usecases.userUseCaseModule
@@ -23,6 +24,7 @@ class DInitialization : ModuleInitialization() {
     listModules.addAll(returnUseCasesModules())
     listModules.addAll(returnFirebaseModules())
     listModules.addAll(returnDbModules())
+    listModules.addAll(returnMoshiModules())
 
     return listModules
   }
@@ -58,6 +60,12 @@ private fun returnFirebaseModules(): List<Module> {
 private fun returnDbModules(): List<Module> {
   return listOf(
     databaseModule
+  )
+}
+
+private fun returnMoshiModules(): List<Module> {
+  return listOf(
+    moshiModule
   )
 }
 

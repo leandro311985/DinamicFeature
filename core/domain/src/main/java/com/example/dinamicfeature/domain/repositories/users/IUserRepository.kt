@@ -1,6 +1,8 @@
 package com.example.dinamicfeature.domain.repositories.users
 
 import com.example.dinamicfeature.baseApp.commons.UiState
+import com.example.dinamicfeature.domain.models.PersonsFake
+import com.example.dinamicfeature.domain.models.ProfileBasicDataUsers
 import com.example.dinamicfeature.domain.models.UserFirebase
 
 interface IUserRepository {
@@ -12,7 +14,10 @@ interface IUserRepository {
   suspend fun loginUser(email: String, password: String, result: (UiState<Boolean>) -> Unit)
   suspend fun isLoginUser():Boolean
   suspend fun savePhoto(photo:String):Boolean
+  suspend fun saveRegister(register: ProfileBasicDataUsers?):Boolean
+  suspend fun getRegister():ProfileBasicDataUsers?
   suspend fun getPhoto(id:String):String?
   suspend fun getDataUser(key:String):UserFirebase?
+  suspend fun getListPerson():List<PersonsFake?>
 
 }

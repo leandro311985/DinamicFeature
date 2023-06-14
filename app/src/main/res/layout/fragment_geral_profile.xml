@@ -55,56 +55,64 @@
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip2"
-                style="@style/Widget.MaterialComponents.Chip.Filter"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                app:chipBackgroundColor="@color/chip_selector"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Homen" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip3"
-                style="@style/Widget.MaterialComponents.Chip.Filter"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                app:chipBackgroundColor="@color/chip_selector"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Mulher" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip4"
-                style="@style/Widget.MaterialComponents.Chip.Filter"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                app:chipBackgroundColor="@color/chip_selector"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="LGBTQIA+" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip5"
-                style="@style/Widget.MaterialComponents.Chip.Filter"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                app:chipBackgroundColor="@color/chip_selector"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Assexual" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip6"
-                style="@style/Widget.MaterialComponents.Chip.Filter"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                app:chipBackgroundColor="@color/chip_selector"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Homens e Mulheres" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip7"
-                style="@style/Widget.MaterialComponents.Chip.Filter"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                app:chipBackgroundColor="@color/chip_selector"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Sapiossexual" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip8"
-                style="@style/Widget.MaterialComponents.Chip.Filter"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                app:chipBackgroundColor="@color/chip_selector"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Pansexual" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip9"
-                style="@style/Widget.MaterialComponents.Chip.Filter"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                app:chipBackgroundColor="@color/chip_selector"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Todos os gêneros" />
@@ -136,28 +144,32 @@
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chipAp2"
-                style="@style/Widget.MaterialComponents.Chip.Filter"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                app:chipBackgroundColor="@color/chip_selector"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Namoro" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chipAp3"
-                style="@style/Widget.MaterialComponents.Chip.Filter"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                app:chipBackgroundColor="@color/chip_selector"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Amizade" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip4Ap"
-                style="@style/Widget.MaterialComponents.Chip.Filter"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                app:chipBackgroundColor="@color/chip_selector"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Relacionamento" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip5Ap"
-                style="@style/Widget.MaterialComponents.Chip.Filter"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                app:chipBackgroundColor="@color/chip_selector"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Casar" />

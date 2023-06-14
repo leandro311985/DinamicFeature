@@ -16,37 +16,25 @@ class SearchAdapter(
     parent: ViewGroup,
     viewType: Int
   ): CourseViewHolder {
-    // this method is use to inflate the layout file
-    // which we have created for our recycler view.
-    // on below line we are inflating our layout file.
+
     val itemView = LayoutInflater.from(parent.context).inflate(
       R.layout.item_region,
       parent, false
     )
 
-    // at last we are returning our view holder
-    // class with our item View File.
     return CourseViewHolder(itemView)
   }
 
-  // method for filtering our recyclerview items.
   fun filterList(filterlist: ArrayList<Region>) {
-    // below line is to add our filtered
-    // list in our course array list.
     courseList = filterlist
-    // below line is to notify our adapter
-    // as change in recycler view data.
     notifyDataSetChanged()
   }
 
   override fun onBindViewHolder(holder: CourseViewHolder, position: Int) {
-    // on below line we are setting data to our text view and our image view.
     holder.courseNameTV.text = courseList[position].regionName
   }
 
   override fun getItemCount(): Int {
-    // on below line we are returning
-    // our size of our list
     return courseList.size
   }
 

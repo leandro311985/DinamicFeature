@@ -1,4 +1,4 @@
-package com.example.dinamicfeature
+package com.example.dinamicfeature.presentation.main
 
 import android.app.Application
 import com.example.dinamicfeature.di.modules.ModuleInitializer

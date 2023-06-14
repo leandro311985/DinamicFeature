@@ -4,31 +4,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <include
+        layout="@layout/fragment_loading"
         android:id="@+id/loading_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/DEFAULT_99000000"
-        android:clickable="true"
-        android:elevation="@dimen/DEFAULT_50DP"
-        android:visibility="gone"
+        android:elevation="@dimen/DEFAULT_100DP"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <androidx.core.widget.ContentLoadingProgressBar
-            style="?android:attr/progressBarStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:elevation="@dimen/DEFAULT_50DP"
-            android:indeterminate="true"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </include>
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/title_logo"
@@ -113,6 +100,7 @@
         app:layout_constraintTop_toBottomOf="@id/login_social_button" />
 
     <com.google.android.material.divider.MaterialDivider
+        android:id="@+id/divider"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/black"

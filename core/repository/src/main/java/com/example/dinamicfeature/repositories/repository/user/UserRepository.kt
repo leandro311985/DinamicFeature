@@ -4,22 +4,32 @@ import android.content.Context
 import com.example.dinamicfeature.baseApp.commons.UiState
 import com.example.dinamicfeature.baseApp.constants.Constants
 import com.example.dinamicfeature.baseApp.constants.Constants.DATA_USER
+import com.example.dinamicfeature.domain.models.PersonsFake
+import com.example.dinamicfeature.domain.models.ProfileBasicDataUsers
 import com.example.dinamicfeature.domain.models.UserFirebase
 import com.example.dinamicfeature.domain.repositories.users.IUserRepository
 import com.example.dinamicfeature.repositories.datasource.UserDataBase
+import com.example.repository.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.google.firebase.auth.FirebaseAuthUserCollisionException
 import com.google.firebase.auth.FirebaseAuthWeakPasswordException
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.ktx.database
-import com.google.firebase.ktx.Firebase
+import com.squareup.moshi.JsonAdapter
+import com.squareup.moshi.Moshi
+import com.squareup.moshi.Types
+import java.lang.reflect.ParameterizedType
 
 class UserRepository(
   private val context: Context,
   private val auth: FirebaseAuth,
   private val database: UserDataBase,
+  moshi: Moshi
 ) : IUserRepository {
+
+  private val ovenProcessSubFunctionList: ParameterizedType =
+    Types.newParameterizedType(List::class.java, PersonsFake::class.java)
+  private val jsonAdapterOvenProcessSubFunction: JsonAdapter<List<PersonsFake>> =
+    moshi.adapter(ovenProcessSubFunctionList)
 
   private val userEmpty = UserFirebase()
   override suspend fun registerUser(
@@ -111,12 +121,31 @@ class UserRepository(
     return true
   }
 
+  override suspend fun saveRegister(register: ProfileBasicDataUsers?): Boolean {
+    database.saveRegister(Constants.SAVE_REGISTER, register)
+    return true
+  }
+
+  override suspend fun getRegister(): ProfileBasicDataUsers? {
+    return database.getRegister(Constants.SAVE_REGISTER)
+  }
+
   override suspend fun getPhoto(id: String): String? {
     return database.getPhoto(id)
   }
 
   override suspend fun getDataUser(key: String): UserFirebase? {
     return database.getUser(key)
+  }
+
+  override suspend fun getListPerson(): List<PersonsFake?> {
+    val json = getJson(R.raw.list_person)
+    var list = listOf<PersonsFake>()
+    jsonAdapterOvenProcessSubFunction.fromJson(json)?.let {
+      list = it
+
+    }
+    return list
   }
 
   private fun getJson(rawResource: Int): String {

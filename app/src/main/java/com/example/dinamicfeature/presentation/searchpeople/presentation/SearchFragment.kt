@@ -6,6 +6,7 @@ import android.location.Geocoder
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
@@ -38,6 +39,7 @@ class SearchFragment : BaseFragment(R.layout.fragment_search_people) {
     viewModel.getPhoto()
     viewModel.getDataUser()
     viewModel.getLocation()
+    viewModel.getListPerson()
   }
 
   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -67,11 +69,19 @@ class SearchFragment : BaseFragment(R.layout.fragment_search_people) {
 
           }
         }
+
         launch {
           viewModel.location.collect { location ->
              getNeighborhoodFromLocation(location.latitude?:0.0,location.longitude?:0.0)
           }
         }
+
+        launch {
+          viewModel.listPerson.collect { list ->
+
+          }
+        }
+
         launch {
           viewModel.userData.collect { dataUser ->
             userData = dataUser

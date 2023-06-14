@@ -13,6 +13,13 @@
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
         <item name="android:windowFullscreen">true</item>
+        <item name="navigationViewStyle">@style/NavigationViewStyle</item>
+
+    </style>
+
+    <style name="NavigationViewStyle" parent="Widget.MaterialComponents.NavigationView">
+        <!-- Define a cor de fundo do Drawer Navigation -->
+        <item name="android:background">@color/DEFAULT_BLUE_SPLASH</item>
     </style>
 
     <!--  Progress Button  -->

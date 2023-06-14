@@ -6,9 +6,8 @@ import org.koin.android.ext.koin.androidContext
 import org.koin.dsl.module
 
 val userRepositoryModule = module {
-
   factory<IUserRepository> {
-    UserRepository(androidContext(), get(), get())
+    UserRepository(androidContext(), get(), get(),get())
   }
 
 }

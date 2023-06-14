@@ -50,7 +50,7 @@ class LoginViewModel(
   fun isLogged() {
     viewModelScope.launch {
       val result = isLoginUserUseCase()
-      delay(500)
+      delay(1000)
       _isLogged.emit(result)
     }
   }

@@ -16,7 +16,7 @@
 
 
     <application
-        android:name=".MainApplication"
+        android:name=".presentation.main.MainApplication"
         android:allowBackup="true"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher_app"
@@ -24,7 +24,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DinamicFeature">
         <activity
-            android:name=".MainActivity"
+            android:name=".presentation.main.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -40,7 +40,7 @@
             android:exported="false" />
 
         <service
-            android:name="com.example.dinamicfeature.com.example.ForegroundOnlyLocationService"
+            android:name="com.example.dinamicfeature.presentation.main.ForegroundOnlyLocationService"
             android:enabled="true"
             android:exported="false"
             android:foregroundServiceType="location" />

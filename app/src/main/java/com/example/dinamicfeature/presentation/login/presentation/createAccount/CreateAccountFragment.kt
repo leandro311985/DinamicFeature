@@ -48,6 +48,7 @@ class CreateAccountFragment : BaseFragment(R.layout.fragment_create_account) {
   override fun initView(view: View) {
     setViewBinding(view)
     register()
+    setElements()
     setCollectors()
   }
 
@@ -58,8 +59,21 @@ class CreateAccountFragment : BaseFragment(R.layout.fragment_create_account) {
 
   }
 
-  private fun loading(isVisible:Boolean) = binding.apply{
-    loadingContainer.isVisible = isVisible
+  private fun setElements() = binding.apply {
+    containerToolbar.title.text = "Criar conta"
+    containerToolbar.title.setTextColor(ContextCompat.getColor(requireContext(), R.color.white))
+    containerToolbar.backgraund.setBackgroundColor(resources.getColor(R.color.DEFAULT_TEXT_LOGIN))
+    containerToolbar.img.setImageResource(R.drawable.baseline_white_arrow_back_ios_24)
+    containerToolbar.img2.isVisible = false
+    containerToolbar.img.setOnClickListener {
+      findNavController().navigateUp()
+    }
+  }
+
+  private fun loading(isVisible: Boolean) = binding.apply {
+    loadingContainer.loadingContainer.isVisible = isVisible
+    container.isVisible = !isVisible
+
   }
 
 
@@ -126,6 +140,7 @@ class CreateAccountFragment : BaseFragment(R.layout.fragment_create_account) {
     if (validation()) viewModel.createAccount(emailText.text.toString(), passwordText.text.toString(), nameText.text.toString())
     context?.hideKeyboard(view)
   }
+
   private fun showDialog() {
     requireContext().createAlertDialogOneButton(
       getString(com.example.dinamicfeature.R.string.app_name),
@@ -144,34 +159,31 @@ class CreateAccountFragment : BaseFragment(R.layout.fragment_create_account) {
     if (binding.nameText.text.isNullOrEmpty()) {
       isValid = false
       Toast.makeText(requireContext(), getString(com.example.dinamicfeature.R.string.name_empty), Toast.LENGTH_SHORT).show()
-
+      loading(false)
     } else {
       if (!binding.emailText.text.toString().isValidEmail()) {
         isValid = false
         Toast.makeText(requireContext(), getString(com.example.dinamicfeature.R.string.invalid_password), Toast.LENGTH_SHORT).show()
-
+        loading(false)
       }
     }
     if (binding.passwordText.text.toString() != binding.passwordConfirmeEditText.text.toString()) {
       isValid = false
       Toast.makeText(requireContext(), getString(com.example.dinamicfeature.R.string.enter_password_check), Toast.LENGTH_SHORT).show()
+      loading(false)
     }
     if (binding.passwordText.text.isNullOrEmpty()) {
       isValid = false
       Toast.makeText(requireContext(), getString(com.example.dinamicfeature.R.string.enter_password), Toast.LENGTH_SHORT).show()
-
+      loading(false)
     } else {
       if (binding.passwordText.text.toString().length < 8) {
         isValid = false
         Toast.makeText(requireContext(), getString(com.example.dinamicfeature.R.string.password), Toast.LENGTH_SHORT).show()
-
+        loading(false)
       }
     }
-    if (imageFlow.value == null) {
-      isValid = false
-      Toast.makeText(requireContext(), getString(com.example.dinamicfeature.R.string.error_photo), Toast.LENGTH_SHORT).show()
-      loading(false)
-    }
+
     return isValid
   }
 
@@ -217,27 +229,30 @@ class CreateAccountFragment : BaseFragment(R.layout.fragment_create_account) {
         launch {
           viewModel.userData.collect { dataUser ->
             userData = dataUser
-            viewModel.savePhoto(uri_Imagem,userData?.id?:"",{
-              viewModel.savePhotoDb(it)
-              savePhotoFirebase(userData?.id?:"",it.toString())
-            },{
-              Toast.makeText(requireContext(), it?.message, Toast.LENGTH_SHORT).show()
-            })
-
+            if (uri_Imagem != null) {
+              viewModel.savePhoto(uri_Imagem, userData?.id ?: "", {
+                viewModel.savePhotoDb(it)
+                savePhotoFirebase(userData?.id ?: "", it.toString())
+              }, {
+                Toast.makeText(requireContext(), it?.message, Toast.LENGTH_SHORT).show()
+              })
+            } else {
+              findNavController().navigate(R.id.action_create_login_fragment_to_success)
+            }
           }
         }
       }
     }
   }
 
-   private fun savePhotoFirebase(userId: String, photo: String) {
-     database = Firebase.database.reference
+  private fun savePhotoFirebase(userId: String, photo: String) {
+    database = Firebase.database.reference
     val result = database.child("users").child(userId).setValue(photo).addOnCompleteListener {
       it.isSuccessful
       loading(false)
 
     }
-     Toast.makeText(requireContext(), result.isSuccessful.toString(), Toast.LENGTH_SHORT).show()
+    Toast.makeText(requireContext(), result.isSuccessful.toString(), Toast.LENGTH_SHORT).show()
 
   }
 

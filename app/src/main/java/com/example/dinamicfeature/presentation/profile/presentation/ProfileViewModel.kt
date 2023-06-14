@@ -17,7 +17,6 @@ class ProfileViewModel(
   private val getDataUseCase: GetDataUseCase,
   private val getPhotoUseCase: GetPhotoUseCase
 ) : BaseViewModel() {
-  private lateinit var firebaseStorage: FirebaseStorage
 
   private val _user = MutableSharedFlow<UserFirebase>()
   val user = _user.asSharedFlow()
