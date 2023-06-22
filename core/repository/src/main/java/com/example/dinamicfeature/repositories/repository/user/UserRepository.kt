@@ -4,8 +4,12 @@ import android.content.Context
 import com.example.dinamicfeature.baseApp.commons.UiState
 import com.example.dinamicfeature.baseApp.constants.Constants
 import com.example.dinamicfeature.baseApp.constants.Constants.DATA_USER
+import com.example.dinamicfeature.baseApp.constants.Constants.SAVE_LIST_KEY
+import com.example.dinamicfeature.baseApp.constants.Constants.SAVE_PEOPLE_FAKE
 import com.example.dinamicfeature.domain.models.PersonsFake
+import com.example.dinamicfeature.domain.models.PhysicalData
 import com.example.dinamicfeature.domain.models.ProfileBasicDataUsers
+import com.example.dinamicfeature.domain.models.ProfileGeneralData
 import com.example.dinamicfeature.domain.models.UserFirebase
 import com.example.dinamicfeature.domain.repositories.users.IUserRepository
 import com.example.dinamicfeature.repositories.datasource.UserDataBase
@@ -121,13 +125,49 @@ class UserRepository(
     return true
   }
 
+  override suspend fun savePeopleFake(personsFake: PersonsFake): Boolean {
+    database.savePersonFake(SAVE_PEOPLE_FAKE, personsFake)
+    return true
+  }
+
+  override suspend fun getPeopleFake(): PersonsFake? {
+    return database.getPersonFake(SAVE_PEOPLE_FAKE)
+  }
+
+  override suspend fun getListKey(): List<PersonsFake?> {
+    return database.getListKey(SAVE_LIST_KEY)
+  }
+
   override suspend fun saveRegister(register: ProfileBasicDataUsers?): Boolean {
     database.saveRegister(Constants.SAVE_REGISTER, register)
     return true
   }
 
+  override suspend fun saveListKey(list: List<PersonsFake>): Boolean {
+    database.saveListKeyPersonFake(SAVE_LIST_KEY, list)
+    return true
+  }
+
+  override suspend fun saveRegisterPhysicalData(register: PhysicalData?): Boolean {
+    database.saveRegisterProfilePhysicalData(Constants.SAVE_REGISTER_PHYSICAL, register)
+    return true
+  }
+
+  override suspend fun saveRegisterProfileGeneralData(register: ProfileGeneralData?): Boolean {
+    database.saveRegisterProfileGeneralData(Constants.SAVE_REGISTER_GENERAL, register)
+    return true
+  }
+
   override suspend fun getRegister(): ProfileBasicDataUsers? {
     return database.getRegister(Constants.SAVE_REGISTER)
+  }
+
+  override suspend fun getRegisterProfileGeneralData(): ProfileGeneralData? {
+    return database.getRegisterProfileGeneralData(Constants.SAVE_REGISTER_GENERAL)
+  }
+
+  override suspend fun getRegisterPhysicalData(): PhysicalData? {
+    return database.getRegisterProfilePhysicalData(Constants.SAVE_REGISTER_PHYSICAL)
   }
 
   override suspend fun getPhoto(id: String): String? {

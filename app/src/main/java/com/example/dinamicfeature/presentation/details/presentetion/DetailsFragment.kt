@@ -1,23 +1,31 @@
 package com.example.dinamicfeature.presentation.details.presentetion
 
-import android.graphics.Bitmap
-import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.dinamicfeature.R
 import com.example.dinamicfeature.baseApp.commons.BaseFragment
 import com.example.dinamicfeature.databinding.FragmentDetailsBinding
-import com.example.extension.openLargeImage
+import com.example.dinamicfeature.domain.models.PersonsFake
+import com.example.extension.getDrawableByName
+import com.example.extension.getStringByName
 import com.squareup.picasso.Picasso
-import com.squareup.picasso.Target
+import kotlinx.coroutines.launch
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
 class DetailsFragment : BaseFragment(R.layout.fragment_details) {
 
   private lateinit var binding: FragmentDetailsBinding
   private val args: DetailsFragmentArgs by navArgs()
-  private lateinit var photoId: String
+  private val viewModel: DetailsViewModel by viewModel()
+  private var listFake = mutableListOf<PersonsFake?>()
+  private var position = 0
 
 
   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -27,9 +35,10 @@ class DetailsFragment : BaseFragment(R.layout.fragment_details) {
 
   override fun initView(view: View) {
     setViewBinding(view)
+    getLists()
     checkArgs()
-    setImage()
-
+    setCollectors()
+    setElements()
   }
 
   override fun setViewBinding(view: View) {
@@ -37,35 +46,50 @@ class DetailsFragment : BaseFragment(R.layout.fragment_details) {
   }
 
   private fun checkArgs() {
-    photoId = args.photo
+    position = args.position
   }
 
-  private fun setImage()  {
-    when (photoId) {
-      "1" -> setImgDrawable(R.drawable.woman)
-      "2" -> setImgDrawable(R.drawable.woman2)
-      "3" -> setImgDrawable(R.drawable.woman3)
-      "4" -> setImgDrawable(R.drawable.woman)
-    }
+  private fun getLists(){
+    viewModel.getListPerson()
+    viewModel.getPersonFake()
+  }
+  private fun setElements() = binding.apply {
+    back.setOnClickListener {
+     var copy =  listFake.toList()
+      findNavController().navigateUp()
 
+    }
+    floatingActionButtonLike.setOnClickListener {
+      if (it.isClickable){
+        listFake[position]?.like = true
+      }
+    }
+    floatingActionButtonCancel.setOnClickListener {
+      if (it.isClickable){
+        listFake[position]?.like = false
+      }
+    }
   }
 
-  private fun setImgDrawable(image: Int) {
-    val target = object : Target {
-      override fun onBitmapLoaded(bitmap: Bitmap?, from: Picasso.LoadedFrom?) {
-        // Aqui você pode realizar a ação desejada com a imagem carregada
-        binding.imageViewPhoto.setImageBitmap(bitmap)
-      }
+  private fun setCollectors() {
+    viewLifecycleOwner.lifecycleScope.launch {
+      viewLifecycleOwner.lifecycle.repeatOnLifecycle(Lifecycle.State.STARTED) {
 
-      override fun onBitmapFailed(e: Exception?, errorDrawable: Drawable?) {
-        // Tratamento de erro, se necessário
-      }
+        launch {
+          viewModel.getPersonFake.collect { data ->
+            binding.nameUser.text = data?.name?.let { context?.getStringByName(it) }
+            context?.getDrawableByName(data?.image ?: "")?.let { Picasso.get().load(it).into(binding.imageViewPhoto) }
+          }
+        }
 
-      override fun onPrepareLoad(placeHolderDrawable: Drawable?) {
-        // Ação a ser executada enquanto a imagem está sendo carregada
+        launch {
+          viewModel.listPerson.collect { list ->
+            listFake = list.toMutableList()
+          }
+        }
+
       }
     }
+  }
 
-    openLargeImage(image, target)
-
-}}
+}

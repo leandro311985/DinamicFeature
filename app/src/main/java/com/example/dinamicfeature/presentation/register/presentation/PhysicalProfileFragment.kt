@@ -7,13 +7,17 @@ import android.view.View
 import android.widget.SeekBar
 import android.widget.Toast
 import androidx.appcompat.widget.AppCompatTextView
-import androidx.core.content.ContextCompat
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
 import com.example.dinamicfeature.R
 import com.example.dinamicfeature.baseApp.commons.BaseFragment
 import com.example.dinamicfeature.databinding.FragmentPhysicalProfileBinding
+import com.example.dinamicfeature.domain.models.PhysicalData
 import com.example.dinamicfeature.domain.models.ProfileBasicDataUsers
 import com.google.android.material.chip.Chip
+import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
 class PhysicalProfileFragment : BaseFragment(R.layout.fragment_physical_profile) {
@@ -22,7 +26,11 @@ class PhysicalProfileFragment : BaseFragment(R.layout.fragment_physical_profile)
   private lateinit var seekBar: SeekBar
   private lateinit var heightTextView: AppCompatTextView
   private val viewModel: RegisterViewModel by sharedViewModel()
-  private lateinit var data: ProfileBasicDataUsers
+  private lateinit var data: PhysicalData
+  private var listAppearance = mutableListOf<String>()
+  private var listBodyType = mutableListOf<String>()
+  private var varHeight = ""
+
 
 
   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -32,18 +40,26 @@ class PhysicalProfileFragment : BaseFragment(R.layout.fragment_physical_profile)
 
   override fun initView(view: View) {
     setViewBinding(view)
-    data = ProfileBasicDataUsers()
+    getData()
+    data = PhysicalData()
     setElements()
+    setCollectors()
   }
 
   override fun setViewBinding(view: View) {
     binding = FragmentPhysicalProfileBinding.bind(view)
 
   }
-
+  private fun getData() {
+    viewModel.getRegisterUserPhysicalData()
+  }
   private fun setElements() {
     binding.back.setOnClickListener {
-      findNavController().navigateUp()
+      data.yourAppearance = listAppearance
+      data.bodyType = listBodyType
+      data.height = varHeight
+
+      viewModel.saveRegisterDbPhysicalData(data)
     }
     seekBar = binding.seekBar
     val thumbColor = Color.parseColor("#20304C")
@@ -57,7 +73,7 @@ class PhysicalProfileFragment : BaseFragment(R.layout.fragment_physical_profile)
       override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
         val height = (progress + 100).toString()
         heightTextView.text = "Sua altura $height cm"
-        data.physical?.height = height
+        varHeight = height
       }
 
       override fun onStartTrackingTouch(seekBar: SeekBar?) {}
@@ -65,13 +81,49 @@ class PhysicalProfileFragment : BaseFragment(R.layout.fragment_physical_profile)
       override fun onStopTrackingTouch(seekBar: SeekBar?) {}
     })
 
-    binding.chipGroupFilter.setOnCheckedChangeListener { group, checkedId ->
-      val chip: Chip? = group.findViewById(checkedId)
-      chip?.let {chipView ->
-        Toast.makeText(context, chip.text, Toast.LENGTH_SHORT).show()
-      } ?: kotlin.run {
+
+    binding.chipGroupFilter.setOnCheckedStateChangeListener { group, checkedId ->
+      checkedId.map {
+        val chip: Chip? = group.findViewById(it)
+        if (chip?.isChecked == true) {
+          listBodyType.add(chip.text.toString())
+        } else {
+          listBodyType.remove(chip?.text.toString())
+
+        }
       }
+
     }
 
+    binding.chipGroupFilter2.setOnCheckedStateChangeListener { group, checkedId ->
+      checkedId.map {
+        val chip: Chip? = group.findViewById(it)
+        if (chip?.isChecked == true) {
+          listAppearance.add(chip.text.toString())
+        } else {
+          listAppearance.remove(chip?.text.toString())
+        }
+      }
+    }
+  }
+
+  private fun setCollectors() {
+    viewLifecycleOwner.lifecycleScope.launch {
+      viewLifecycleOwner.lifecycle.repeatOnLifecycle(Lifecycle.State.STARTED) {
+        launch {
+          viewModel.successPhysical.collect { result ->
+            if (result) findNavController().navigateUp()
+          }
+        }
+        launch {
+          viewModel.getDataPhysicalData.collect { result ->
+            if (result != null) {
+              if (result.height != "") binding.heightTextView.text = "Sua altura ${result.height} cm"
+
+            }
+          }
+        }
+      }
+    }
   }
 }

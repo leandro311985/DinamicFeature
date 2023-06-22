@@ -8,15 +8,24 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <androidx.appcompat.widget.AppCompatImageView
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/back"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/DEFAULT_10DP"
             android:layout_marginTop="@dimen/DEFAULT_10DP"
-            android:src="@drawable/baseline_arrow_back_ios_new_24"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent" >
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/back_navigaiton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/DEFAULT_10DP"
+                android:src="@drawable/baseline_arrow_back_ios_new_24"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/txt_title"
@@ -45,13 +54,13 @@
             android:id="@+id/chip_group_filter"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            app:singleSelection="true"
             android:layout_marginStart="@dimen/DEFAULT_20DP"
             android:layout_marginEnd="@dimen/DEFAULT_40DP"
             android:layout_marginTop="@dimen/DEFAULT_20DP"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/title_data"
-            app:singleSelection="true">
+            app:layout_constraintTop_toBottomOf="@id/title_data">
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip2"
@@ -139,8 +148,7 @@
             android:layout_marginTop="@dimen/DEFAULT_20DP"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/title_aparencia"
-            app:singleSelection="true">
+            app:layout_constraintTop_toBottomOf="@+id/title_aparencia">
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chipAp2"

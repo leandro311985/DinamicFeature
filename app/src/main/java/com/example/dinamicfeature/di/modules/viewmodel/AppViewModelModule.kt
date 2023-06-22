@@ -1,5 +1,6 @@
 package com.example.dinamicfeature.di.modules.viewmodel
 
+import com.example.dinamicfeature.presentation.details.presentetion.DetailsViewModel
 import com.example.dinamicfeature.presentation.main.AppViewModel
 import com.example.dinamicfeature.presentation.login.presentation.LoginViewModel
 import com.example.dinamicfeature.presentation.login.presentation.createAccount.CreateAccountViewModel
@@ -19,10 +20,11 @@ val appViewModelModule = module {
   viewModel { LoginViewModel(get(), get()) }
   viewModel { MySignatureViewModel(get()) }
   viewModel { ProfileViewModel(get(), get()) }
-  viewModel { SearchViewModel(get(), get(), get(),get()) }
+  viewModel { SearchViewModel(get(), get(), get(),get(),get(),get()) }
   viewModel { CreateAccountViewModel(get(), get(), get()) }
   viewModel { SplashViewModel(get()) }
   viewModel { LogoutViewModel(get()) }
-  viewModel { RegisterViewModel(get(), get()) }
+  viewModel { DetailsViewModel(get(),get(),get()) }
+  viewModel { RegisterViewModel(get(), get(),get(),get(),get(),get()) }
 
 }

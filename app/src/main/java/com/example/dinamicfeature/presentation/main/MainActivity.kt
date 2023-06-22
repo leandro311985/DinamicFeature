@@ -109,10 +109,11 @@ class MainActivity : BaseActivity() {
     topLevelDestination.add(getString(R.string.title_createUser))
     topLevelDestination.add(getString(R.string.title_details))
     topLevelDestination.add(getString(R.string.title_success_account))
-    topLevelDestination.add("InitJourneyFragment")
-    topLevelDestination.add("BasicDataFragment")
-    topLevelDestination.add("PhysicalProfileFragment")
-    topLevelDestination.add("ProfileGeralFragment")
+    topLevelDestination.add(getString(R.string.title_InitJourneyFragment))
+    topLevelDestination.add(getString(R.string.title_BasicDataFragment))
+    topLevelDestination.add(getString(R.string.title_PhysicalProfileFragment))
+    topLevelDestination.add(getString(R.string.title_ProfileGeralFragment))
+    topLevelDestination.add(getString(R.string.title_ListPeopleResult))
   }
 
   private fun setupNavigation() {
@@ -128,6 +129,8 @@ class MainActivity : BaseActivity() {
         hideActionBar(true)
       } else {
         hideActionBar(false)
+        drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED)
+
       }
       if (topLevelLocation.contains(destination.label)) {
         subscribeLocationService()
@@ -228,7 +231,6 @@ class MainActivity : BaseActivity() {
     }
   }
 
-  // TODO: Step 1.0, Review Permissions: Handles permission result.
   override fun onRequestPermissionsResult(
     requestCode: Int,
     permissions: Array<String>,

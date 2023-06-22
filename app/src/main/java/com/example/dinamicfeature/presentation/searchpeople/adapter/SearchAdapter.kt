@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.dinamicfeature.R
 import com.example.dinamicfeature.presentation.searchpeople.data.Region
@@ -25,13 +26,12 @@ class SearchAdapter(
     return CourseViewHolder(itemView)
   }
 
-  fun filterList(filterlist: ArrayList<Region>) {
-    courseList = filterlist
-    notifyDataSetChanged()
-  }
 
   override fun onBindViewHolder(holder: CourseViewHolder, position: Int) {
     holder.courseNameTV.text = courseList[position].regionName
+    holder.courseNameTV.setOnClickListener {
+      it.findNavController().navigate(R.id.action_search_fragment_list_to_fragment_people)
+    }
   }
 
   override fun getItemCount(): Int {
@@ -39,7 +39,8 @@ class SearchAdapter(
   }
 
   class CourseViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-    // on below line we are initializing our course name text view and our image view.
+
     val courseNameTV: TextView = itemView.findViewById(R.id.idTVCourse)
+
   }
 }

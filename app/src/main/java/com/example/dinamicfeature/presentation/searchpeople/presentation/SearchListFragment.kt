@@ -35,43 +35,15 @@ class SearchListFragment : BaseFragment(R.layout.fragment_search_list) {
     courseRV = binding.idRVCourses
     courseList = ArrayList()
 
-    // on below line we are initializing our adapter
     courseRVAdapter = SearchAdapter(courseList)
-
-    // on below line we are setting adapter to our recycler view.
     courseRV.adapter = courseRVAdapter
-
-    // on below line we are adding data to our list
     courseList.add(Region("Africa"))
     courseList.add(Region("Asia"))
     courseList.add(Region("Europe"))
     courseList.add(Region("West America"))
     courseList.add(Region("Australia"))
     courseList.add(Region("East America"))
-
-    // on below line we are notifying adapter
-    // that data has been updated.
     courseRVAdapter.notifyDataSetChanged()
   }
 
-
-  private fun filter(text: String) {
-    // creating a new array list to filter our data.
-    val filteredlist: ArrayList<Region> = ArrayList()
-
-    for (item in courseList) {
-      // checking if the entered string matched with any item of our recycler view.
-      if (item.regionName.toLowerCase().contains(text.toLowerCase())) {
-        // if the item is matched we are
-        // adding it to our filtered list.
-        filteredlist.add(item)
-      }
-    }
-    if (filteredlist.isEmpty()) {
-
-      Toast.makeText(requireContext(), "No Data Found..", Toast.LENGTH_SHORT).show()
-    } else {
-      courseRVAdapter.filterList(filteredlist)
-    }
-  }
 }

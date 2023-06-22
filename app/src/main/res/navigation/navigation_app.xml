@@ -126,14 +126,6 @@
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right" />
 
-        <action
-            android:id="@+id/action_search_to_navigation_details"
-            app:destination="@id/navigation_details"
-            app:enterAnim="@anim/slide_in_right"
-            app:exitAnim="@anim/slide_out_left"
-            app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right" />
-
     </fragment>
 
     <fragment
@@ -141,6 +133,14 @@
         android:name="com.example.dinamicfeature.presentation.searchpeople.presentation.SearchListFragment"
         android:label="Região"
         tools:layout="@layout/fragment_search_list">
+
+        <action
+            android:id="@+id/action_search_fragment_list_to_fragment_people"
+            app:destination="@id/search_fragment_list_people"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
 
 
     </fragment>
@@ -155,14 +155,30 @@
     </fragment>
 
     <fragment
+        android:id="@+id/search_fragment_list_people"
+        android:name="com.example.dinamicfeature.presentation.searchpeople.presentation.ListPeopleResult"
+        android:label="@string/title_ListPeopleResult"
+        tools:layout="@layout/fragment_search_people_list">
+
+        <action
+            android:id="@+id/action_list_people_to_navigation_details_people"
+            app:destination="@id/navigation_details"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+    </fragment>
+
+    <fragment
         android:id="@+id/navigation_details"
         android:name="com.example.dinamicfeature.presentation.details.presentetion.DetailsFragment"
         android:label="@string/title_details"
         tools:layout="@layout/fragment_signature">
 
         <argument
-            android:name="photo"
-            app:argType="string" />
+            android:name="position"
+            app:argType="integer" />
 
 
     </fragment>

@@ -6,7 +6,6 @@ import android.location.Geocoder
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.Toast
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
@@ -22,13 +21,13 @@ import com.google.firebase.ktx.Firebase
 import com.squareup.picasso.Picasso
 import java.util.*
 import kotlinx.coroutines.launch
-import org.koin.androidx.viewmodel.ext.android.viewModel
+import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
 
 class SearchFragment : BaseFragment(R.layout.fragment_search_people) {
 
   private lateinit var binding: FragmentSearchPeopleBinding
-  private val viewModel: SearchViewModel by viewModel()
+  private val viewModel: SearchViewModel by sharedViewModel()
   private var userData: UserFirebase? = null
   private var locationViewObject: LocationData? = null
   private lateinit var database: DatabaseReference
@@ -86,7 +85,7 @@ class SearchFragment : BaseFragment(R.layout.fragment_search_people) {
           viewModel.userData.collect { dataUser ->
             userData = dataUser
             getPhotoFirebase(userData?.id?:"")
-            var name = userData?.first_name?.toUpperCase()
+            val name = userData?.first_name?.toUpperCase()
             if (name == "") {
               binding.containerUserr.name.text = "Chuck norris"
             }else{
@@ -102,20 +101,20 @@ class SearchFragment : BaseFragment(R.layout.fragment_search_people) {
     locationViewObject = LocationData()
 
     containerWoman.cardView3.setOnClickListener {
-      val action = SearchFragmentDirections.actionSearchToNavigationDetails("3")
-      findNavController().navigate(action)
+//      val action = SearchFragmentDirections.actionSearchToNavigationDetails("3")
+//      findNavController().navigate(action)
     }
     containerWoman.cardView1.setOnClickListener {
-      val action = SearchFragmentDirections.actionSearchToNavigationDetails("1")
-      findNavController().navigate(action)
+//      val action = SearchFragmentDirections.actionSearchToNavigationDetails("1")
+//      findNavController().navigate(action)
     }
     containerWoman.cardView2.setOnClickListener {
-      val action = SearchFragmentDirections.actionSearchToNavigationDetails("2")
-      findNavController().navigate(action)
+//      val action = SearchFragmentDirections.actionSearchToNavigationDetails("2")
+//      findNavController().navigate(action)
     }
     containerWoman.cardView4.setOnClickListener {
-      val action = SearchFragmentDirections.actionSearchToNavigationDetails("4")
-      findNavController().navigate(action)
+//      val action = SearchFragmentDirections.actionSearchToNavigationDetails("4")
+//      findNavController().navigate(action)
     }
 
     if (photo.isEmpty()) {

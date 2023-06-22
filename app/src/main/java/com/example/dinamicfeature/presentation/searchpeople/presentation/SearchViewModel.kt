@@ -5,11 +5,14 @@ import com.example.dinamicfeature.baseApp.commons.BaseViewModel
 import com.example.dinamicfeature.baseApp.constants.Constants
 import com.example.dinamicfeature.domain.models.LocationData
 import com.example.dinamicfeature.domain.models.PersonsFake
+import com.example.dinamicfeature.domain.models.ProfileGeneralData
 import com.example.dinamicfeature.domain.models.UserFirebase
 import com.example.dinamicfeature.domain.useCases.main.GetLocationUseCase
 import com.example.dinamicfeature.domain.useCases.users.GetDataUseCase
 import com.example.dinamicfeature.domain.useCases.users.GetPersonUseCase
 import com.example.dinamicfeature.domain.useCases.users.GetPhotoUseCase
+import com.example.dinamicfeature.domain.useCases.users.GetRegisterGeneralDataUseCase
+import com.example.dinamicfeature.domain.useCases.users.SavePeopleFakeUseCase
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.asSharedFlow
@@ -19,8 +22,10 @@ class SearchViewModel(
   private val getPhotoUseCase: GetPhotoUseCase,
   private val getDataUseCase: GetDataUseCase,
   private val getLocationUseCase: GetLocationUseCase,
-  private val getPersonUseCase: GetPersonUseCase
-) : BaseViewModel() {
+  private val getPersonUseCase: GetPersonUseCase,
+  private val getRegisterGeneralDataUseCase: GetRegisterGeneralDataUseCase,
+  private val savePeopleFakeDataUseCase: SavePeopleFakeUseCase
+  ) : BaseViewModel() {
 
   private val _userData = MutableSharedFlow<UserFirebase>()
   val userData = _userData.asSharedFlow()
@@ -33,6 +38,12 @@ class SearchViewModel(
 
   private val _listPerson = MutableSharedFlow<List<PersonsFake?>>()
   val listPerson = _listPerson.asSharedFlow()
+
+  private val _getDataProfileGeneralData = MutableSharedFlow<ProfileGeneralData?>()
+  val getDataProfileGeneralData = _getDataProfileGeneralData.asSharedFlow()
+
+  private val _savePersonFake = MutableSharedFlow<Boolean>()
+  val savePersonFake = _savePersonFake.asSharedFlow()
 
   fun getPhoto() {
     viewModelScope.launch {
@@ -65,6 +76,22 @@ class SearchViewModel(
       val result = getPersonUseCase()
       delay(1000)
       _listPerson.emit(result)
+    }
+  }
+
+  fun getRegisterUserGeneralData() {
+    viewModelScope.launch {
+      delay(1000)
+      val result = getRegisterGeneralDataUseCase()
+      _getDataProfileGeneralData.emit(result)
+    }
+  }
+
+  fun savePeopleFakeData(personsFake: PersonsFake) {
+    viewModelScope.launch {
+      delay(1000)
+      val result = savePeopleFakeDataUseCase(personsFake)
+      _savePersonFake.emit(result)
     }
   }
 }

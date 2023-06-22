@@ -6,17 +6,17 @@ data class ProfileBasicDataUsers(
   var country: String? = null,
   var city: String? = null,
   var street: String? = null,
-  var physical: PhysicalData? = null,
-  var profileGeneralData: ProfileGeneralData? = null
 )
 
 data class PhysicalData(
   var height: String? = null,
-  var bodyType: String? = null,
-  var yourAppearance: String? = null
+  var bodyType: List<String>? = null,
+  var yourAppearance:List<String>? = null
 )
 
 data class ProfileGeneralData(
-  var preferences: String? = null,
-  var objective: String? = null
+  var masculino: Boolean? = false,
+  var feminino: Boolean? = false,
+  var lgbtqa: Boolean? = false,
+  var objective: List<String>? = null
 )
