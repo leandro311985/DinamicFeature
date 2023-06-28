@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/loading_containe_explorerr"
+            layout="@layout/fragment_loading"
+            android:layout_width="match_parent"
+            android:layout_height="1000dp"
+            android:elevation="@dimen/DEFAULT_10DP"
+            app:layout_constraintTop_toTopOf="@id/container"
+            app:layout_constraintEnd_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/container"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <include
+            android:id="@+id/container_toolbar_explore"
+            layout="@layout/item_toolbar_list_people"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/DEFAULT_TOOLBAR"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/container_macths"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/container_toolbar_explore">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/container_linear_line"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/DEFAULT_10DP"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/nameExplorer"
+                    style="@style/Potlid_normal_18sp"
+                    android:layout_width="@dimen/DEFAULT_120DP"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/DEFAULT_20DP"
+                    android:text="Perto de voçê"
+                    android:maxLines="1"
+                    android:layout_marginStart="@dimen/DEFAULT_10DP"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/localizationExplorer"
+                    style="@style/Potlid_normal_14sp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Localização"
+                    android:maxLines="1"
+                    app:layout_constraintEnd_toStartOf="@id/view"
+                    app:layout_constraintStart_toStartOf="@id/nameExplorer"
+                    app:layout_constraintTop_toBottomOf="@id/nameExplorer" />
+
+                <View
+                    android:id="@+id/view"
+                    android:layout_width="@dimen/DEFAULT_2DP"
+                    android:layout_height="@dimen/DEFAULT_35DP"
+                    android:layout_marginTop="@dimen/DEFAULT_20DP"
+                    android:layout_marginBottom="@dimen/DEFAULT_10DP"
+                    android:background="@color/DEFAULT_GRAY_APP"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/icone_location"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/icone_location"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/DEFAULT_60DP"
+                    android:layout_marginStart="@dimen/DEFAULT_8DP"
+                    android:layout_marginTop="@dimen/DEFAULT_10DP"
+                    android:src="@drawable/baseline_location_on_24"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/localExplorer"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/localExplorer"
+                    style="@style/Potlid_normal_14sp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/DEFAULT_8DP"
+                    android:layout_marginEnd="@dimen/DEFAULT_20DP"
+                    android:maxLines="2"
+                    android:text="Até 20km\nSão paulo"
+                    android:textColor="@color/DEFAULT_ORANGE_APP"
+                    app:autoSizeTextType="uniform"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/icone_location" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rc_explore"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/DEFAULT_140DP"
+                android:layout_marginStart="@dimen/DEFAULT_20DP"
+                android:layout_marginEnd="@dimen/DEFAULT_20DP"
+                android:scrollbars="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/container_linear_line"
+                tools:listitem="@layout/item_favorites_macths" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/container_mensages"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/container_macths">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/container_linear_message"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="@dimen/DEFAULT_20DP"
+                android:layout_marginStart="@dimen/DEFAULT_20DP"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/Potlid_normal_18sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="80% de Compatibilidade (aproximado)"
+                    android:textColor="@color/DEFAULT_TEXT_REGISTER" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/Potlid_normal_14sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Perfil"
+                    android:textColor="@color/DEFAULT_TEXT_REGISTER" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rc_aproximado"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/DEFAULT_140DP"
+                android:layout_marginStart="@dimen/DEFAULT_20DP"
+                android:layout_marginEnd="@dimen/DEFAULT_20DP"
+                android:scrollbars="horizontal"
+                tools:listitem="@layout/item_favorites_macths"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/container_linear_message"
+                 />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/banner3"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/DEFAULT_150DP"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="@dimen/DEFAULT_10DP"
+            android:layout_marginStart="@dimen/DEFAULT_20DP"
+            android:layout_marginEnd="@dimen/DEFAULT_20DP"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:scaleType="fitXY"
+            app:layout_constraintTop_toBottomOf="@id/container_mensages"
+            android:src="@drawable/banner3"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/container_like"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/banner3">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/container_linear_like"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="@dimen/DEFAULT_20DP"
+                android:layout_marginStart="@dimen/DEFAULT_20DP"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    style="@style/Potlid_normal_18sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Relacionamento sério"
+                    android:textColor="@color/DEFAULT_TEXT_REGISTER" />
+
+                <TextView
+                    style="@style/Potlid_normal_14sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Perfil" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rc_serio"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/DEFAULT_140DP"
+                android:layout_marginStart="@dimen/DEFAULT_20DP"
+                android:layout_marginEnd="@dimen/DEFAULT_20DP"
+                android:scrollbars="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/container_linear_like"
+                tools:listitem="@layout/item_favorites_macths" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/container_my_likes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/container_like">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/container_linear_my_likes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="@dimen/DEFAULT_20DP"
+                android:layout_marginStart="@dimen/DEFAULT_20DP"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/destaque"
+                    style="@style/Potlid_normal_18sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Destaques"
+                    android:textColor="@color/DEFAULT_TEXT_REGISTER" />
+
+                <TextView
+                    android:id="@+id/destaquePerfil"
+                    style="@style/Potlid_normal_14sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Perfil" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rc_destaque"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/DEFAULT_140DP"
+                android:layout_marginStart="@dimen/DEFAULT_20DP"
+                android:layout_marginEnd="@dimen/DEFAULT_20DP"
+                android:scrollbars="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/container_linear_my_likes"
+                tools:listitem="@layout/item_favorites_macths" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/container_perhaps"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/DEFAULT_100DP"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/container_my_likes">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/container_linear_perhaps"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="@dimen/DEFAULT_20DP"
+                android:layout_marginStart="@dimen/DEFAULT_20DP"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    style="@style/Potlid_normal_18sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Chat live"
+                    android:textColor="@color/DEFAULT_TEXT_REGISTER" />
+
+                <TextView
+                    style="@style/Potlid_normal_14sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ao vivo agora" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rc_live"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/DEFAULT_140DP"
+                android:layout_marginStart="@dimen/DEFAULT_20DP"
+                android:layout_marginEnd="@dimen/DEFAULT_20DP"
+                android:scrollbars="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/container_linear_perhaps"
+                tools:listitem="@layout/item_favorites_macths" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</androidx.core.widget.NestedScrollView>

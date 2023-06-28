@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/container_line_time"
+    android:padding="@dimen/DEFAULT_4DP">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/logo_image_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/DEFAULT_10DP"
+        android:layout_marginStart="@dimen/DEFAULT_20DP"
+        android:layout_marginTop="@dimen/DEFAULT_20DP"
+        android:src="@drawable/ic_search"
+        app:layout_constraintEnd_toStartOf="@id/name"
+        app:layout_constraintBottom_toBottomOf="@+id/localization"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/name"
+        style="@style/Potlid_normal_18sp"
+        android:layout_width="@dimen/DEFAULT_120DP"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/DEFAULT_20DP"
+        android:text="Perto de voçê"
+        android:maxLines="1"
+        android:layout_marginStart="@dimen/DEFAULT_10DP"
+        app:layout_constraintStart_toEndOf="@+id/logo_image_view"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/localization"
+        style="@style/Potlid_normal_14sp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Localização"
+        android:maxLines="1"
+        app:layout_constraintEnd_toStartOf="@+id/view"
+        app:layout_constraintStart_toStartOf="@+id/name"
+        app:layout_constraintTop_toBottomOf="@id/name" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="@dimen/DEFAULT_2DP"
+        android:layout_height="@dimen/DEFAULT_35DP"
+        android:layout_marginStart="@dimen/DEFAULT_10DP"
+        android:layout_marginTop="@dimen/DEFAULT_20DP"
+        android:background="@color/DEFAULT_GRAY_APP"
+        android:layout_marginBottom="@dimen/DEFAULT_10DP"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/name"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/icone_location"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/DEFAULT_60DP"
+        android:layout_marginStart="@dimen/DEFAULT_8DP"
+        android:layout_marginTop="@dimen/DEFAULT_10DP"
+        android:src="@drawable/baseline_location_on_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/view"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/local"
+        style="@style/Potlid_normal_14sp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/DEFAULT_8DP"
+        app:autoSizeTextType="uniform"
+        android:maxLines="2"
+        android:text="Até 20km\nSão paulo"
+        android:layout_marginEnd="@dimen/DEFAULT_5DP"
+        android:textColor="@color/DEFAULT_ORANGE_APP"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/icone_location"
+        app:layout_constraintTop_toTopOf="@id/icone_location" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/icone_visial"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="@dimen/DEFAULT_20DP"
+        android:layout_marginStart="@dimen/DEFAULT_30DP"
+        android:layout_marginTop="@dimen/DEFAULT_10DP"
+        android:src="@drawable/mode_list"
+        app:layout_constraintEnd_toStartOf="@id/icone_menu4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/local"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+   <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/icone_menu4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+       android:elevation="@dimen/DEFAULT_20DP"
+        android:layout_marginStart="@dimen/DEFAULT_8DP"
+       android:layout_marginEnd="@dimen/DEFAULT_20DP"
+        android:layout_marginTop="@dimen/DEFAULT_10DP"
+        android:src="@drawable/menu4"
+       app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/icone_visial"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

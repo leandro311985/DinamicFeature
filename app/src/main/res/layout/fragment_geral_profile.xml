@@ -40,12 +40,13 @@
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/title_data"
+            style="@style/Potlid_normal_14sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/DEFAULT_20DP"
             android:layout_marginTop="@dimen/DEFAULT_30DP"
             android:text="Qual sua preferencia?"
-            android:textColor="@color/DEFAULT_TEXT_REGISTER"
+            android:textColor="@color/DEFAULT_AZUL_APP"
             android:textSize="@dimen/DEFAULT_20SP"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/txt_title" />
@@ -128,13 +129,14 @@
         </com.google.android.material.chip.ChipGroup>
 
         <androidx.appcompat.widget.AppCompatTextView
+            style="@style/Potlid_normal_14sp"
             android:id="@+id/title_aparencia"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/DEFAULT_20DP"
             android:layout_marginTop="@dimen/DEFAULT_50DP"
             android:text="Qual se objetivo?"
-            android:textColor="@color/DEFAULT_TEXT_REGISTER"
+            android:textColor="@color/DEFAULT_AZUL_APP"
             android:textSize="@dimen/DEFAULT_20SP"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/chip_group_filter" />
@@ -183,6 +185,30 @@
                 android:text="Casar" />
 
         </com.google.android.material.chip.ChipGroup>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/btn_cancel"
+            android:layout_width="@dimen/DEFAULT_0DP"
+            android:layout_height="@dimen/DEFAULT_60DP"
+            android:layout_marginTop="@dimen/DEFAULT_40DP"
+            android:background="@drawable/btn_save"
+            android:gravity="center"
+            android:layout_marginEnd="@dimen/DEFAULT_5DP"
+            app:layout_constraintEnd_toStartOf="@id/btn_save"
+            app:layout_constraintStart_toStartOf="@+id/chip_group_filter2"
+            app:layout_constraintTop_toBottomOf="@id/chip_group_filter2" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/btn_save"
+            android:layout_width="@dimen/DEFAULT_0DP"
+            android:layout_height="@dimen/DEFAULT_60DP"
+            android:layout_marginTop="@dimen/DEFAULT_40DP"
+            android:layout_marginStart="@dimen/DEFAULT_5DP"
+            android:background="@drawable/btn_save_2"
+            android:gravity="center"
+            app:layout_constraintStart_toEndOf="@id/btn_cancel"
+            app:layout_constraintEnd_toEndOf="@+id/chip_group_filter2"
+            app:layout_constraintTop_toBottomOf="@id/chip_group_filter2" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -1,25 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="DEFAULT_AZUL_APP">#20304C</color>
+    <color name="DEFAULT_TEXT_REGISTER">#283E62</color>
+    <color name="DEFAULT_AZUL_APP_3">#0303DD</color>
+    <color name="DEFAULT_AZUL_APP_4">#5A93E1</color>
+    <color name="DEFAULT_AZUL_APP_5">#70C3C9</color>
+    <color name="DEFAULT_AZUL_APP_6">#6EBCC8</color>
+
+    <color name="DEFAULT_GRAY_APP">#B3B3B3</color>
+    <color name="DEFAULT_ORANGE_APP">#FF931E</color>
+    <color name="DEFAULT_RED_APP">#FF0000</color>
+    <color name="DEFAULT_GREEN_APP">#39B54A</color>
+    <color name="DEFAULT_MARRON_APP">#A67C52</color>
+    <color name="DEFAULT_LILAZ_APP">#ED1E79</color>
+
+    <color name="DEFAULT_BLACK">#FF000000</color>
+    <color name="DEFAULT_WHITE">#FFFFFFFF</color>
+    <color name="DEFAULT_AMARELO">#DAA520</color>
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
-    <color name="ColorApp">#8B0000</color>
-    <color name="DEFAULT_2777B4">#2777B4</color>
-    <color name="DEFAULT_AAB09F">#aab09f</color>
-    <color name="DEFAULT_041E50">#041E50</color>
-    <color name="DEFAULT_TEXT_REGISTER">#20304C</color>
+
     <color name="DEFAULT_99000000">#99000000</color>
     <color name="DEFAULT_TOOLBAR_MEMBERSHIP">#A2DAFD</color>
-    <color name="DEFAULT_ORANGE">#eb6332</color>
-    <color name="DEFAULT_RED">#c13316</color>
-    <color name="DEFAULT_GREEN_SPLASH">#4D7700</color>
-    <color name="DEFAULT_BLUE_SPLASH">#509AE2</color>
-    <color name="DEFAULT_TEXT_LOGIN">#70C3C9</color>
-    <color name="DEFAULT_TAMARELO">#DAA520</color>
     <color name="DEFAULT_CARD1">#F0F6FA</color>
     <color name="DEFAULT_CARD2">#5A93E1</color>
     <color name="DEFAULT_CARD3">#71AEF0</color>

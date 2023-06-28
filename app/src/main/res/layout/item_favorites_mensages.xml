@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/DEFAULT_1DP"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/image_menssage_image_view"
+        android:layout_width="@dimen/DEFAULT_80DP"
+        android:layout_height="@dimen/DEFAULT_80DP"
+        android:layout_marginTop="@dimen/DEFAULT_20DP"
+        android:src="@drawable/norris"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/name"
+        style="@style/Potlid_normal_18sp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/DEFAULT_10DP"
+        android:layout_marginTop="@dimen/DEFAULT_40DP"
+        android:maxLines="1"
+        android:text="CHUCK ROBERTO"
+        android:textColor="@color/DEFAULT_TEXT_REGISTER"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@id/estrela"
+        app:layout_constraintStart_toEndOf="@id/image_menssage_image_view"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/localization"
+        style="@style/Potlid_normal_14sp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/DEFAULT_10DP"
+        android:text="Ativo recentemente, dê um..."
+        android:maxLines="1"
+        android:textColor="@color/DEFAULT_TEXT_REGISTER"
+        app:layout_constraintEnd_toStartOf="@id/estrela"
+        app:layout_constraintStart_toStartOf="@+id/name"
+        app:layout_constraintTop_toBottomOf="@id/name" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/estrela"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_favorits"
+        android:layout_marginEnd="@dimen/DEFAULT_10DP"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

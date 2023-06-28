@@ -2,37 +2,34 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <group android:checkableBehavior="single">
+    <item
+        android:id="@+id/navigation_home_fragment"
+        android:enabled="true"
+        android:icon="@drawable/ic_app"
+        android:title="@string/HOME"
+        app:labelVisibilityMode="selected" />
+
+        <item
+            android:id="@+id/navigation_shop_fragment"
+            android:icon="@drawable/gift"
+            android:title="@string/STORE"
+            />
+
+        <item
+            android:id="@+id/navigation_favorites_fragment"
+            android:icon="@drawable/_166"
+            android:title="@string/search_people" />
+
+
+        <item
+            android:id="@+id/navigation_explorer_fragment"
+            android:icon="@drawable/baseline_content_paste_24"
+            android:title="@string/explorer" />
 
         <item
             android:id="@+id/navigation_profile"
             android:icon="@drawable/round_person_24"
-            android:title="@string/USER_PROFILE"
-            app:labelVisibilityMode="selected"/>
-
-        <item
-            android:id="@+id/navigation_search_people"
-            android:icon="@drawable/baseline_search_24"
-            android:title="@string/search_people" />
-
-        <item
-            android:id="@+id/navigation_signature"
-            android:icon="@drawable/baseline_credit_card_24"
-            android:title="@string/my_signature"
-            />
-
-        <item
-            android:id="@+id/navigation_Register_fragment"
-            android:icon="@drawable/baseline_content_paste_24"
-            android:title="@string/register" />
-
-        <item
-            android:id="@+id/navigation_Logout"
-            android:icon="@drawable/baseline_logout_24"
             android:title="@string/logout"
             />
-
-    </group>
-
 
 </menu>

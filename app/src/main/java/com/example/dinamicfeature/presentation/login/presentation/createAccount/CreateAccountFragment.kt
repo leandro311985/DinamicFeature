@@ -61,8 +61,8 @@ class CreateAccountFragment : BaseFragment(R.layout.fragment_create_account) {
 
   private fun setElements() = binding.apply {
     containerToolbar.title.text = "Criar conta"
-    containerToolbar.title.setTextColor(ContextCompat.getColor(requireContext(), R.color.white))
-    containerToolbar.backgraund.setBackgroundColor(resources.getColor(R.color.DEFAULT_TEXT_LOGIN))
+    containerToolbar.title.setTextColor(ContextCompat.getColor(requireContext(), R.color.DEFAULT_WHITE))
+    containerToolbar.backgraund.setBackgroundColor(resources.getColor(R.color.DEFAULT_AZUL_APP_4))
     containerToolbar.img.setImageResource(R.drawable.baseline_white_arrow_back_ios_24)
     containerToolbar.img2.isVisible = false
     containerToolbar.img.setOnClickListener {

@@ -39,7 +39,7 @@
                 android:paddingTop="6dp"
                 android:paddingRight="6dp"
                 android:text="14 de maio"
-                android:textColor="@color/DEFAULT_2777B4"
+                android:textColor="@color/DEFAULT_AZUL_APP_4"
                 android:textSize="12sp" />
 
             <TextView
@@ -51,7 +51,7 @@
                 android:maxLines="2"
                 android:paddingLeft="6dp"
                 android:paddingRight="6dp"
-                android:textColor="@color/DEFAULT_2777B4"
+                android:textColor="@color/DEFAULT_AZUL_APP_4"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 android:visibility="visible"
@@ -68,7 +68,7 @@
                 android:maxLines="2"
                 android:paddingLeft="6dp"
                 android:paddingRight="6dp"
-                android:textColor="@color/DEFAULT_2777B4"
+                android:textColor="@color/DEFAULT_AZUL_APP_4"
                 android:textSize="12sp"
                 android:visibility="visible"
                 tools:text="Conversou pelo chat as 19:00" />

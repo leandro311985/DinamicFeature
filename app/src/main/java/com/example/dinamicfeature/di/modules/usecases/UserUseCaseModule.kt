@@ -4,6 +4,7 @@ import com.example.dinamicfeature.domain.useCases.users.CreateUserUseCase
 import com.example.dinamicfeature.domain.useCases.users.GetDataUseCase
 import com.example.dinamicfeature.domain.useCases.users.GetListLikeUseCase
 import com.example.dinamicfeature.domain.useCases.users.GetPeopleFakeUseCase
+import com.example.dinamicfeature.domain.useCases.users.GetPersonHomeUseCase
 import com.example.dinamicfeature.domain.useCases.users.GetPersonUseCase
 import com.example.dinamicfeature.domain.useCases.users.GetPhotoUseCase
 import com.example.dinamicfeature.domain.useCases.users.GetRegisterGeneralDataUseCase
@@ -35,6 +36,7 @@ val userUseCaseModule = module {
   single { SaveRegisterUseCase(get()) }
   single { SavePeopleFakeUseCase(get()) }
   single { GetPersonUseCase(get()) }
+  single { GetPersonHomeUseCase(get()) }
   single { SaveListLikeUseCase(get()) }
   single { GetPeopleFakeUseCase(get()) }
   single { GetListLikeUseCase(get()) }

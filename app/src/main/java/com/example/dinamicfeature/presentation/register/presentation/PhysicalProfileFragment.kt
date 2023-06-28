@@ -54,13 +54,22 @@ class PhysicalProfileFragment : BaseFragment(R.layout.fragment_physical_profile)
     viewModel.getRegisterUserPhysicalData()
   }
   private fun setElements() {
-    binding.back.setOnClickListener {
+    binding.btnSave.setOnClickListener {
       data.yourAppearance = listAppearance
       data.bodyType = listBodyType
       data.height = varHeight
 
       viewModel.saveRegisterDbPhysicalData(data)
     }
+
+    binding.btnCancel.setOnClickListener {
+      findNavController().navigateUp()
+    }
+
+    binding.back.setOnClickListener {
+      findNavController().navigateUp()
+    }
+
     seekBar = binding.seekBar
     val thumbColor = Color.parseColor("#20304C")
     val progressColor = Color.parseColor("#20304C")

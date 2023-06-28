@@ -31,6 +31,7 @@
     <string name="title_estado">Estado?</string>
     <string name="title_cidade">Cidade?</string>
     <string name="register">Cadastro</string>
+    <string name="explorer">Explorar</string>
     <string name="APP_DATE_PATTERN">dd/MM/yyyy</string>
 
 
@@ -44,7 +45,7 @@
     <string name="HOME">Home</string>
     <string name="USER_PROFILE">Perfil</string>
     <string name="SPLASH">splash</string>
-    <string name="STORE">Loja</string>
+    <string name="STORE">Shop</string>
     <string name="HOME_PRODUCT_HOME_FRAGMENT_LABEL">home</string>
     <string name="HOME_ADD_PRODUCT">Adicionar Produto</string>
     <string name="title_profile">Meu Perfil</string>
@@ -71,18 +72,28 @@
     <string name="PROVISIONING_WIFI_MODAL_TITLE">Wi-Fi</string>
     <string name="PROVISIONING_WIFI_MODAL_EXPLANATION">Para continuar precisamos que o Wi-Fi esteja ligado</string>
 
-    <string name="mulher">Yasmin Cardoso Goncalves</string>
-    <string name="mulher1">Vitória Alves Souza</string>
-    <string name="mulher2">Lavinia Castro Sousa</string>
-    <string name="mulher3">Lara Carvalho Goncalves</string>
-    <string name="mulher4">Giovana Fernandes Barros</string>
-    <string name="mulher5">Bruna Cavalcanti Rodrigues</string>
-    <string name="mulher6">Vitoria Costa Cavalcanti</string>
-    <string name="mulher7">Larissa Cunha Rocha</string>
-    <string name="mulher8">Eduarda Rodrigues Alves</string>
-    <string name="mulher9">Gabrielly Rocha Barros</string>
-    <string name="mulher10">Beatrice Melo Alves</string>
-    <string name="mulher11">Maria Alves Silva</string>
+    <string name="mulherNameHome">Thais, 35</string>
+    <string name="mulher2NameHome">Monica, 27</string>
+    <string name="mulher3NameHome">Silvia, 35</string>
+    <string name="mulher4NameHome">Clara, 25</string>
+
+    <string name="mulherKMHome">11km</string>
+    <string name="mulher2KMHome">20km</string>
+    <string name="mulher3KMHome">15km</string>
+    <string name="mulher4KMHome">18km</string>
+
+    <string name="mulher">Yasmin, 35</string>
+    <string name="mulher1">Vitória, 25</string>
+    <string name="mulher2">Lavinia, 38</string>
+    <string name="mulher3">Lara, 35</string>
+    <string name="mulher4">Giovana, 32</string>
+    <string name="mulher5">Bruna, 28</string>
+    <string name="mulher6">Vitoria, 29</string>
+    <string name="mulher7">Larissa, 31</string>
+    <string name="mulher8">Eduarda, 35</string>
+    <string name="mulher9">Gabrielly, 38</string>
+    <string name="mulher10">Beatrice, 27</string>
+    <string name="mulher11">Maria, 33</string>
     <string name="mulherEnd">Rua Jatobá, 1841 Olinda-PE 53270-620</string>
     <string name="mulherEnd1">Rua São Sebastião, 260 São Caetano do Sul-SP 09580-680</string>
     <string name="mulherEnd2">Rua 13, 1516 Rio Verde-GO 75907-440</string>
@@ -95,6 +106,18 @@
     <string name="mulherEnd9">Rua João Silveira Camboim, 1783 Sapucaia do Sul-RS 93224-140</string>
     <string name="mulherEnd10">Rua Aureliano Gomes, 339 Franca-SP 14405-057</string>
     <string name="mulherEnd11">Rua José Carlos Gebara, 1749 Bauru-SP 17047-370</string>
+
+    <string name="homen">Joao, 35</string>
+    <string name="homen1">Paulo, 25</string>
+    <string name="homen2">Mario, 38</string>
+    <string name="homen3">Marcos, 35</string>
+    <string name="homen4">Giovana, 32</string>
+    <string name="homen5">Antonio, 28</string>
+    <string name="homen6">Leonardo, 29</string>
+    <string name="homen7">Luiz, 31</string>
+    <string name="homen8">Eduardo, 35</string>
+    <string name="homen9">Willhiam, 38</string>
+    <string name="homen10">Mateus, 27</string>
 
 
     <string-array name="country_names">

@@ -19,7 +19,7 @@
             android:layout_height="match_parent"
             android:gravity="center"
             android:text="50 $ Monthly/Annual 300$"
-            android:textColor="@color/DEFAULT_TEXT_LOGIN" />
+            android:textColor="@color/DEFAULT_AZUL_APP_6" />
 
     </androidx.cardview.widget.CardView>
 
@@ -27,7 +27,7 @@
         android:id="@+id/cardView1"
         android:layout_width="0dp"
         android:layout_height="@dimen/DEFAULT_60DP"
-        app:cardBackgroundColor="@color/DEFAULT_TEXT_LOGIN"
+        app:cardBackgroundColor="@color/DEFAULT_AZUL_APP_6"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginEnd="@dimen/DEFAULT_20DP"
 
@@ -40,7 +40,7 @@
             android:layout_height="match_parent"
             android:gravity="center"
             android:text="BUSINESS"
-            android:textColor="@color/white"
+            android:textColor="@color/DEFAULT_WHITE"
             android:textStyle="bold" />
 
     </androidx.cardview.widget.CardView>
@@ -60,7 +60,7 @@
         android:layout_height="match_parent"
         android:gravity="center"
         android:text="25 $ Monthly/Annual 200$"
-        android:textColor="@color/DEFAULT_TEXT_LOGIN" />
+        android:textColor="@color/DEFAULT_AZUL_APP_6" />
 
     </androidx.cardview.widget.CardView>
 
@@ -80,7 +80,7 @@
             android:layout_height="match_parent"
             android:gravity="center"
             android:text="BUSINESS"
-            android:textColor="@color/white"
+            android:textColor="@color/DEFAULT_WHITE"
             android:textStyle="bold" />
 
     </androidx.cardview.widget.CardView>
@@ -100,7 +100,7 @@
             android:layout_height="match_parent"
             android:gravity="center"
             android:text="100 $ Monthly/Annual 100$"
-            android:textColor="@color/DEFAULT_TEXT_LOGIN" />
+            android:textColor="@color/DEFAULT_AZUL_APP_6" />
 
     </androidx.cardview.widget.CardView>
 
@@ -120,7 +120,7 @@
             android:layout_height="match_parent"
             android:gravity="center"
             android:text="BUSINESS"
-            android:textColor="@color/white"
+            android:textColor="@color/DEFAULT_WHITE"
             android:textStyle="bold" />
 
     </androidx.cardview.widget.CardView>

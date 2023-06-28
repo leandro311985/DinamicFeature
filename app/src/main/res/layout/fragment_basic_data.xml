@@ -30,6 +30,7 @@
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/title"
+            style="@style/Potlid_normal_14sp"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textColor="@color/DEFAULT_TEXT_REGISTER"
@@ -51,12 +52,13 @@
             android:layout_marginEnd="@dimen/DEFAULT_20DP"
             android:textSize="@dimen/DEFAULT_20SP"
             android:hint="@string/NICK_NAME"
-            android:textColorHint="@color/DEFAULT_AAB09F"
+            android:textColorHint="@color/DEFAULT_GRAY_APP"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/title" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/title_data"
+            style="@style/Potlid_normal_14sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/DEFAULT_TEXT_REGISTER"
@@ -72,7 +74,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/DATA"
-            android:textColorHint="@color/DEFAULT_AAB09F"
+            android:textColorHint="@color/DEFAULT_GRAY_APP"
             android:layout_marginStart="@dimen/DEFAULT_20DP"
             android:layout_marginTop="@dimen/DEFAULT_10DP"
             android:layout_marginEnd="@dimen/DEFAULT_20DP"
@@ -82,6 +84,7 @@
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/title_pais"
+            style="@style/Potlid_normal_14sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/DEFAULT_TEXT_REGISTER"
@@ -105,6 +108,7 @@
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/title_estado"
+            style="@style/Potlid_normal_14sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/DEFAULT_TEXT_REGISTER"
@@ -128,6 +132,7 @@
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/title_cidade"
+            style="@style/Potlid_normal_14sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/DEFAULT_TEXT_REGISTER"
@@ -148,6 +153,30 @@
             android:textSize="@dimen/DEFAULT_20SP"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/title_cidade" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/btn_cancel"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/DEFAULT_60DP"
+            android:layout_marginTop="@dimen/DEFAULT_40DP"
+            android:layout_marginEnd="@dimen/DEFAULT_10DP"
+            android:background="@drawable/btn_save"
+            android:gravity="center"
+            app:layout_constraintEnd_toStartOf="@id/btn_save"
+            app:layout_constraintStart_toStartOf="@+id/edit_cidade"
+            app:layout_constraintTop_toBottomOf="@id/edit_cidade" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/btn_save"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/DEFAULT_60DP"
+            android:layout_marginTop="@dimen/DEFAULT_40DP"
+            android:background="@drawable/btn_save_2"
+            android:layout_marginStart="@dimen/DEFAULT_10DP"
+            android:gravity="center"
+            app:layout_constraintStart_toEndOf="@id/btn_cancel"
+            app:layout_constraintEnd_toEndOf="@+id/edit_cidade"
+            app:layout_constraintTop_toBottomOf="@id/edit_cidade" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

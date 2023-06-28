@@ -93,6 +93,9 @@
     <dimen name="DEFAULT_400DP">400dp</dimen>
     <dimen name="DEFAULT_460DP">460dp</dimen>
 
+
+    <dimen name="DEFAULT_TOOLBAR">56dp</dimen>
+
     //------------------------------- DEFAULT SP PART FOR TEXTS ---------------------------------------->
     <dimen name="DEFAULT_1SP">1sp</dimen>
     <dimen name="DEFAULT_3SP">3sp</dimen>

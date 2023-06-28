@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <include
+        android:id="@+id/loading_container_shop"
+        layout="@layout/fragment_loading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation="@dimen/DEFAULT_100DP"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <include
+        android:id="@+id/container_toolbar_shop"
+        layout="@layout/item_toolbar_list_people"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/DEFAULT_TOOLBAR"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/container_card"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/DEFAULT_60DP"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/container_toolbar_shop">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView1"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:cardBackgroundColor="@color/DEFAULT_AZUL_APP_6"
+                app:layout_constraintBottom_toBottomOf="@id/container_card"
+                app:layout_constraintEnd_toStartOf="@id/cardView2"
+                app:layout_constraintStart_toStartOf="@id/container_card"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/info_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="Saúde Mental"
+                    android:textColor="@color/DEFAULT_WHITE" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView2"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:cardBackgroundColor="@color/DEFAULT_AZUL_APP_6"
+                app:layout_constraintBottom_toBottomOf="@id/container_card"
+                app:layout_constraintEnd_toStartOf="@id/cardView3"
+                app:layout_constraintStart_toEndOf="@+id/cardView1"
+                app:layout_constraintTop_toTopOf="@id/container_card">
+
+                <TextView
+                    android:id="@+id/info_text2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="Doutor Potilid"
+                    android:textColor="@color/DEFAULT_WHITE" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView3"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:cardBackgroundColor="@color/DEFAULT_AZUL_APP_6"
+                app:layout_constraintBottom_toBottomOf="@id/container_card"
+                app:layout_constraintEnd_toStartOf="@id/cardView4"
+                app:layout_constraintStart_toEndOf="@id/cardView2"
+                app:layout_constraintTop_toTopOf="@id/container_card">
+
+                <TextView
+                    android:id="@+id/info_textNumber3"
+                    style="@style/Potlid_normal_14sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/DEFAULT_10DP"
+                    android:gravity="center"
+                    android:text="Lojas"
+                     />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView4"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:cardBackgroundColor="@color/DEFAULT_AZUL_APP_6"
+                app:layout_constraintBottom_toBottomOf="@id/container_card"
+                app:layout_constraintEnd_toStartOf="@id/cardView5"
+                app:layout_constraintStart_toEndOf="@id/cardView3"
+                app:layout_constraintTop_toTopOf="@id/container_card">
+
+                <TextView
+                    android:id="@+id/info_text4"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="Viaje \n bem"
+                    android:textColor="@color/DEFAULT_WHITE" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView5"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:cardBackgroundColor="@color/DEFAULT_AZUL_APP_6"
+                app:layout_constraintBottom_toBottomOf="@id/container_card"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/cardView4"
+                app:layout_constraintTop_toTopOf="@id/container_card">
+
+                <TextView
+                    android:id="@+id/info_text5"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="Chefe\n Potlid"
+                    android:textColor="@color/DEFAULT_WHITE" />
+            </androidx.cardview.widget.CardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/banner"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/DEFAULT_150DP"
+        android:layout_marginTop="@dimen/DEFAULT_10DP"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:scaleType="fitXY"
+        app:layout_constraintTop_toBottomOf="@id/container_card"
+        android:src="@drawable/banner_1"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/banner2"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/DEFAULT_150DP"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="@dimen/DEFAULT_10DP"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:scaleType="fitXY"
+        app:layout_constraintTop_toBottomOf="@id/banner"
+        android:src="@drawable/banner_2"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

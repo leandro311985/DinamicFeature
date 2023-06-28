@@ -17,24 +17,26 @@
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/name"
+        style="@style/Potlid_normal_18sp"
         android:layout_width="@dimen/DEFAULT_110DP"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/DEFAULT_20DP"
         android:layout_marginStart="@dimen/DEFAULT_10DP"
         android:text="CHUCK ROBERTO"
         android:maxLines="1"
-        android:textColor="@color/DEFAULT_2777B4"
+        android:textColor="@color/DEFAULT_AZUL_APP_4"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/logo_image_view"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/localization"
+        style="@style/Potlid_normal_14sp"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Localização"
         android:maxLines="1"
-        android:textColor="@color/DEFAULT_2777B4"
+        android:textColor="@color/DEFAULT_AZUL_APP_4"
         app:layout_constraintEnd_toStartOf="@+id/view"
         app:layout_constraintStart_toStartOf="@+id/name"
         app:layout_constraintTop_toBottomOf="@id/name" />
@@ -45,7 +47,7 @@
         android:layout_height="@dimen/DEFAULT_50DP"
         android:layout_marginStart="@dimen/DEFAULT_10DP"
         android:layout_marginTop="@dimen/DEFAULT_20DP"
-        android:background="@color/DEFAULT_AAB09F"
+        android:background="@color/DEFAULT_GRAY_APP"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@id/name"
         app:layout_constraintTop_toTopOf="parent" />
@@ -63,6 +65,7 @@
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/local"
+        style="@style/Potlid_normal_14sp"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/DEFAULT_10DP"
@@ -71,7 +74,7 @@
         android:maxLines="2"
         android:text="Brazil\nSão paulo"
         android:layout_marginEnd="@dimen/DEFAULT_5DP"
-        android:textColor="@color/DEFAULT_2777B4"
+        android:textColor="@color/DEFAULT_AZUL_APP_4"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/icone_location"

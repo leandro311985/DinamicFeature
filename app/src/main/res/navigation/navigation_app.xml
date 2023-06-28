@@ -24,7 +24,7 @@
 
         <action
             android:id="@+id/action_splash_to_profile"
-            app:destination="@id/navigation_profile"
+            app:destination="@id/navigation_home_fragment"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
@@ -274,6 +274,51 @@
         android:name="com.example.dinamicfeature.presentation.login.presentation.logout.LogoutFragment"
         android:label="ProfileGeralFragment"
         tools:layout="@layout/fragment_logout">
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_home_fragment"
+        android:name="com.example.dinamicfeature.presentation.home.presentation.HomeFragments"
+        android:label="@string/HOME"
+        tools:layout="@layout/fragment_home">
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_favorites_fragment"
+        android:name="com.example.dinamicfeature.presentation.favorite.FavoritesFragments"
+        android:label="favorites"
+        tools:layout="@layout/fragment_favorites">
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_shop_fragment"
+        android:name="com.example.dinamicfeature.presentation.shop.ShopFragment"
+        android:label="shop"
+        tools:layout="@layout/fragment_shop">
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_explorer_fragment"
+        android:name="com.example.dinamicfeature.presentation.explore.ExploreFragment"
+        android:label="explore"
+        tools:layout="@layout/fragment_explore">
+
+        <action
+            android:id="@+id/action_navigation_explorer_fragment_to_config_fragment"
+            app:destination="@id/navigation_Config_fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_Config_fragment"
+        android:name="com.example.dinamicfeature.presentation.config.ConfigFragment"
+        android:label="config"
+        tools:layout="@layout/fragment_config">
     </fragment>
 
 

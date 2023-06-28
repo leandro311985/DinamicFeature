@@ -2,13 +2,13 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="@dimen/DEFAULT_TOOLBAR"
     android:id="@+id/backgraund"
-    android:background="#6EBCC8"
+    android:background="@color/DEFAULT_AZUL_APP_5"
     android:padding="@dimen/DEFAULT_10DP">
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/img"
+        android:id="@+id/img_back"
         android:layout_width="@dimen/DEFAULT_24DP"
         android:layout_height="@dimen/DEFAULT_24DP"
         android:src="@drawable/baseline_white_arrow_back_ios_24"
@@ -16,24 +16,26 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.appcompat.widget.AppCompatEditText
+    <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/title"
+        style="@style/Potlid_normal_20sp"
         android:layout_width="@dimen/DEFAULT_0DP"
         android:layout_height="wrap_content"
-        android:hint="@string/title_search"
-        android:background="@drawable/border_edit_text"
-        android:textColor="#6EBCC8"
-        android:textSize="@dimen/DEFAULT_16SP"
+        android:text="@string/title_search"
+        android:textColor="@color/DEFAULT_WHITE"
+        android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/img2"
-        app:layout_constraintStart_toEndOf="@id/img"
+        app:layout_constraintEnd_toStartOf="@id/ic_toolbar_menu"
+        app:layout_constraintStart_toEndOf="@id/img_back"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/img2"
+        android:id="@+id/ic_toolbar_menu"
         android:layout_width="@dimen/DEFAULT_24DP"
         android:layout_height="@dimen/DEFAULT_24DP"
+        android:visibility="gone"
         android:src="@drawable/baseline_menu_24_register"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

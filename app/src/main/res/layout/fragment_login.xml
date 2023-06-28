@@ -32,6 +32,7 @@
         android:id="@+id/email_edit_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        style="@style/Potlid_normal_18sp"
         android:layout_marginHorizontal="@dimen/DEFAULT_50DP"
         android:layout_marginTop="@dimen/DEFAULT_30DP"
         android:background="@drawable/border_edit_text"
@@ -39,13 +40,14 @@
         android:inputType="textEmailAddress"
         android:maxLines="1"
         android:textAlignment="center"
-        android:textColorHint="@color/DEFAULT_TEXT_LOGIN"
+        android:textColorHint="@color/DEFAULT_AZUL_APP_6"
         app:layout_constraintTop_toBottomOf="@id/title_logo" />
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/password_edit_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        style="@style/Potlid_normal_18sp"
         android:layout_marginHorizontal="@dimen/DEFAULT_50DP"
         android:layout_marginTop="@dimen/DEFAULT_10DP"
         android:background="@drawable/border_edit_text"
@@ -53,7 +55,7 @@
         android:inputType="textPassword"
         android:maxLines="1"
         android:textAlignment="center"
-        android:textColorHint="@color/DEFAULT_TEXT_LOGIN"
+        android:textColorHint="@color/DEFAULT_AZUL_APP_6"
         app:layout_constraintTop_toBottomOf="@id/email_edit_text" />
 
     <androidx.appcompat.widget.AppCompatButton
@@ -64,9 +66,9 @@
         android:layout_marginStart="@dimen/DEFAULT_50DP"
         android:layout_marginTop="@dimen/DEFAULT_50DP"
         android:layout_marginEnd="@dimen/DEFAULT_50DP"
-        android:background="@color/DEFAULT_BLUE_SPLASH"
+        android:background="@color/DEFAULT_AZUL_APP_4"
         android:text="LOGIN"
-        android:textColor="@color/white"
+        android:textColor="@color/DEFAULT_WHITE"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/password_edit_text" />
@@ -79,9 +81,9 @@
         android:layout_marginStart="@dimen/DEFAULT_50DP"
         android:layout_marginTop="@dimen/DEFAULT_5DP"
         android:layout_marginEnd="@dimen/DEFAULT_50DP"
-        android:background="@color/DEFAULT_041E50"
+        android:background="@color/DEFAULT_AZUL_APP"
         android:text="LOGIN REDE SOCIAL"
-        android:textColor="@color/white"
+        android:textColor="@color/DEFAULT_WHITE"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/login_button" />
@@ -89,12 +91,13 @@
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/forgot_password_text_view"
+        style="@style/Potlid_normal_14sp"
         android:layout_width="@dimen/DEFAULT_0DP"
         android:layout_height="wrap_content"
         android:layout_below="@id/login_button"
         android:layout_marginTop="@dimen/DEFAULT_20DP"
         android:text="@string/forgot_password_text"
-        android:textColor="@color/DEFAULT_TEXT_LOGIN"
+        android:textColor="@color/DEFAULT_AZUL_APP_6"
         app:layout_constraintEnd_toEndOf="@id/login_social_button"
         app:layout_constraintStart_toStartOf="@id/login_social_button"
         app:layout_constraintTop_toBottomOf="@id/login_social_button" />
@@ -103,7 +106,7 @@
         android:id="@+id/divider"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/black"
+        android:background="@color/DEFAULT_BLACK"
         android:layout_marginStart="@dimen/DEFAULT_50DP"
         android:layout_marginEnd="@dimen/DEFAULT_50DP"
         app:layout_constraintEnd_toEndOf="parent"

@@ -7,6 +7,7 @@ import com.example.dinamicfeature.baseApp.constants.Constants.DATA_USER
 import com.example.dinamicfeature.baseApp.constants.Constants.SAVE_LIST_KEY
 import com.example.dinamicfeature.baseApp.constants.Constants.SAVE_PEOPLE_FAKE
 import com.example.dinamicfeature.domain.models.PersonsFake
+import com.example.dinamicfeature.domain.models.PersonsFakeHome
 import com.example.dinamicfeature.domain.models.PhysicalData
 import com.example.dinamicfeature.domain.models.ProfileBasicDataUsers
 import com.example.dinamicfeature.domain.models.ProfileGeneralData
@@ -34,6 +35,11 @@ class UserRepository(
     Types.newParameterizedType(List::class.java, PersonsFake::class.java)
   private val jsonAdapterOvenProcessSubFunction: JsonAdapter<List<PersonsFake>> =
     moshi.adapter(ovenProcessSubFunctionList)
+
+  private val personFakeHome: ParameterizedType =
+    Types.newParameterizedType(List::class.java, PersonsFakeHome::class.java)
+  private val jsonAdapterPersonFakeHome: JsonAdapter<List<PersonsFakeHome>> =
+    moshi.adapter(personFakeHome)
 
   private val userEmpty = UserFirebase()
   override suspend fun registerUser(
@@ -182,6 +188,16 @@ class UserRepository(
     val json = getJson(R.raw.list_person)
     var list = listOf<PersonsFake>()
     jsonAdapterOvenProcessSubFunction.fromJson(json)?.let {
+      list = it
+
+    }
+    return list
+  }
+
+  override suspend fun getListPersonHome(): List<PersonsFakeHome?> {
+    val json = getJson(R.raw.list_person_home)
+    var list = listOf<PersonsFakeHome>()
+    jsonAdapterPersonFakeHome.fromJson(json)?.let {
       list = it
 
     }

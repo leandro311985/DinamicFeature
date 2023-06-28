@@ -39,16 +39,8 @@ class BasicDataFragment : BaseFragment(R.layout.fragment_basic_data) {
 
   override fun initView(view: View) {
     setViewBinding(view)
-    binding.back.setOnClickListener {
-      if (binding.editData.text.toString() != "") {
-        data.selectedDate = selectedDateVar
-      }
-      data.city = binding.editCidade.text.toString()
-      data.street = binding.editEstado.text.toString()
-      data.nickname = binding.editName.text.toString()
-      data.country = country
-      viewModel.saveRegisterDb(data)
-    }
+
+
   }
 
   override fun setViewBinding(view: View) {
@@ -60,6 +52,25 @@ class BasicDataFragment : BaseFragment(R.layout.fragment_basic_data) {
   }
 
   private fun setElements() = binding.apply {
+    btnSave.setOnClickListener {
+      if (binding.editData.text.toString() != "") {
+        data.selectedDate = selectedDateVar
+      }
+      data.city = binding.editCidade.text.toString()
+      data.street = binding.editEstado.text.toString()
+      data.nickname = binding.editName.text.toString()
+      data.country = country
+      viewModel.saveRegisterDb(data)
+    }
+
+    btnCancel.setOnClickListener {
+      findNavController().navigateUp()
+    }
+
+    back.setOnClickListener {
+      findNavController().navigateUp()
+    }
+
     val nome = editName.text.toString()
     val selectedDateText = editData.text.toString()
 

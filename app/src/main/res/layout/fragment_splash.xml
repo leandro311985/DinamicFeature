@@ -11,7 +11,7 @@
         android:layout_marginStart="@dimen/DEFAULT_20DP"
         android:layout_marginTop="@dimen/DEFAULT_100DP"
         android:elevation="@dimen/DEFAULT_20SP"
-        android:textColor="@color/white"
+        android:textColor="@color/DEFAULT_WHITE"
         android:textSize="@dimen/DEFAULT_28SP"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -44,7 +44,7 @@
         android:layout_height="wrap_content"
         android:elevation="@dimen/DEFAULT_20SP"
         android:text="Descubra o novo!"
-        android:textColor="@color/white"
+        android:textColor="@color/DEFAULT_WHITE"
         android:textSize="@dimen/DEFAULT_28SP"
         android:layout_marginEnd="@dimen/DEFAULT_20DP"
         android:layout_marginBottom="@dimen/DEFAULT_100DP"

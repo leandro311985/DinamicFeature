@@ -23,7 +23,7 @@
             android:layout_marginStart="@dimen/DEFAULT_20DP"
             tools:text="@string/app_name"
             android:textAlignment="textStart"
-            android:textColor="@color/DEFAULT_TEXT_LOGIN"
+            android:textColor="@color/DEFAULT_AZUL_APP_6"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"

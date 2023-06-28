@@ -6,5 +6,6 @@ data class PersonsFake(
   var name:String,
   var end:String,
   var type:String,
-  var like:Boolean
-  )
+  var like:Boolean,
+  var km:String
+)

@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/loading_container"
+            layout="@layout/fragment_loading"
+            android:layout_width="match_parent"
+            android:layout_height="1000dp"
+            android:elevation="@dimen/DEFAULT_100DP"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <include
+            android:id="@+id/container_toolbar"
+            layout="@layout/item_toolbar_list_people"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/DEFAULT_TOOLBAR"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/container_macths"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/container_toolbar">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/container_linear_line"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/DEFAULT_10DP"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    style="@style/Potlid_normal_18sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Macths"
+                    android:textColor="@color/DEFAULT_TEXT_REGISTER" />
+
+                <TextView
+                    style="@style/Potlid_normal_14sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Perfil" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rc_favorites"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/DEFAULT_140DP"
+                android:layout_marginStart="@dimen/DEFAULT_20DP"
+                android:layout_marginEnd="@dimen/DEFAULT_20DP"
+                android:scrollbars="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/container_linear_line"
+                tools:listitem="@layout/item_favorites_macths" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/container_mensages"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/container_macths">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/container_linear_message"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/DEFAULT_10DP"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    style="@style/Potlid_normal_18sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mensagens"
+                    android:textColor="@color/DEFAULT_TEXT_REGISTER" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rc_message"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/DEFAULT_300DP"
+                android:layout_marginStart="@dimen/DEFAULT_20DP"
+                android:layout_marginEnd="@dimen/DEFAULT_20DP"
+                android:scrollbars="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/container_linear_message"
+                tools:listitem="@layout/item_favorites_mensages" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/container_like"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/container_mensages">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/container_linear_like"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/DEFAULT_10DP"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    style="@style/Potlid_normal_18sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Curtiram voçê"
+                    android:textColor="@color/DEFAULT_TEXT_REGISTER" />
+
+                <TextView
+                    style="@style/Potlid_normal_14sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Perfil" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rc_like"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/DEFAULT_140DP"
+                android:layout_marginStart="@dimen/DEFAULT_20DP"
+                android:layout_marginEnd="@dimen/DEFAULT_20DP"
+                android:scrollbars="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/container_linear_like"
+                tools:listitem="@layout/item_favorites_macths" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/container_my_likes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/container_like">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/container_linear_my_likes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/DEFAULT_10DP"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    style="@style/Potlid_normal_18sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Minhas Curtidas"
+                    android:textColor="@color/DEFAULT_TEXT_REGISTER" />
+
+                <TextView
+                    style="@style/Potlid_normal_14sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Perfil" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rc_myLikes"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/DEFAULT_140DP"
+                android:layout_marginStart="@dimen/DEFAULT_20DP"
+                android:layout_marginEnd="@dimen/DEFAULT_20DP"
+                android:scrollbars="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/container_linear_my_likes"
+                tools:listitem="@layout/item_favorites_macths" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/container_perhaps"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/DEFAULT_100DP"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/container_my_likes">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:id="@+id/container_linear_perhaps"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/DEFAULT_10DP"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    style="@style/Potlid_normal_18sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Talvez"
+                    android:textColor="@color/DEFAULT_TEXT_REGISTER" />
+
+                <TextView
+                    style="@style/Potlid_normal_14sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Perfil" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rc_perhaps"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/DEFAULT_140DP"
+                android:layout_marginStart="@dimen/DEFAULT_20DP"
+                android:layout_marginEnd="@dimen/DEFAULT_20DP"
+                android:scrollbars="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/container_linear_perhaps"
+                tools:listitem="@layout/item_favorites_macths" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</androidx.core.widget.NestedScrollView>

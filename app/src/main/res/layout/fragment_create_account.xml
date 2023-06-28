@@ -46,6 +46,7 @@
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/description_image_view"
+            style="@style/Potlid_normal_14sp_text_black"
             android:layout_width="@dimen/DEFAULT_0DP"
             android:layout_height="@dimen/DEFAULT_100DP"
             android:layout_marginStart="@dimen/DEFAULT_20DP"
@@ -62,6 +63,7 @@
 
         <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/name_text"
+            style="@style/Potlid_normal_18sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/logo_image_view"
@@ -71,14 +73,15 @@
             android:hint="@string/name_hint"
             android:inputType="textPersonName"
             android:maxLines="1"
-            android:textColor="@color/DEFAULT_TEXT_LOGIN"
-            android:textColorHint="@color/DEFAULT_TEXT_LOGIN"
+            android:textColor="@color/DEFAULT_AZUL_APP_6"
+            android:textColorHint="@color/DEFAULT_AZUL_APP_6"
             app:layout_constraintEnd_toEndOf="@id/container"
             app:layout_constraintStart_toStartOf="@id/container"
             app:layout_constraintTop_toBottomOf="@id/logo_image_view" />
 
         <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/email_text"
+            style="@style/Potlid_normal_18sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/name_text"
@@ -88,14 +91,15 @@
             android:hint="@string/email_create_hint"
             android:inputType="textEmailAddress"
             android:maxLines="1"
-            android:textColor="@color/DEFAULT_TEXT_LOGIN"
-            android:textColorHint="@color/DEFAULT_TEXT_LOGIN"
+            android:textColor="@color/DEFAULT_AZUL_APP_6"
+            android:textColorHint="@color/DEFAULT_AZUL_APP_6"
             app:layout_constraintEnd_toEndOf="@id/container"
             app:layout_constraintStart_toStartOf="@id/container"
             app:layout_constraintTop_toBottomOf="@id/name_text" />
 
         <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/password_text"
+            style="@style/Potlid_normal_18sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/email_text"
@@ -105,14 +109,15 @@
             android:hint="@string/password_register"
             android:inputType="textPassword"
             android:maxLines="1"
-            android:textColor="@color/DEFAULT_TEXT_LOGIN"
-            android:textColorHint="@color/DEFAULT_TEXT_LOGIN"
+            android:textColor="@color/DEFAULT_AZUL_APP_6"
+            android:textColorHint="@color/DEFAULT_AZUL_APP_6"
             app:layout_constraintEnd_toEndOf="@id/container"
             app:layout_constraintStart_toStartOf="@id/container"
             app:layout_constraintTop_toBottomOf="@id/email_text" />
 
         <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/password_confirme_edit_text"
+            style="@style/Potlid_normal_18sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/password_text"
@@ -122,14 +127,15 @@
             android:hint="@string/enter_password_confirme"
             android:inputType="textPassword"
             android:maxLines="1"
-            android:textColor="@color/DEFAULT_TEXT_LOGIN"
-            android:textColorHint="@color/DEFAULT_TEXT_LOGIN"
+            android:textColor="@color/DEFAULT_AZUL_APP_6"
+            android:textColorHint="@color/DEFAULT_AZUL_APP_6"
             app:layout_constraintEnd_toEndOf="@id/container"
             app:layout_constraintStart_toStartOf="@id/container"
             app:layout_constraintTop_toBottomOf="@id/password_text" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/register_button"
+            style="@style/Potlid_normal_18sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/password_confirme_edit_text"
@@ -137,15 +143,16 @@
             android:layout_marginStart="@dimen/DEFAULT_50DP"
             android:layout_marginTop="@dimen/DEFAULT_32DP"
             android:layout_marginEnd="@dimen/DEFAULT_50DP"
-            android:background="@color/DEFAULT_BLUE_SPLASH"
+            android:background="@color/DEFAULT_AZUL_APP_4"
             android:text="@string/confirm_register"
-            android:textColor="@color/white"
+            android:textColor="@color/DEFAULT_WHITE"
             app:layout_constraintEnd_toEndOf="@id/container"
             app:layout_constraintStart_toStartOf="@id/container"
             app:layout_constraintTop_toBottomOf="@id/password_confirme_edit_text" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/back_text_view"
+            style="@style/Potlid_normal_14sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/register_button"
@@ -153,7 +160,7 @@
             android:layout_marginTop="@dimen/DEFAULT_16DP"
             android:gravity="center"
             android:text="@string/text_register"
-            android:textColor="@color/black"
+            android:textColor="@color/DEFAULT_BLACK"
             app:layout_constraintEnd_toEndOf="@id/container"
             app:layout_constraintStart_toStartOf="@id/container"
             app:layout_constraintTop_toBottomOf="@id/register_button" />

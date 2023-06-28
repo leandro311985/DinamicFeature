@@ -9,6 +9,7 @@
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/searchViewList"
+        style="@style/Potlid_normal_14sp"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginStart="@dimen/DEFAULT_20DP"
@@ -18,7 +19,7 @@
         android:gravity="start|center"
         android:hint="Procurar Região"
         android:padding="@dimen/DEFAULT_10DP"
-        android:textColorHint="@color/DEFAULT_TEXT_LOGIN"
+        android:textColorHint="@color/DEFAULT_AZUL_APP_6"
         android:textSize="@dimen/DEFAULT_20SP"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

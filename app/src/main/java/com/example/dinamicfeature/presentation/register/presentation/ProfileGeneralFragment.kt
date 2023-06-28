@@ -45,8 +45,16 @@ class ProfileGeneralFragment : BaseFragment(R.layout.fragment_geral_profile) {
   }
 
   private fun setElements() {
-    binding.back.setOnClickListener {
+    binding.btnSave.setOnClickListener {
       saveData()
+    }
+
+    binding.btnCancel.setOnClickListener {
+      findNavController().navigateUp()
+    }
+
+   binding.back.setOnClickListener {
+      findNavController().navigateUp()
     }
 
 

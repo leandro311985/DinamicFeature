@@ -30,6 +30,9 @@ class RegisterFragment : BaseFragment(R.layout.fragment_register) {
   }
 
   private fun setElements() = binding.apply{
+    toolbarContainerRegister.img.setOnClickListener {
+      findNavController().navigateUp()
+    }
     imageView1.setOnClickListener {
       findNavController().navigate(RegisterFragmentDirections.actionRegisterToNavigationBasic())
     }

@@ -39,7 +39,7 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginEnd="@dimen/DEFAULT_5DP"
-            app:cardBackgroundColor="@color/DEFAULT_TEXT_LOGIN"
+            app:cardBackgroundColor="@color/DEFAULT_AZUL_APP_6"
             app:layout_constraintBottom_toBottomOf="@id/container_card"
             app:layout_constraintEnd_toStartOf="@+id/cardView2"
             app:layout_constraintHorizontal_bias="0.5"
@@ -52,7 +52,7 @@
                 android:layout_height="match_parent"
                 android:gravity="center|top"
                 android:text="Seguidores"
-                android:textColor="@color/white" />
+                android:textColor="@color/DEFAULT_WHITE" />
 
             <TextView
                 android:id="@+id/info_textNumber"
@@ -61,7 +61,7 @@
                 android:layout_marginTop="@dimen/DEFAULT_10DP"
                 android:gravity="center"
                 android:text="564"
-                android:textColor="@color/DEFAULT_2777B4" />
+                android:textColor="@color/DEFAULT_AZUL_APP_4" />
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
@@ -69,7 +69,7 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginEnd="@dimen/DEFAULT_5DP"
-            app:cardBackgroundColor="@color/DEFAULT_TEXT_LOGIN"
+            app:cardBackgroundColor="@color/DEFAULT_AZUL_APP_6"
             app:layout_constraintBottom_toBottomOf="@id/container_card"
             app:layout_constraintEnd_toStartOf="@+id/cardView3"
             app:layout_constraintHorizontal_bias="0.5"
@@ -82,7 +82,7 @@
                 android:layout_height="match_parent"
                 android:gravity="center|top"
                 android:text="Seguindo"
-                android:textColor="@color/white" />
+                android:textColor="@color/DEFAULT_WHITE" />
 
             <TextView
                 android:id="@+id/info_textNumber2"
@@ -91,14 +91,14 @@
                 android:layout_marginTop="@dimen/DEFAULT_10DP"
                 android:gravity="center"
                 android:text="92"
-                android:textColor="@color/DEFAULT_2777B4" />
+                android:textColor="@color/DEFAULT_AZUL_APP_4" />
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView3"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            app:cardBackgroundColor="@color/DEFAULT_TEXT_LOGIN"
+            app:cardBackgroundColor="@color/DEFAULT_AZUL_APP_6"
             app:layout_constraintBottom_toBottomOf="@id/container_card"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -111,7 +111,7 @@
                 android:layout_height="match_parent"
                 android:gravity="center|top"
                 android:text="Favoritos"
-                android:textColor="@color/white" />
+                android:textColor="@color/DEFAULT_WHITE" />
 
             <TextView
                 android:id="@+id/info_textNumber3"
@@ -120,7 +120,7 @@
                 android:layout_marginTop="@dimen/DEFAULT_10DP"
                 android:gravity="center"
                 android:text="107"
-                android:textColor="@color/DEFAULT_2777B4" />
+                android:textColor="@color/DEFAULT_AZUL_APP_4" />
         </androidx.cardview.widget.CardView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

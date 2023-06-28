@@ -8,7 +8,7 @@
         android:id="@+id/loading_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/DEFAULT_BLUE_SPLASH"
+        android:background="@color/DEFAULT_AZUL_APP_4"
         android:clickable="true"
         android:elevation="@dimen/DEFAULT_100DP"
         android:visibility="gone"
@@ -36,7 +36,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             android:text="...Loading"
-            android:textColor="@color/white"/>
+            android:textColor="@color/DEFAULT_WHITE"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

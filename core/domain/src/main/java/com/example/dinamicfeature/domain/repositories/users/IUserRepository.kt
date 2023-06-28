@@ -2,6 +2,7 @@ package com.example.dinamicfeature.domain.repositories.users
 
 import com.example.dinamicfeature.baseApp.commons.UiState
 import com.example.dinamicfeature.domain.models.PersonsFake
+import com.example.dinamicfeature.domain.models.PersonsFakeHome
 import com.example.dinamicfeature.domain.models.PhysicalData
 import com.example.dinamicfeature.domain.models.ProfileBasicDataUsers
 import com.example.dinamicfeature.domain.models.ProfileGeneralData
@@ -29,5 +30,6 @@ interface IUserRepository {
   suspend fun getPhoto(id: String): String?
   suspend fun getDataUser(key: String): UserFirebase?
   suspend fun getListPerson(): List<PersonsFake?>
+  suspend fun getListPersonHome(): List<PersonsFakeHome?>
 
 }

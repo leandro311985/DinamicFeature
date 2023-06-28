@@ -32,6 +32,7 @@
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/searchView"
+        style="@style/Potlid_normal_14sp"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginTop="@dimen/DEFAULT_20DP"
@@ -41,7 +42,7 @@
         android:gravity="start|center"
         android:hint="Região"
         android:padding="@dimen/DEFAULT_10DP"
-        android:textColorHint="@color/DEFAULT_TEXT_LOGIN"
+        android:textColorHint="@color/DEFAULT_AZUL_APP_6"
         android:textSize="@dimen/DEFAULT_20SP"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -87,14 +88,15 @@
         android:layout_width="130dp"
         android:layout_height="50dp"
         android:layout_marginTop="@dimen/DEFAULT_10DP"
-        app:cardBackgroundColor="@color/DEFAULT_TEXT_LOGIN"
+        app:cardBackgroundColor="@color/DEFAULT_AZUL_APP_6"
         app:layout_constraintStart_toStartOf="@+id/container_woman"
         app:layout_constraintTop_toBottomOf="@+id/container_woman" >
 
         <androidx.appcompat.widget.AppCompatTextView
+            style="@style/Potlid_normal_18sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/white"
+            android:textColor="@color/DEFAULT_WHITE"
             android:layout_gravity="center"
             android:textStyle="bold"
             android:text="PERFIL"/>
@@ -105,7 +107,7 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginTop="@dimen/DEFAULT_10DP"
-        app:cardBackgroundColor="@color/teal_700"
+        app:cardBackgroundColor="@color/DEFAULT_GREEN_APP"
         app:layout_constraintStart_toEndOf="@+id/caed1"
         app:layout_constraintTop_toBottomOf="@+id/container_woman">
 
@@ -114,7 +116,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="57"
-            android:textColor="@color/white"
+            android:textColor="@color/DEFAULT_WHITE"
             android:textStyle="bold" />
     </androidx.cardview.widget.CardView>
 
@@ -124,16 +126,17 @@
         android:layout_height="50dp"
         android:layout_marginStart="@dimen/DEFAULT_30DP"
         android:layout_marginTop="@dimen/DEFAULT_10DP"
-        app:cardBackgroundColor="@color/DEFAULT_TEXT_LOGIN"
+        app:cardBackgroundColor="@color/DEFAULT_AZUL_APP_6"
         app:layout_constraintStart_toEndOf="@id/card2"
         app:layout_constraintTop_toBottomOf="@id/container_woman">
 
         <androidx.appcompat.widget.AppCompatTextView
+            style="@style/Potlid_normal_18sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="MATCH"
-            android:textColor="@color/white"
+            android:textColor="@color/DEFAULT_WHITE"
             android:textStyle="bold" />
     </androidx.cardview.widget.CardView>
 
@@ -143,7 +146,7 @@
         android:layout_height="50dp"
         android:layout_marginEnd="@dimen/DEFAULT_10DP"
         android:layout_marginTop="@dimen/DEFAULT_10DP"
-        app:cardBackgroundColor="@color/DEFAULT_TAMARELO"
+        app:cardBackgroundColor="@color/DEFAULT_AMARELO"
         app:layout_constraintEnd_toEndOf="@+id/container_woman"
         app:layout_constraintStart_toEndOf="@+id/caed3"
         app:layout_constraintTop_toBottomOf="@+id/container_woman">
@@ -153,16 +156,17 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="7"
-            android:textColor="@color/white"
+            android:textColor="@color/DEFAULT_WHITE"
             android:textStyle="bold" />
     </androidx.cardview.widget.CardView>
 
     <androidx.appcompat.widget.AppCompatTextView
+        style="@style/Potlid_normal_18sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="Estatística de busca"
-        android:textColor="@color/DEFAULT_TEXT_LOGIN"
+        android:textColor="@color/DEFAULT_AZUL_APP_6"
         android:textStyle="bold"
         android:layout_marginTop="@dimen/DEFAULT_40DP"
         android:textSize="@dimen/DEFAULT_20SP"
