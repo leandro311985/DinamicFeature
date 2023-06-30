@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.dinamicfeature.R
 import com.example.dinamicfeature.baseApp.commons.BaseFragment
 import com.example.dinamicfeature.databinding.FragmentFavoritesBinding
+import com.example.dinamicfeature.domain.models.MyPersonsFake
 import com.example.dinamicfeature.domain.models.PersonsFakeHome
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -39,6 +40,7 @@ class FavoritesFragments : BaseFragment(R.layout.fragment_favorites) {
   }
 
   private fun getList() {
+    viewModel.getMyList()
     viewModel.getList()
   }
 
@@ -61,13 +63,15 @@ class FavoritesFragments : BaseFragment(R.layout.fragment_favorites) {
     containerLinearMyLikes.isVisible = !isVisible
   }
 
+  private fun myMatchs(listMatchs:MutableList<MyPersonsFake>) = binding.apply{
+    val rc = binding.rcMyLikes
+    rc.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+    val adapter = FavoritesMacthAdapter(requireContext(),listMatchs)
+    rc.adapter = adapter
+  }
+
   private fun upDateList(list: List<PersonsFakeHome>) {
     binding.apply {
-      val rc = binding.rcFavorites
-      rc.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-      val adapter = FavoritesAdapter(requireContext(),list)
-      rc.adapter = adapter
-
       val rcMessage = binding.rcMessage
       rcMessage.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
       val adapterMessage = FavoritesMenssagesAdapter(requireContext(),list)
@@ -78,7 +82,7 @@ class FavoritesFragments : BaseFragment(R.layout.fragment_favorites) {
       val adapterLike = FavoritesAdapter(requireContext(),list)
       rcLike.adapter = adapterLike
 
-      val rcMyLike = binding.rcMyLikes
+      val rcMyLike = binding.rcFavorites
       rcMyLike.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
       val adapterMyLike = FavoritesAdapter(requireContext(),list)
       rcMyLike.adapter = adapterMyLike
@@ -96,6 +100,13 @@ class FavoritesFragments : BaseFragment(R.layout.fragment_favorites) {
         launch {
           viewModel.listHome.collect { result ->
             upDateList(result)
+            loading(false)
+          }
+        }
+
+        launch {
+          viewModel.myListHome.collect { result ->
+            myMatchs(result)
             loading(false)
           }
         }

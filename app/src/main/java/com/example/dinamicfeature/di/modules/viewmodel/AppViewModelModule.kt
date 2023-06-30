@@ -31,7 +31,7 @@ val appViewModelModule = module {
   viewModel { ConfigViewModel() }
   viewModel { ExploreViewModel(get()) }
   viewModel { HomeViewModel(get(),get()) }
-  viewModel { FavoritesViewModel(get()) }
+  viewModel { FavoritesViewModel(get(),get()) }
   viewModel { DetailsViewModel(get(),get(),get()) }
   viewModel { RegisterViewModel(get(), get(),get(),get(),get(),get()) }
 

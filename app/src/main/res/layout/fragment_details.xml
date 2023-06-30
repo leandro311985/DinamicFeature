@@ -1,202 +1,433 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/container_photo"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="match_parent">
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/imageViewPhoto"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/container_photo"
             android:layout_width="match_parent"
-            android:layout_height="600dp"
-            android:layout_weight="1"
-            android:scaleType="centerCrop"
-            android:src="@drawable/woman"
+            android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent">
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/sinilization"
-            android:layout_width="@dimen/DEFAULT_12DP"
-            android:layout_height="@dimen/DEFAULT_12DP"
-            android:layout_marginTop="@dimen/DEFAULT_8DP"
-            android:layout_marginEnd="@dimen/DEFAULT_12DP"
-            android:scaleType="centerCrop"
-            android:src="@drawable/bolinha_verde"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageViewPhoto"
+                android:layout_width="match_parent"
+                android:layout_height="600dp"
+                android:layout_weight="1"
+                android:scaleType="centerCrop"
+                android:src="@drawable/woman"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/back"
-            android:layout_width="@dimen/DEFAULT_24DP"
-            android:layout_height="@dimen/DEFAULT_24DP"
-            android:layout_marginTop="@dimen/DEFAULT_8DP"
-            android:layout_marginEnd="@dimen/DEFAULT_12DP"
-            android:scaleType="centerCrop"
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/sinilization"
+                android:layout_width="@dimen/DEFAULT_12DP"
+                android:layout_height="@dimen/DEFAULT_12DP"
+                android:layout_marginTop="@dimen/DEFAULT_8DP"
+                android:layout_marginEnd="@dimen/DEFAULT_12DP"
+                android:scaleType="centerCrop"
+                android:src="@drawable/bolinha_verde"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/back"
+                android:layout_width="@dimen/DEFAULT_24DP"
+                android:layout_height="@dimen/DEFAULT_24DP"
+                android:layout_marginStart="@dimen/DEFAULT_10DP"
+                android:layout_marginTop="@dimen/DEFAULT_8DP"
+                android:layout_marginEnd="@dimen/DEFAULT_12DP"
+                android:scaleType="centerCrop"
+                android:src="@drawable/baseline_white_arrow_back_ios_24"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/name"
+            style="@style/Potlid_normal_14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/DEFAULT_30DP"
             android:layout_marginStart="@dimen/DEFAULT_10DP"
-            android:src="@drawable/baseline_white_arrow_back_ios_24"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"/>
+            android:text="Nome:"
+            android:textStyle="normal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/container_photo" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/nameUser"
+            style="@style/Potlid_normal_14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/DEFAULT_30DP"
+            android:layout_marginStart="@dimen/DEFAULT_10DP"
+            android:text="Clara silva"
+            android:textStyle="normal"
+            app:layout_constraintStart_toEndOf="@id/name"
+            app:layout_constraintTop_toBottomOf="@id/container_photo" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/idade"
+            style="@style/Potlid_normal_14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/DEFAULT_10DP"
+            android:text="Idade:"
+            android:textStyle="normal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/name" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/Potlid_normal_14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/DEFAULT_10DP"
+            android:text="26 anos"
+            android:textStyle="normal"
+            app:layout_constraintStart_toEndOf="@id/idade"
+            app:layout_constraintTop_toBottomOf="@id/name" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/cidade"
+            style="@style/Potlid_normal_14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/DEFAULT_10DP"
+            android:text="Cidade:"
+            android:textStyle="normal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/idade" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/Potlid_normal_14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/DEFAULT_10DP"
+            android:text="São paulo"
+            android:textStyle="normal"
+            app:layout_constraintStart_toEndOf="@id/cidade"
+            app:layout_constraintTop_toBottomOf="@id/idade" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/olhos"
+            style="@style/Potlid_normal_14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/DEFAULT_10DP"
+            android:text="Olhos:"
+            android:textStyle="normal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cidade" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/Potlid_normal_14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/DEFAULT_10DP"
+            android:text="Verdes"
+            android:textStyle="normal"
+            app:layout_constraintStart_toEndOf="@id/olhos"
+            app:layout_constraintTop_toBottomOf="@id/cidade" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/cabelos"
+            style="@style/Potlid_normal_14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/DEFAULT_10DP"
+            android:text="Cabelos:"
+            android:textStyle="normal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/olhos" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/Potlid_normal_14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/DEFAULT_10DP"
+            android:text="Médio, castanho claro,ondulado"
+            android:textStyle="normal"
+            app:layout_constraintStart_toEndOf="@id/cabelos"
+            app:layout_constraintTop_toBottomOf="@id/olhos" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/corpo"
+            style="@style/Potlid_normal_14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/DEFAULT_10DP"
+            android:text="Corpo:"
+            android:textStyle="normal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cabelos" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/Potlid_normal_14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/DEFAULT_10DP"
+            android:text="1,70, 65kg, normal"
+            android:textStyle="normal"
+            app:layout_constraintStart_toEndOf="@id/corpo"
+            app:layout_constraintTop_toBottomOf="@id/cabelos" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/estilo"
+            style="@style/Potlid_normal_14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/DEFAULT_10DP"
+            android:text="Estilo:"
+            android:textStyle="normal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/corpo" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/Potlid_normal_14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/DEFAULT_10DP"
+            android:text="Hisper, retrô, street style"
+            android:textStyle="normal"
+            app:layout_constraintStart_toEndOf="@id/estilo"
+            app:layout_constraintTop_toBottomOf="@id/corpo" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/profissao"
+            style="@style/Potlid_normal_14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/DEFAULT_10DP"
+            android:text="Profissão:"
+            android:textStyle="normal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/estilo" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/Potlid_normal_14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/DEFAULT_10DP"
+            android:text="Veterinária"
+            android:textStyle="normal"
+            app:layout_constraintStart_toEndOf="@id/profissao"
+            app:layout_constraintTop_toBottomOf="@id/estilo" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/hobbies"
+            style="@style/Potlid_normal_14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/DEFAULT_10DP"
+            android:text="Hobbies:"
+            android:textStyle="normal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/profissao" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/Potlid_normal_14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/DEFAULT_10DP"
+            android:text="Malhar, caminhada, barzinho, viagens"
+            android:textStyle="normal"
+            app:layout_constraintStart_toEndOf="@id/hobbies"
+            app:layout_constraintTop_toBottomOf="@id/profissao" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/signo"
+            style="@style/Potlid_normal_14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/DEFAULT_10DP"
+            android:text="Signo:"
+            android:textStyle="normal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/hobbies" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/Potlid_normal_14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/DEFAULT_10DP"
+            android:text="Aquario"
+            android:textStyle="normal"
+            app:layout_constraintStart_toEndOf="@id/signo"
+            app:layout_constraintTop_toBottomOf="@id/hobbies" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/distancia"
+            style="@style/Potlid_normal_14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/DEFAULT_10DP"
+            android:text="Distância:"
+            android:textStyle="normal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/signo" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/Potlid_normal_14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/DEFAULT_10DP"
+            android:text="Cerca de 10 km de voçê"
+            android:textStyle="normal"
+            app:layout_constraintStart_toEndOf="@id/distancia"
+            app:layout_constraintTop_toBottomOf="@id/signo" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/procura"
+            style="@style/Potlid_normal_14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/DEFAULT_10DP"
+            android:text="Procura:"
+            android:textStyle="normal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/distancia" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/Potlid_normal_14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/DEFAULT_10DP"
+            android:text="Relacionamento sério"
+            android:textStyle="normal"
+            app:layout_constraintStart_toEndOf="@id/procura"
+            app:layout_constraintTop_toBottomOf="@id/distancia" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/cigarro"
+            style="@style/Potlid_normal_14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/DEFAULT_10DP"
+            android:text="Cigarro:"
+            android:textStyle="normal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/procura" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/Potlid_normal_14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/DEFAULT_10DP"
+            android:text="Tolerância zero"
+            android:textStyle="normal"
+            app:layout_constraintStart_toEndOf="@id/cigarro"
+            app:layout_constraintTop_toBottomOf="@id/procura" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/bebida"
+            style="@style/Potlid_normal_14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/DEFAULT_10DP"
+            android:text="Bebida:"
+            android:textStyle="normal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cigarro" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            style="@style/Potlid_normal_14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/DEFAULT_10DP"
+            android:text="Socialmente"
+            android:textStyle="normal"
+            app:layout_constraintStart_toEndOf="@id/bebida"
+            app:layout_constraintTop_toBottomOf="@id/cigarro" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="@dimen/DEFAULT_180DP"
+            android:layout_height="300dp"
+            app:layout_constraintBottom_toBottomOf="@id/container_photo"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/floating_action_button"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_margin="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/btn_seguir_app_potlid" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/floating_action_button1"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_margin="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/floating_action_button"
+                app:srcCompat="@drawable/ic_botao_msg" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/floating_action_button_cancel"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_margin="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/floating_action_button1"
+                app:srcCompat="@drawable/btn_flash_notes_app_potlid" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/floating_action_button3"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_margin="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/floating_action_button_cancel"
+                app:srcCompat="@drawable/btn_talvez_app_potlid" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/floating_action_button_like"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_margin="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/floating_action_button3"
+                app:srcCompat="@drawable/btn_like_app_potlid" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/floating_action_button_dislike"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_margin="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/floating_action_button_like"
+                app:layout_constraintTop_toBottomOf="@id/floating_action_button3"
+                app:srcCompat="@drawable/btn_negative_app_potlid" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/floating_action_button_update"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_margin="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/floating_action_button_dislike"
+                app:layout_constraintTop_toBottomOf="@id/floating_action_button3"
+                app:srcCompat="@drawable/btn_update" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/name"
-        style="@style/Potlid_normal_14sp_text_black"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Nome"
-        android:layout_marginStart="@dimen/DEFAULT_10DP"
-        android:textStyle="normal"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/container_photo" />
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/nameUser"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Clara silva"
-        android:layout_marginStart="@dimen/DEFAULT_10DP"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@id/name"
-        app:layout_constraintTop_toBottomOf="@id/container_photo" />
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/idade"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Idade"
-        android:layout_marginStart="@dimen/DEFAULT_10DP"
-        android:textStyle="normal"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/name" />
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="26 anos"
-        android:layout_marginStart="@dimen/DEFAULT_10DP"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@id/idade"
-        app:layout_constraintTop_toBottomOf="@id/name" />
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/cidade"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Cidade"
-        android:layout_marginStart="@dimen/DEFAULT_10DP"
-        android:textStyle="normal"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/idade" />
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="São paulo"
-        android:layout_marginStart="@dimen/DEFAULT_10DP"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@id/cidade"
-        app:layout_constraintTop_toBottomOf="@id/idade" />
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/olhos"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Olhos"
-        android:layout_marginStart="@dimen/DEFAULT_10DP"
-        android:textStyle="normal"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/cidade" />
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Verdes"
-        android:layout_marginStart="@dimen/DEFAULT_10DP"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@id/olhos"
-        app:layout_constraintTop_toBottomOf="@id/cidade" />
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/cabelos"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Cabelos"
-        android:layout_marginStart="@dimen/DEFAULT_10DP"
-        android:textStyle="normal"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/olhos" />
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Médio, castanho claro,ondulado"
-        android:layout_marginStart="@dimen/DEFAULT_10DP"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@id/cabelos"
-        app:layout_constraintTop_toBottomOf="@id/olhos" />
-
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="@dimen/DEFAULT_80DP"
-        android:layout_height="250dp"
-        app:layout_constraintBottom_toBottomOf="@id/container_photo"
-        app:layout_constraintEnd_toEndOf="parent">
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/floating_action_button1"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_margin="16dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_botao_msg" />
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/floating_action_button_cancel"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_margin="16dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/floating_action_button1"
-            app:srcCompat="@drawable/ic_botao_error" />
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/floating_action_button3"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_margin="16dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/floating_action_button_cancel"
-            app:srcCompat="@drawable/ic_botao_location" />
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/floating_action_button_like"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_margin="16dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/floating_action_button3"
-            app:srcCompat="@drawable/ic_botao_checked" />
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-    <!-- Título da foto -->
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

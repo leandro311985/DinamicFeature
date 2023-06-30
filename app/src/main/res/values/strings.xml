@@ -36,6 +36,7 @@
 
 
     <string name="success">sucesso</string>
+    <string name="snack_like">Voçê adicionou %s ao favoritos</string>
     <string name="my_signature">Assinatura</string>
     <string name="auth_invalid">Autenticação inválida</string>
     <string name="error_auth_caracter">Falha na autenticação, a senha deve ter pelo menos 6 caracteres</string>
@@ -53,6 +54,7 @@
     <string name="title_mysignature">Assinatura</string>
     <string name="title_ListPeopleResult">ListPeopleResult</string>
     <string name="title_details">detalhes</string>
+    <string name="title_favorits">Favoritos</string>
     <string name="title_success_account">create_account_success</string>
     <string name="title_InitJourneyFragment">InitJourneyFragment</string>
     <string name="title_BasicDataFragment">BasicDataFragment</string>

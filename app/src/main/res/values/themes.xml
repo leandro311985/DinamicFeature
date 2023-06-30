@@ -3,22 +3,17 @@
     <style name="Theme.DinamicFeature" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/DEFAULT_AZUL_APP_6</item>
-        <item name="colorPrimaryVariant">@color/DEFAULT_AZUL_APP_4</item>
+        <item name="colorPrimaryVariant">@color/DEFAULT_ORANGE_APP</item>
         <item name="colorOnPrimary">@color/DEFAULT_WHITE</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/DEFAULT_AZUL_APP_4</item>
-        <item name="colorSecondaryVariant">@color/DEFAULT_AZUL_APP_4</item>
+        <item name="colorSecondary">@color/DEFAULT_ORANGE_APP</item>
+        <item name="colorSecondaryVariant">@color/DEFAULT_ORANGE_APP</item>
         <item name="colorOnSecondary">@color/DEFAULT_BLACK</item>
         <!-- Customize your theme here. -->
         <item name="android:windowFullscreen">true</item>
-        <item name="navigationViewStyle">@style/NavigationViewStyle</item>
 
     </style>
 
-    <style name="NavigationViewStyle" parent="Widget.MaterialComponents.NavigationView">
-        <!-- Define a cor de fundo do Drawer Navigation -->
-        <item name="android:background">@color/DEFAULT_AZUL_APP_4</item>
-    </style>
 
     <!--  Progress Button  -->
     <style name="Widget.App.ProgressButtonView" parent="">
@@ -43,11 +38,6 @@
 
     <style name="SearchViewStyle" parent="Widget.AppCompat.SearchView">
         <item name="android:textColorHint">@color/DEFAULT_BLACK</item>
-    </style>
-
-    <style name="SeekBarStyle" parent="Widget.AppCompat.SeekBar">
-        <item name="android:progressDrawable">@drawable/seekbar_progress</item>
-        <item name="android:thumb">@drawable/seekbar_thumb</item>
     </style>
 
     <style name="Potlid_font">
@@ -80,10 +70,26 @@
         <item name="android:lineSpacingExtra">@dimen/DEFAULT_4SP</item>
     </style>
 
+    <style name="Potlid_normal_orange_16sp" parent="Potlid_font">
+        <item name="android:textSize">@dimen/DEFAULT_16SP</item>
+        <item name="android:textColor">@color/DEFAULT_ORANGE_APP</item>
+        <item name="android:lineSpacingExtra">@dimen/DEFAULT_4SP</item>
+    </style>
+
     <style name="Potlid_normal_20sp" parent="Potlid_font">
         <item name="android:textSize">@dimen/DEFAULT_20SP</item>
         <item name="android:textColor">@color/DEFAULT_AZUL_APP_4</item>
         <item name="android:lineSpacingExtra">@dimen/DEFAULT_4SP</item>
+    </style>
+
+    <style name="SwitchCompatStyle" parent="Widget.AppCompat.CompoundButton.Switch">
+        <item name="android:thumbTint">@color/DEFAULT_ORANGE_APP</item>
+        <item name="trackTint">@color/DEFAULT_GRAY_APP</item>
+    </style>
+
+    <style name="SeekBarStyle2" parent="Widget.AppCompat.SeekBar">
+        <item name="colorControlNormal">@color/DEFAULT_ORANGE_APP</item>
+        <item name="colorControlActivated">@color/DEFAULT_GRAY_APP</item>
     </style>
 
 </resources>

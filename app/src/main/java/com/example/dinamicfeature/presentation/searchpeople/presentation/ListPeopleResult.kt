@@ -56,7 +56,7 @@ class ListPeopleResult : BaseFragment(R.layout.fragment_search_people_list), Car
         launch {
           viewModel.savePersonFake.collect {
             if (it){
-              findNavController().navigate(ListPeopleResultDirections.actionListPeopleToNavigationDetailsPeople(position))
+//              findNavController().navigate(ListPeopleResultDirections.actionListPeopleToNavigationDetailsPeople(position))
             }
           }
         }

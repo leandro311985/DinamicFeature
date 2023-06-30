@@ -2,7 +2,9 @@ package com.example.dinamicfeature.presentation.details.presentetion
 
 import androidx.lifecycle.viewModelScope
 import com.example.dinamicfeature.baseApp.commons.BaseViewModel
+import com.example.dinamicfeature.domain.models.MyPersonsFake
 import com.example.dinamicfeature.domain.models.PersonsFake
+import com.example.dinamicfeature.domain.useCases.main.SaveMyListFakeUseCase
 import com.example.dinamicfeature.domain.useCases.users.GetPeopleFakeUseCase
 import com.example.dinamicfeature.domain.useCases.users.GetPersonUseCase
 import com.example.dinamicfeature.domain.useCases.users.SaveListLikeUseCase
@@ -14,7 +16,7 @@ import kotlinx.coroutines.launch
 class DetailsViewModel(
   private val getPersonFakeUseCase: GetPeopleFakeUseCase,
   private val getPersonUseCase: GetPersonUseCase,
-  private val saveListFakeDataUseCase: SaveListLikeUseCase
+  private val saveListFakeDataUseCase: SaveMyListFakeUseCase
   ) : BaseViewModel() {
 
   private val _getPersonFake = MutableSharedFlow<PersonsFake?>()
@@ -39,9 +41,9 @@ class DetailsViewModel(
     }
   }
 
-  fun saveLikeList(personsFake: List<PersonsFake>) {
+  fun saveLikeList(personsFake: MyPersonsFake) {
     viewModelScope.launch {
-      delay(1000)
+      delay(500)
       saveListFakeDataUseCase(personsFake)
     }
   }

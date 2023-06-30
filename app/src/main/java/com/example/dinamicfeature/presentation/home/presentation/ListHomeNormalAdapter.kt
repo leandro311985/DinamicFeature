@@ -12,17 +12,21 @@ import com.squareup.picasso.Picasso
 
 
 class ListHomeNormalAdapter(
+  private val homeListener: HomeListener,
   private val context: Context,
   private val profiles: List<PersonsFake>
 ) : RecyclerView.Adapter<ListHomeNormalAdapter.MyViewHolder>() {
   private val data = profiles
 
   class MyViewHolder(private val view: ItemPeopleListHomeBinding) : RecyclerView.ViewHolder(view.root) {
-    fun bind(data: PersonsFake, context: Context) {
+    fun bind(data: PersonsFake, context: Context, homeListener: HomeListener) {
       val image = view.imageItem
       view.titleRc.text = context.getStringByName(data.name)
       val img = context.getDrawableByName(data.image)
       Picasso.get().load(img).into(image)
+      view.cardViewPeople.setOnClickListener {
+        homeListener.onItemClick(data, position)
+      }
     }
   }
 
@@ -33,7 +37,7 @@ class ListHomeNormalAdapter(
   }
 
   override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-    holder.bind(data[position], context)
+    holder.bind(data[position], context, homeListener)
   }
 
   override fun getItemCount() = data.size

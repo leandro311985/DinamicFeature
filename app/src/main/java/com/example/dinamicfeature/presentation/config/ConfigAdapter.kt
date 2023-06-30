@@ -5,9 +5,12 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.dinamicfeature.databinding.ItemConfigBinding
+import com.example.dinamicfeature.presentation.searchpeople.adapter.CardListener
 
 
-class ConfigAdapter(private val mList: List<ConfigData>) : RecyclerView.Adapter<ConfigAdapter.ViewHolder>() {
+class ConfigAdapter(private val mList: List<ConfigData>,
+                    private val configListener: ConfigListener,
+) : RecyclerView.Adapter<ConfigAdapter.ViewHolder>() {
 
   // create new views
   override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -22,6 +25,9 @@ class ConfigAdapter(private val mList: List<ConfigData>) : RecyclerView.Adapter<
     val itemsViewModel = mList[position]
     // sets the text to the textview from our itemHolder class
     holder.textView.text = itemsViewModel.item
+    holder.textView.setOnClickListener {
+      configListener.onItemClick(itemsViewModel)
+    }
 
   }
 

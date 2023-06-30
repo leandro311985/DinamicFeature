@@ -13,11 +13,13 @@ import com.example.dinamicfeature.databinding.ItemPeopleListBinding
 import com.example.dinamicfeature.databinding.ItemPeopleListHomeBinding
 import com.example.dinamicfeature.domain.models.PersonsFake
 import com.example.dinamicfeature.domain.models.PersonsFakeHome
+import com.example.dinamicfeature.presentation.searchpeople.adapter.CardListener
 import com.example.extension.getDrawableByName
 import com.example.extension.getStringByName
 import com.squareup.picasso.Picasso
 
 class ListHomeAdapter(
+  private val homeListener: HomeListener,
   private val context: Context, private val cards: List<PersonsFake>
 ) : BaseAdapter() {
 
@@ -32,7 +34,7 @@ class ListHomeAdapter(
     binding.titleRc.text = title
 
     binding.cardViewPeople.setOnClickListener {
-
+      homeListener.onItemClick(card, position)
     }
 
     return binding.root

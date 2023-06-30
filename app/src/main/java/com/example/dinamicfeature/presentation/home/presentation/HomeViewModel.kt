@@ -4,15 +4,17 @@ import androidx.lifecycle.viewModelScope
 import com.example.dinamicfeature.baseApp.commons.BaseViewModel
 import com.example.dinamicfeature.domain.models.PersonsFake
 import com.example.dinamicfeature.domain.models.PersonsFakeHome
+import com.example.dinamicfeature.domain.models.ProfileGeneralData
 import com.example.dinamicfeature.domain.useCases.users.GetPersonHomeUseCase
 import com.example.dinamicfeature.domain.useCases.users.GetPersonUseCase
+import com.example.dinamicfeature.domain.useCases.users.GetRegisterGeneralDataUseCase
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.launch
 
 class HomeViewModel(
-  private val getPersonHomeUseCase: GetPersonHomeUseCase,
+  private val getRegisterGeneralDataUseCase: GetRegisterGeneralDataUseCase,
   private val getPersonUseCase: GetPersonUseCase,
 ) : BaseViewModel() {
 
@@ -21,6 +23,9 @@ class HomeViewModel(
 
   private val _listHomeNormal = MutableSharedFlow<List<PersonsFake>>()
   val listHomeNormal = _listHomeNormal.asSharedFlow()
+
+  private val _getDataProfileGeneralData = MutableSharedFlow<ProfileGeneralData?>()
+  val getDataProfileGeneralData = _getDataProfileGeneralData.asSharedFlow()
 
 
   fun getList(typeVisual: TypeVisual) {
@@ -33,5 +38,14 @@ class HomeViewModel(
       }
     }
   }
+
+  fun getRegisterUserGeneralData() {
+    viewModelScope.launch {
+      delay(1000)
+      val result = getRegisterGeneralDataUseCase()
+      _getDataProfileGeneralData.emit(result)
+    }
+  }
+
 
 }

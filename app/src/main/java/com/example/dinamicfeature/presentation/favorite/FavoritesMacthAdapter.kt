@@ -6,13 +6,13 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.dinamicfeature.databinding.ItemEmptyListBinding
 import com.example.dinamicfeature.databinding.ItemFavoritesMacthsBinding
-import com.example.dinamicfeature.domain.models.PersonsFakeHome
+import com.example.dinamicfeature.domain.models.MyPersonsFake
 import com.example.extension.getDrawableByName
 import com.squareup.picasso.Picasso
 
-class FavoritesAdapter(
+class FavoritesMacthAdapter(
   private val context: Context,
-  private val profiles: List<PersonsFakeHome>
+  private val profiles: List<MyPersonsFake>
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
   private val data = profiles
   private val VIEW_TYPE_ITEM = 0
@@ -21,9 +21,9 @@ class FavoritesAdapter(
   class EmptyViewHolder(itemView: ItemEmptyListBinding) : RecyclerView.ViewHolder(itemView.root)
 
   class MyViewHolder(private val view: ItemFavoritesMacthsBinding) : RecyclerView.ViewHolder(view.root) {
-    fun bind(data: PersonsFakeHome, context: Context) {
+    fun bind(data: MyPersonsFake, context: Context) {
       val image = view.cardViewMatchs
-      val img = context.getDrawableByName(data.image)
+      val img = context.getDrawableByName(data.personsFake.image)
       Picasso.get().load(img).into(image)
     }
   }

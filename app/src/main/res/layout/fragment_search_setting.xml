@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <include
+            android:id="@+id/loading_container_shop"
+            layout="@layout/fragment_loading"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:elevation="@dimen/DEFAULT_100DP"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <include
+            android:id="@+id/container_toolbar_search_setting"
+            layout="@layout/item_toolbar_list_people"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/DEFAULT_TOOLBAR"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/view1"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/DEFAULT_10DP"
+            android:background="@color/DEFAULT_AZUL_APP_7"
+            app:layout_constraintTop_toBottomOf="@id/container_toolbar_search_setting" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/km"
+            style="@style/Potlid_normal_orange_16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/DEFAULT_20DP"
+            android:layout_marginEnd="@dimen/DEFAULT_20DP"
+            android:text="50km"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/view1" />
+
+        <SeekBar
+            android:id="@+id/seekBarAjuste"
+            style="@style/SeekBarStyle2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/DEFAULT_20DP"
+            android:layout_marginTop="@dimen/DEFAULT_10DP"
+            android:layout_marginEnd="@dimen/DEFAULT_20DP"
+            android:max="100"
+            android:progress="0"
+            android:textSize="@dimen/DEFAULT_20SP"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/km" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/description_km"
+            style="@style/Potlid_normal_14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/DEFAULT_20DP"
+            android:layout_marginTop="@dimen/DEFAULT_20DP"
+            android:text="Mostrar pessoas apenas nessa área"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/seekBarAjuste" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/DEFAULT_20DP"
+            style="@style/SwitchCompatStyle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/seekBarAjuste" />
+
+        <View
+            android:id="@+id/view2"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/DEFAULT_10DP"
+            android:layout_marginTop="@dimen/DEFAULT_20DP"
+            android:background="@color/DEFAULT_AZUL_APP_7"
+            app:layout_constraintTop_toBottomOf="@id/description_km" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_profile"
+            style="@style/Potlid_normal_14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/DEFAULT_20DP"
+            android:layout_marginTop="@dimen/DEFAULT_20DP"
+            android:text="Mostrar meu perfil"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/view2" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_profile_type"
+            style="@style/Potlid_normal_14sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/DEFAULT_20DP"
+            android:layout_marginTop="@dimen/DEFAULT_10DP"
+            android:layout_marginEnd="@dimen/DEFAULT_20DP"
+            android:drawableEnd="@drawable/baseline_navigate_next_ajuste"
+            android:gravity="start|center"
+            android:text="Mulheres"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_profile" />
+
+        <View
+            android:id="@+id/view3"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/DEFAULT_10DP"
+            android:layout_marginTop="@dimen/DEFAULT_20DP"
+            android:background="@color/DEFAULT_AZUL_APP_7"
+            app:layout_constraintTop_toBottomOf="@id/text_profile_type" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/container_faixa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/view3">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/faixa_etaria"
+                style="@style/Potlid_normal_orange_16sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/DEFAULT_20DP"
+                android:layout_marginEnd="@dimen/DEFAULT_20DP"
+                android:text="35-35"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/title_faixa_etaria"
+                style="@style/Potlid_normal_14sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/DEFAULT_20DP"
+                android:text="Faixa etária"
+                app:layout_constraintStart_toStartOf="@+id/seekBarAjuste_faixaetaria"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <SeekBar
+                android:id="@+id/seekBarAjuste_faixaetaria"
+                style="@style/SeekBarStyle2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/DEFAULT_20DP"
+                android:layout_marginTop="@dimen/DEFAULT_10DP"
+                android:layout_marginEnd="@dimen/DEFAULT_20DP"
+                android:max="100"
+                android:progress="0"
+                android:textSize="@dimen/DEFAULT_20SP"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/faixa_etaria" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/description_faixa_etaria"
+                style="@style/Potlid_normal_14sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/DEFAULT_20DP"
+                android:layout_marginTop="@dimen/DEFAULT_20DP"
+                android:text="Mostrar pessoas apenas nessa faixa"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/seekBarAjuste_faixaetaria" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/switc_faixa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/DEFAULT_20DP"
+                style="@style/SwitchCompatStyle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/seekBarAjuste_faixaetaria" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/busca"
+            style="@style/Potlid_normal_18sp"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@color/DEFAULT_AZUL_APP_7"
+            android:gravity="start|center"
+            android:text="   BUSCA PREMIUM"
+            android:textColor="@color/DEFAULT_WHITE"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/container_faixa" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/container_Photos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/busca">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/faixa_photos"
+                style="@style/Potlid_normal_orange_16sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/DEFAULT_20DP"
+                android:layout_marginEnd="@dimen/DEFAULT_20DP"
+                android:text="1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/title_photos"
+                style="@style/Potlid_normal_14sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/DEFAULT_20DP"
+                android:text="Numeros mínimo de fotos"
+                app:layout_constraintStart_toStartOf="@+id/seekBarAjuste_photos"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <SeekBar
+                android:id="@+id/seekBarAjuste_photos"
+                style="@style/SeekBarStyle2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/DEFAULT_20DP"
+                android:layout_marginTop="@dimen/DEFAULT_10DP"
+                android:layout_marginEnd="@dimen/DEFAULT_20DP"
+                android:max="19"
+                android:progress="0"
+                android:textSize="@dimen/DEFAULT_20SP"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/faixa_photos" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/description_photos"
+                style="@style/Potlid_normal_14sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/DEFAULT_20DP"
+                android:layout_marginTop="@dimen/DEFAULT_20DP"
+                android:text="Cambio"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/seekBarAjuste_photos" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/switc_photo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/DEFAULT_20DP"
+                style="@style/SwitchCompatStyle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/seekBarAjuste_photos" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/view4"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/DEFAULT_10DP"
+            android:background="@color/DEFAULT_AZUL_APP_7"
+            app:layout_constraintTop_toBottomOf="@id/container_Photos" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_interesse"
+            style="@style/Potlid_normal_14sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/DEFAULT_20DP"
+            android:layout_marginTop="@dimen/DEFAULT_10DP"
+            android:layout_marginEnd="@dimen/DEFAULT_20DP"
+            android:drawableEnd="@drawable/baseline_navigate_next_ajuste"
+            android:gravity="start|center"
+            android:text="Interesses"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/view4" />
+
+        <View
+            android:id="@+id/view5"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/DEFAULT_10DP"
+            android:layout_marginTop="@dimen/DEFAULT_10DP"
+            android:background="@color/DEFAULT_AZUL_APP_7"
+            app:layout_constraintTop_toBottomOf="@id/text_interesse" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_1"
+            style="@style/Potlid_normal_14sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/DEFAULT_20DP"
+            android:layout_marginTop="@dimen/DEFAULT_10DP"
+            android:layout_marginEnd="@dimen/DEFAULT_20DP"
+            android:drawableEnd="@drawable/baseline_navigate_next_ajuste"
+            android:gravity="start|center"
+            android:text="Interesses"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/view5" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_2"
+            style="@style/Potlid_normal_14sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/DEFAULT_20DP"
+            android:layout_marginTop="@dimen/DEFAULT_10DP"
+            android:layout_marginEnd="@dimen/DEFAULT_20DP"
+            android:drawableEnd="@drawable/baseline_navigate_next_ajuste"
+            android:gravity="start|center"
+            android:text="Signo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_1" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_3"
+            style="@style/Potlid_normal_14sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/DEFAULT_20DP"
+            android:layout_marginTop="@dimen/DEFAULT_10DP"
+            android:layout_marginEnd="@dimen/DEFAULT_20DP"
+            android:drawableEnd="@drawable/baseline_navigate_next_ajuste"
+            android:gravity="start|center"
+            android:text="Formação"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_2" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_4"
+            style="@style/Potlid_normal_14sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/DEFAULT_20DP"
+            android:layout_marginTop="@dimen/DEFAULT_10DP"
+            android:layout_marginEnd="@dimen/DEFAULT_20DP"
+            android:drawableEnd="@drawable/baseline_navigate_next_ajuste"
+            android:gravity="start|center"
+            android:text="Família"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_3" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_5"
+            style="@style/Potlid_normal_14sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/DEFAULT_20DP"
+            android:layout_marginTop="@dimen/DEFAULT_10DP"
+            android:layout_marginEnd="@dimen/DEFAULT_20DP"
+            android:drawableEnd="@drawable/baseline_navigate_next_ajuste"
+            android:gravity="start|center"
+            android:text="Vacina contra a..."
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_4" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/description"
+            style="@style/Potlid_normal_14sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/DEFAULT_AZUL_APP_7"
+            android:gravity="center"
+            android:padding="@dimen/DEFAULT_10DP"
+            android:layout_marginTop="@dimen/DEFAULT_10DP"
+            android:layout_marginBottom="@dimen/DEFAULT_60DP"
+            android:text="Vamos te mostrar pessoas que curtem a
+mesma vibe, mas você ainda poderá dar
+Match com qualquer pessoa, mesmo que ela
+não esteja nas suas seleções."
+            android:textColor="@color/DEFAULT_WHITE"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_5"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.core.widget.NestedScrollView>

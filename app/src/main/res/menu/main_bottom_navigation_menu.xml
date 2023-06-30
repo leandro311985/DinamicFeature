@@ -5,7 +5,7 @@
     <item
         android:id="@+id/navigation_home_fragment"
         android:enabled="true"
-        android:icon="@drawable/ic_app"
+        android:icon="@drawable/logopotlid"
         android:title="@string/HOME"
         app:labelVisibilityMode="selected" />
 
@@ -17,19 +17,19 @@
 
         <item
             android:id="@+id/navigation_favorites_fragment"
-            android:icon="@drawable/_166"
-            android:title="@string/search_people" />
+            android:icon="@drawable/favorite_app_potlid"
+            android:title="@string/title_favorits" />
 
 
         <item
             android:id="@+id/navigation_explorer_fragment"
-            android:icon="@drawable/baseline_content_paste_24"
+            android:icon="@drawable/search_app_potlid"
             android:title="@string/explorer" />
 
         <item
             android:id="@+id/navigation_profile"
             android:icon="@drawable/round_person_24"
-            android:title="@string/logout"
+            android:title="@string/USER_PROFILE"
             />
 
 </menu>
