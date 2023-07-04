@@ -126,6 +126,10 @@ dependencies {
 
     api('net.danlew:android.joda:2.12.5')
 
+    //viewpager2
+    api('androidx.viewpager2:viewpager2:1.0.0')
+    api('me.relex:circleindicator:2.1.6')
+
 
 
 }

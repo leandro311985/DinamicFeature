@@ -385,7 +385,7 @@
                 app:srcCompat="@drawable/btn_flash_notes_app_potlid" />
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/floating_action_button3"
+                android:id="@+id/floating_action_talvez"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_margin="16dp"
@@ -400,7 +400,7 @@
                 android:layout_margin="16dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/floating_action_button3"
+                app:layout_constraintTop_toBottomOf="@id/floating_action_talvez"
                 app:srcCompat="@drawable/btn_like_app_potlid" />
 
             <androidx.appcompat.widget.AppCompatImageView
@@ -410,7 +410,7 @@
                 android:layout_margin="16dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/floating_action_button_like"
-                app:layout_constraintTop_toBottomOf="@id/floating_action_button3"
+                app:layout_constraintTop_toBottomOf="@id/floating_action_talvez"
                 app:srcCompat="@drawable/btn_negative_app_potlid" />
 
             <androidx.appcompat.widget.AppCompatImageView
@@ -420,7 +420,7 @@
                 android:layout_margin="16dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/floating_action_button_dislike"
-                app:layout_constraintTop_toBottomOf="@id/floating_action_button3"
+                app:layout_constraintTop_toBottomOf="@id/floating_action_talvez"
                 app:srcCompat="@drawable/btn_update" />
 
 

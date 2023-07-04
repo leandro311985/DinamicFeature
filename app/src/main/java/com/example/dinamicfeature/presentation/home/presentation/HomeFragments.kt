@@ -1,14 +1,15 @@
 package com.example.dinamicfeature.presentation.home.presentation
 
 import android.os.Bundle
+import android.view.MotionEvent
 import android.view.View
-import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.dinamicfeature.R
 import com.example.dinamicfeature.baseApp.commons.BaseFragment
 import com.example.dinamicfeature.databinding.FragmentHomeBinding
@@ -17,12 +18,12 @@ import com.example.dinamicfeature.domain.models.ProfileGeneralData
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class HomeFragments : BaseFragment(R.layout.fragment_home),HomeListener {
+class HomeFragments : BaseFragment(R.layout.fragment_home), HomeListener, HomeViewPagerListener {
 
   private lateinit var binding: FragmentHomeBinding
   private val viewModel: HomeViewModel by viewModel()
   private var data = ProfileGeneralData()
-
+  private lateinit var adapterViewPager: PhotoPagerAdapter
 
   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
     super.onViewCreated(view, savedInstanceState)
@@ -43,9 +44,7 @@ class HomeFragments : BaseFragment(R.layout.fragment_home),HomeListener {
 
   private fun setElements() = binding.apply {
     containerToolbar.title.text = "Home"
-    containerToolbar.imgBack.setOnClickListener {
-      findNavController().navigateUp()
-    }
+    containerToolbar.imgBack.isVisible = false
     containerTimeLine.iconeMenu4.setOnClickListener {
       getList(TypeVisual.GRADE)
     }
@@ -58,7 +57,6 @@ class HomeFragments : BaseFragment(R.layout.fragment_home),HomeListener {
     loadingContainerHome.loadingContainer.isVisible = isVisible
     containerToolbar.backgraund.isVisible = !isVisible
     containerTimeLine.containerLineTime.isVisible = !isVisible
-    rcHome.isVisible = !isVisible
   }
 
   private fun getData() {
@@ -77,9 +75,9 @@ class HomeFragments : BaseFragment(R.layout.fragment_home),HomeListener {
           viewModel.getDataProfileGeneralData.collect { dataResult ->
             if (dataResult != null) {
               data = dataResult
-              getList(TypeVisual.GRADE)
-            }else{
-              getList(TypeVisual.GRADE)
+              getList(TypeVisual.NORMAL)
+            } else {
+              getList(TypeVisual.NORMAL)
 
             }
           }
@@ -87,8 +85,8 @@ class HomeFragments : BaseFragment(R.layout.fragment_home),HomeListener {
         launch {
           viewModel.listHomeGrade.collect { result ->
             binding.rcHome.isVisible = true
-            binding.rcHomeNormal.isVisible = false
-            if (data == null){
+            binding.viewPager.isVisible = false
+            if (data == null) {
               upDateList(result as MutableList<PersonsFake>)
             } else if (data.masculino == true) {
               val type = "man"
@@ -120,10 +118,10 @@ class HomeFragments : BaseFragment(R.layout.fragment_home),HomeListener {
         launch {
           viewModel.listHomeNormal.collect { result ->
             binding.rcHome.isVisible = false
-            binding.rcHomeNormal.isVisible = true
+            binding.viewPager.isVisible = true
             if (data.masculino == true) {
               val type = "man"
-              val list1 = result.filter { it?.type == type }
+              val list1 = result.filter { it.type == type }
               upDateListNormal(list1 as MutableList<PersonsFake>)
 
             } else if (data.feminino == true) {
@@ -154,21 +152,27 @@ class HomeFragments : BaseFragment(R.layout.fragment_home),HomeListener {
   private fun upDateList(emmanuelleModeViewObject: List<PersonsFake>) {
     binding.apply {
       val gridView = binding.rcHome
-      val adapter = ListHomeAdapter(this@HomeFragments,requireContext(), emmanuelleModeViewObject)
+      val adapter = ListHomeAdapter(this@HomeFragments, requireContext(), emmanuelleModeViewObject)
       gridView.adapter = adapter
     }
   }
 
   private fun upDateListNormal(personsFake: List<PersonsFake>) {
-    binding.apply {
-      val gridView = binding.rcHomeNormal
-      gridView.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
-      val adapter = ListHomeNormalAdapter(this@HomeFragments,requireContext(), personsFake)
-      gridView.adapter = adapter
+    binding.viewPager.apply {
+      adapterViewPager = PhotoPagerAdapter(this@HomeFragments, requireContext(), personsFake)
+      binding.viewPager.adapter = adapterViewPager
+
     }
   }
 
   override fun onItemClick(personsFake: PersonsFake, positionInt: Int) {
     findNavController().navigate(HomeFragmentsDirections.actionHomeFragmentListToFragmentDetail(personsFake))
-    Toast.makeText(requireContext(), "${personsFake.name}", Toast.LENGTH_SHORT).show()  }
+  }
+
+  override fun onItemClickListenerViewPager(personsFake: PersonsFake) {
+    val nextPage = binding.viewPager.currentItem + 1
+    if (nextPage < adapterViewPager.itemCount) {
+      binding.viewPager.currentItem = nextPage
+    }
+  }
 }

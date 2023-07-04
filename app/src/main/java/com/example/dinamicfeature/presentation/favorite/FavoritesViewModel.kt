@@ -21,6 +21,9 @@ class FavoritesViewModel(private val getPersonHomeUseCase: GetPersonHomeUseCase,
   private val _myListHome = MutableSharedFlow<MutableList<MyPersonsFake>>()
   val myListHome = _myListHome.asSharedFlow()
 
+  private val _myListHomeTalvez = MutableSharedFlow<MutableList<MyPersonsFake>>()
+  val myListHomeTalvez = _myListHomeTalvez.asSharedFlow()
+
 
   fun getList() {
     viewModelScope.launch {
@@ -33,7 +36,10 @@ class FavoritesViewModel(private val getPersonHomeUseCase: GetPersonHomeUseCase,
     viewModelScope.launch {
       val result = getMyListUseCase()
       delay(500)
-      _myListHome.emit(result as MutableList<MyPersonsFake>)
+      val list1 = result.filter { it?.likeTo == true }
+      _myListHome.emit(list1 as MutableList<MyPersonsFake>)
+      val list2 = result.filter { it?.talvez == true }
+      _myListHomeTalvez.emit(list2 as MutableList<MyPersonsFake>)
     }
   }
 }

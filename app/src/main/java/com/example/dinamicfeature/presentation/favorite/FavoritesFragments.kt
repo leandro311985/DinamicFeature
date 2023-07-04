@@ -44,7 +44,7 @@ class FavoritesFragments : BaseFragment(R.layout.fragment_favorites) {
     viewModel.getList()
   }
 
-  private fun setElements() = binding.apply{
+  private fun setElements() = binding.apply {
     containerToolbar.title.text = "Favoritos"
     containerToolbar.imgBack.setOnClickListener {
       findNavController().navigateUp()
@@ -63,18 +63,25 @@ class FavoritesFragments : BaseFragment(R.layout.fragment_favorites) {
     containerLinearMyLikes.isVisible = !isVisible
   }
 
-  private fun myMatchs(listMatchs:MutableList<MyPersonsFake>) = binding.apply{
+  private fun myMatchs(listMatchs: MutableList<MyPersonsFake>) = binding.apply {
     val rc = binding.rcMyLikes
     rc.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-    val adapter = FavoritesMacthAdapter(requireContext(),listMatchs)
+    val adapter = FavoritesMacthAdapter(requireContext(), listMatchs)
     rc.adapter = adapter
+  }
+
+  private fun myMatchsTalvez(listTalvez: MutableList<MyPersonsFake>) = binding.apply {
+    val rcPerhaps = binding.rcPerhaps
+    rcPerhaps.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+    val adapterPerhaps = FavoritesMacthAdapter(requireContext(), listTalvez)
+    rcPerhaps.adapter = adapterPerhaps
   }
 
   private fun upDateList(list: List<PersonsFakeHome>) {
     binding.apply {
       val rcMessage = binding.rcMessage
       rcMessage.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
-      val adapterMessage = FavoritesMenssagesAdapter(requireContext(),list)
+      val adapterMessage = FavoritesMenssagesAdapter(requireContext(), list)
       rcMessage.adapter = adapterMessage
 
       val rcLike = binding.rcLike
@@ -84,13 +91,9 @@ class FavoritesFragments : BaseFragment(R.layout.fragment_favorites) {
 
       val rcMyLike = binding.rcFavorites
       rcMyLike.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-      val adapterMyLike = FavoritesAdapter(requireContext(),list)
+      val adapterMyLike = FavoritesAdapter(requireContext(), list)
       rcMyLike.adapter = adapterMyLike
 
-      val rcPerhaps = binding.rcPerhaps
-      rcPerhaps.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-      val adapterPerhaps = FavoritesAdapter(requireContext(),list)
-      rcPerhaps.adapter = adapterPerhaps
     }
   }
 
@@ -107,6 +110,12 @@ class FavoritesFragments : BaseFragment(R.layout.fragment_favorites) {
         launch {
           viewModel.myListHome.collect { result ->
             myMatchs(result)
+            loading(false)
+          }
+        }
+        launch {
+          viewModel.myListHomeTalvez.collect { result ->
+            myMatchsTalvez(result)
             loading(false)
           }
         }

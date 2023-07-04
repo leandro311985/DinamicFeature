@@ -358,6 +358,16 @@
             app:popUpTo="@id/navigation_Config_fragment"
             app:popUpToInclusive="true"/>
 
+        <action
+            android:id="@+id/action_Config_fragment_to_avatar"
+            app:destination="@id/navigation_avatar_fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/navigation_Config_fragment"
+            app:popUpToInclusive="true"/>
+
     </fragment>
 
     <fragment
@@ -365,6 +375,13 @@
         android:name="com.example.dinamicfeature.presentation.searchSetting.SearchSettingFragment"
         android:label="searchSetting"
         tools:layout="@layout/fragment_search_setting">
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_avatar_fragment"
+        android:name="com.example.dinamicfeature.presentation.avatar.AvatarFragment"
+        android:label="avatar"
+        tools:layout="@layout/fragment_avatar">
     </fragment>
 
 

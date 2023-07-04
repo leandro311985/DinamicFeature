@@ -28,7 +28,7 @@ class ListHomeAdapter(
     val card = cards[position]
 
     val binding = ItemPeopleListHomeBinding.inflate(LayoutInflater.from(parent?.context), parent, false)
-    val img = context.getDrawableByName(card.image)
+    val img = context.getDrawableByName(card.image[0])
     val title = context.getStringByName(card.name)
     Picasso.get().load(img).into(binding.imageItem)
     binding.titleRc.text = title

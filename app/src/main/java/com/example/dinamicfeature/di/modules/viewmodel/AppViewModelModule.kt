@@ -23,7 +23,7 @@ val appViewModelModule = module {
   viewModel { AppViewModel(get()) }
   viewModel { LoginViewModel(get(), get()) }
   viewModel { MySignatureViewModel(get()) }
-  viewModel { ProfileViewModel(get(), get()) }
+  viewModel { ProfileViewModel(get(), get(),get(),get()) }
   viewModel { SearchViewModel(get(), get(), get(),get(),get(),get()) }
   viewModel { CreateAccountViewModel(get(), get(), get()) }
   viewModel { SplashViewModel(get()) }

@@ -23,7 +23,7 @@ class FavoritesMacthAdapter(
   class MyViewHolder(private val view: ItemFavoritesMacthsBinding) : RecyclerView.ViewHolder(view.root) {
     fun bind(data: MyPersonsFake, context: Context) {
       val image = view.cardViewMatchs
-      val img = context.getDrawableByName(data.personsFake.image)
+      val img = context.getDrawableByName(data.personsFake.image[0])
       Picasso.get().load(img).into(image)
     }
   }

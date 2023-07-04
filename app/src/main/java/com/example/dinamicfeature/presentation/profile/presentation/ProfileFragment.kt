@@ -1,5 +1,8 @@
 package com.example.dinamicfeature.presentation.profile.presentation
 
+import android.content.res.Resources
+import android.location.Address
+import android.location.Geocoder
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -20,6 +23,7 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import com.squareup.picasso.Picasso
+import java.util.*
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -39,6 +43,11 @@ class ProfileFragment : BaseFragment(R.layout.fragment_profile) {
 
   override fun initView(view: View) {
     setViewBinding(view)
+    binding.containerToolbarProfile.title.text = "Meu Perfil"
+    binding.containerToolbarProfile.icToolbarMenu.isVisible = true
+    binding.containerToolbarProfile.icToolbarMenu.setImageDrawable(resources.getDrawable(R.drawable.baseline_logout_24))
+    viewModel.getLocation()
+    viewModel.getMyList()
     setLoading(true)
     auth = FirebaseAuth.getInstance()
     getDataUser()
@@ -61,6 +70,10 @@ class ProfileFragment : BaseFragment(R.layout.fragment_profile) {
     cardView1.isVisible = !isVisible
     cardView2.isVisible = !isVisible
     cardView3.isVisible = !isVisible
+    containerUser.view.isVisible = !isVisible
+    containerUser.logoImageView.isVisible = !isVisible
+    containerUser.name.isVisible = !isVisible
+    containerUser.iconeLocation.isVisible = !isVisible
   }
 
   private fun getPhotoFirebase(userId:String){
@@ -80,7 +93,7 @@ class ProfileFragment : BaseFragment(R.layout.fragment_profile) {
 
       Picasso.get()
         .load(photo)
-        .placeholder(R.drawable.ic_person)
+        .placeholder(R.drawable.profile3)
         .into(imageProfile)
     }
   }
@@ -115,8 +128,36 @@ class ProfileFragment : BaseFragment(R.layout.fragment_profile) {
           viewModel.photoUser.collect { photo ->
           }
         }
+
+        launch {
+          viewModel.location.collect { location ->
+            getNeighborhoodFromLocation(location.latitude?:0.0,location.longitude?:0.0)
+          }
+        }
+
+        launch {
+          viewModel.myListLikeSize.collect { size ->
+           binding.sizeLike.text = size.toString()
+          }
+        }
+        launch {
+          viewModel.myListHomeTalvez.collect { size ->
+           binding.infoTextNumber3.text = size.toString()
+          }
+        }
       }
     }
+  }
+
+  private fun getNeighborhoodFromLocation(latitude: Double, longitude: Double) {
+    val geocoder = Geocoder(requireContext(), Locale.getDefault())
+    val addresses: MutableList<Address> = geocoder.getFromLocation(latitude, longitude, 1) as MutableList<Address>
+
+    if (addresses.isNotEmpty()) {
+      val address: Address = addresses[0]
+      binding.containerUser.local.text = address.subLocality ?: ""
+    }
+
   }
 }
 

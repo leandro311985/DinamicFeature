@@ -22,7 +22,7 @@ class ListHomeNormalAdapter(
     fun bind(data: PersonsFake, context: Context, homeListener: HomeListener) {
       val image = view.imageItem
       view.titleRc.text = context.getStringByName(data.name)
-      val img = context.getDrawableByName(data.image)
+      val img = context.getDrawableByName(data.image[0])
       Picasso.get().load(img).into(image)
       view.cardViewPeople.setOnClickListener {
         homeListener.onItemClick(data, position)

@@ -84,13 +84,6 @@ class MainActivity : BaseActivity() {
     setCollectors()
   }
 
-  private fun hideActionBar(isHide: Boolean) {
-    val action = supportActionBar
-    if (isHide) action?.hide() else action?.show()
-    action?.setDisplayHomeAsUpEnabled(true)
-    action?.setHomeAsUpIndicator(R.drawable.baseline_menu_24)
-  }
-
 
   private fun setUiComponents() {
     val navHostFragment =
@@ -129,7 +122,7 @@ class MainActivity : BaseActivity() {
   }
 
   private fun topLocation() {
-    topLevelLocation.add(getString(R.string.title_searchpeople))
+    topLevelLocation.add(getString(R.string.title_profile))
   }
 
   private fun getLocation() {

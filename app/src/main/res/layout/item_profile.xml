@@ -10,7 +10,7 @@
         android:layout_width="@dimen/DEFAULT_50DP"
         android:layout_height="@dimen/DEFAULT_50DP"
         android:layout_marginStart="@dimen/DEFAULT_30DP"
-        android:layout_marginTop="@dimen/DEFAULT_20DP"
+        android:layout_marginTop="@dimen/DEFAULT_10DP"
         android:src="@drawable/norris"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -20,7 +20,7 @@
         style="@style/Potlid_normal_18sp"
         android:layout_width="@dimen/DEFAULT_110DP"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/DEFAULT_20DP"
+        android:layout_marginTop="@dimen/DEFAULT_10DP"
         android:layout_marginStart="@dimen/DEFAULT_10DP"
         android:text="CHUCK ROBERTO"
         android:maxLines="1"
@@ -46,7 +46,7 @@
         android:layout_width="@dimen/DEFAULT_4DP"
         android:layout_height="@dimen/DEFAULT_50DP"
         android:layout_marginStart="@dimen/DEFAULT_10DP"
-        android:layout_marginTop="@dimen/DEFAULT_20DP"
+        android:layout_marginTop="@dimen/DEFAULT_10DP"
         android:background="@color/DEFAULT_GRAY_APP"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@id/name"
@@ -57,10 +57,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/DEFAULT_8DP"
-        android:layout_marginTop="@dimen/DEFAULT_10DP"
         android:src="@drawable/baseline_location_on_24"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/view"
+        app:layout_constraintStart_toEndOf="@id/view"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatTextView
@@ -69,7 +68,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/DEFAULT_10DP"
-        android:layout_marginBottom="@dimen/DEFAULT_5DP"
+        android:layout_marginBottom="@dimen/DEFAULT_10DP"
         app:autoSizeTextType="uniform"
         android:maxLines="2"
         android:text="Brazil\nSão paulo"

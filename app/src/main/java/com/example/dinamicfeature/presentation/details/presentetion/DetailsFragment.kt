@@ -58,17 +58,19 @@ class DetailsFragment : BaseFragment(R.layout.fragment_details) {
   private fun setElements() = binding.apply {
 
     binding.nameUser.text = personsFake.name.let { context?.getStringByName(it) }
-    context?.getDrawableByName(personsFake.image)?.let { Picasso.get().load(it).into(binding.imageViewPhoto) }
+    context?.getDrawableByName(personsFake.image[0])?.let { Picasso.get().load(it).into(binding.imageViewPhoto) }
     back.setOnClickListener {
       findNavController().navigateUp()
 
     }
     floatingActionButtonLike.setOnClickListener {
-      val text = getString(R.string.snack_like,context?.getStringByName(personsFake.name))
+      val text = getString(R.string.snack_like, context?.getStringByName(personsFake.name))
       if (it.isClickable) {
-        requireContext().createSnackbar( floatingActionButtonLike,
+        requireContext().createSnackbar(
+          floatingActionButtonLike,
           text,
-          Snackbar.LENGTH_LONG)
+          Snackbar.LENGTH_LONG
+        )
 
         val list = MyPersonsFake(personsFake, negative = false, likeTo = true, matchs = false, talvez = false, myLikes = false)
         viewModel.saveLikeList(list)
@@ -76,10 +78,25 @@ class DetailsFragment : BaseFragment(R.layout.fragment_details) {
     }
     floatingActionButtonCancel.setOnClickListener {
       if (it.isClickable) {
-        val list = MyPersonsFake(personsFake,false,false,false,false,false)
-        requireContext().createSnackbar( floatingActionButtonLike,
+        val list = MyPersonsFake(personsFake, false, false, false, false, false)
+        requireContext().createSnackbar(
+          floatingActionButtonLike,
           getText(R.string.snack_like).toString(),
-          Snackbar.LENGTH_LONG)
+          Snackbar.LENGTH_LONG
+        )
+      }
+    }
+    floatingActionTalvez.setOnClickListener {
+      if (it.isClickable) {
+        val text = getString(R.string.snack_talvez, context?.getStringByName(personsFake.name))
+
+        val list = MyPersonsFake(personsFake, negative = false, likeTo = false, matchs = false, talvez = true, myLikes = false)
+        requireContext().createSnackbar(
+          floatingActionButtonLike,
+          text,
+          Snackbar.LENGTH_LONG
+        )
+        viewModel.saveLikeList(list)
       }
     }
   }

@@ -39,7 +39,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:numColumns="2"
-        android:visibility="visible"
+        android:visibility="gone"
         android:horizontalSpacing="@dimen/DEFAULT_10DP"
         android:layout_marginEnd="@dimen/DEFAULT_20DP"
         android:layout_marginStart="@dimen/DEFAULT_20DP"
@@ -49,17 +49,19 @@
         app:layout_constraintTop_toBottomOf="@id/container_time_line"
         tools:listitem="@layout/item_people_list_home" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rc_home_normal"
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:visibility="gone"
+        android:visibility="visible"
+        tools:itemCount="1"
+        tools:listitem="@layout/item_home_view_page"
         android:layout_marginEnd="@dimen/DEFAULT_20DP"
         android:layout_marginStart="@dimen/DEFAULT_20DP"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/container_time_line"
-        tools:listitem="@layout/item_people_list_home" />
+        app:layout_constraintTop_toBottomOf="@id/container_time_line" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -36,7 +36,8 @@
 
 
     <string name="success">sucesso</string>
-    <string name="snack_like">Voçê adicionou %s ao favoritos</string>
+    <string name="snack_like">Voçê curtiu a foto de %s</string>
+    <string name="snack_talvez">Voçê adicionou a foto de %s na lista de talvez</string>
     <string name="my_signature">Assinatura</string>
     <string name="auth_invalid">Autenticação inválida</string>
     <string name="error_auth_caracter">Falha na autenticação, a senha deve ter pelo menos 6 caracteres</string>

@@ -23,7 +23,7 @@ class PeopleCardAdapter(
   override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
     val card = cards[position]
     val binding = ItemPeopleListBinding.inflate(LayoutInflater.from(parent?.context), parent, false)
-    val img = context.getDrawableByName(card.image)
+    val img = context.getDrawableByName(card.image[0])
     val title = context.getStringByName(card.name)
     val subTitle = context.getStringByName(card.end)
     Picasso.get().load(img).into(binding.imageItem)
