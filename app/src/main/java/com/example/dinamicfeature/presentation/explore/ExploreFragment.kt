@@ -21,8 +21,6 @@ class ExploreFragment : BaseFragment(R.layout.fragment_explore) {
   private lateinit var binding: FragmentExploreBinding
   private val viewModel: ExploreViewModel by viewModel()
 
-
-
   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
     super.onViewCreated(view, savedInstanceState)
     initView(view)
@@ -63,7 +61,7 @@ class ExploreFragment : BaseFragment(R.layout.fragment_explore) {
   }
 
   private fun setElements() = binding.apply{
-    containerToolbarExplore.icToolbarMenu.isVisible= true
+    containerToolbarExplore.icToolbarMenu.isVisible = true
     containerToolbarExplore.icToolbarMenu.setOnClickListener {
       findNavController().navigate(ExploreFragmentDirections.actionNavigationExplorerFragmentToConfigFragment())
     }

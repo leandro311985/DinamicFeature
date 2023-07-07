@@ -46,6 +46,7 @@ class FavoritesFragments : BaseFragment(R.layout.fragment_favorites) {
 
   private fun setElements() = binding.apply {
     containerToolbar.title.text = "Favoritos"
+    containerToolbar.icToolbarMenu.isVisible = true
     containerToolbar.imgBack.setOnClickListener {
       findNavController().navigateUp()
     }

@@ -38,10 +38,36 @@ fun Context.createSnackbar(
     snackbar.setAction(titleAction, listener ?: View.OnClickListener { })
   }
 
-  snackbarView.setBackgroundColor(Color.parseColor("#A2DAFD"))
+  snackbarView.setBackgroundColor(Color.parseColor("#5A93E1"))
   val snackTextView =
     snackbarView.findViewById<TextView>(com.google.android.material.R.id.snackbar_text)
   snackTextView.maxLines = 4
 
   snackbar.show()
+}
+
+fun countFilledFields(field1: String?, field2: String?, field3: String?, field4: String?,field5: String?): Int {
+  var count = 0
+
+  if (field1?.isNotEmpty() == true) {
+    count++
+  }
+
+  if (field2?.isNotEmpty() == true) {
+    count++
+  }
+
+  if (field3?.isNotEmpty() == true) {
+    count++
+  }
+
+  if (field4?.isNotEmpty() == true) {
+    count++
+  }
+
+  if (field5?.isNotEmpty() == true) {
+    count++
+  }
+
+  return count
 }

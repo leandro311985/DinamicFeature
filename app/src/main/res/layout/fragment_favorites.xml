@@ -49,7 +49,7 @@
                     style="@style/Potlid_normal_18sp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Macths"
+                    android:text="Matchs"
                     android:textColor="@color/DEFAULT_TEXT_REGISTER" />
 
                 <TextView
@@ -131,7 +131,7 @@
                     style="@style/Potlid_normal_18sp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Curtiram voçê"
+                    android:text="Curtiram você"
                     android:textColor="@color/DEFAULT_TEXT_REGISTER" />
 
                 <TextView

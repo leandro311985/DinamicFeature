@@ -63,29 +63,29 @@ class ListPeopleResult : BaseFragment(R.layout.fragment_search_people_list), Car
 
         launch {
           viewModel.getDataProfileGeneralData.collect { result ->
-            if (result?.masculino == true) {
-              val type = "man"
-              val list1 = listFake.filter { it?.type == type }
-              upDateList(list1 as MutableList<PersonsFake>)
-
-            } else if (result?.feminino == true) {
-              val type = "femi"
-
-              val list2 = listFake.filter { it?.type == type }
-              upDateList(list2 as MutableList<PersonsFake>)
-
-            } else if (result?.lgbtqa == true) {
-              val type = "lgbtqa"
-              val list3 = listFake.filter { it?.type == type }
-              upDateList(list3 as MutableList<PersonsFake>)
-
-            } else if (result?.masculino == true && result.feminino == true) {
-              val list4 = listFake.filter { result.masculino == true && result.masculino == true }
-              upDateList(list4 as MutableList<PersonsFake>)
-
-            } else {
-              upDateList(listFake as MutableList<PersonsFake>)
-            }
+//            if (result?.masculino == true) {
+//              val type = "man"
+//              val list1 = listFake.filter { it?.type == type }
+//              upDateList(list1 as MutableList<PersonsFake>)
+//
+//            } else if (result?.feminino == true) {
+//              val type = "femi"
+//
+//              val list2 = listFake.filter { it?.type == type }
+//              upDateList(list2 as MutableList<PersonsFake>)
+//
+//            } else if (result?.lgbtqa == true) {
+//              val type = "lgbtqa"
+//              val list3 = listFake.filter { it?.type == type }
+//              upDateList(list3 as MutableList<PersonsFake>)
+//
+//            } else if (result?.masculino == true && result.feminino == true) {
+//              val list4 = listFake.filter { result.masculino == true && result.masculino == true }
+//              upDateList(list4 as MutableList<PersonsFake>)
+//
+//            } else {
+//              upDateList(listFake as MutableList<PersonsFake>)
+//            }
 
           }
         }

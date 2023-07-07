@@ -16,6 +16,7 @@ import com.example.dinamicfeature.baseApp.commons.BaseFragment
 import com.example.dinamicfeature.databinding.FragmentPhysicalProfileBinding
 import com.example.dinamicfeature.domain.models.PhysicalData
 import com.example.dinamicfeature.domain.models.ProfileBasicDataUsers
+import com.example.extension.countFilledFields
 import com.google.android.material.chip.Chip
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
@@ -58,7 +59,8 @@ class PhysicalProfileFragment : BaseFragment(R.layout.fragment_physical_profile)
       data.yourAppearance = listAppearance
       data.bodyType = listBodyType
       data.height = varHeight
-
+      val filledCount = countFilledFields(heightTextView.text.toString(),null,null,null,null)
+      data.countFilledFields = filledCount
       viewModel.saveRegisterDbPhysicalData(data)
     }
 

@@ -2,9 +2,11 @@ package com.example.dinamicfeature.presentation.home.presentation
 
 import androidx.lifecycle.viewModelScope
 import com.example.dinamicfeature.baseApp.commons.BaseViewModel
+import com.example.dinamicfeature.domain.models.MyPersonsFake
 import com.example.dinamicfeature.domain.models.PersonsFake
 import com.example.dinamicfeature.domain.models.PersonsFakeHome
 import com.example.dinamicfeature.domain.models.ProfileGeneralData
+import com.example.dinamicfeature.domain.useCases.main.SaveMyListFakeUseCase
 import com.example.dinamicfeature.domain.useCases.users.GetPersonHomeUseCase
 import com.example.dinamicfeature.domain.useCases.users.GetPersonUseCase
 import com.example.dinamicfeature.domain.useCases.users.GetRegisterGeneralDataUseCase
@@ -16,6 +18,7 @@ import kotlinx.coroutines.launch
 class HomeViewModel(
   private val getRegisterGeneralDataUseCase: GetRegisterGeneralDataUseCase,
   private val getPersonUseCase: GetPersonUseCase,
+  private val saveListFakeDataUseCase: SaveMyListFakeUseCase,
 ) : BaseViewModel() {
 
   private val _listHomeGrade = MutableSharedFlow<List<PersonsFake>>()
@@ -47,5 +50,11 @@ class HomeViewModel(
     }
   }
 
+  fun saveLikeList(personsFake: MyPersonsFake) {
+    viewModelScope.launch {
+      delay(500)
+      saveListFakeDataUseCase(personsFake)
+    }
+  }
 
 }

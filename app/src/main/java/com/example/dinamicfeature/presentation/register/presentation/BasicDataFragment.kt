@@ -12,6 +12,8 @@ import com.example.dinamicfeature.R
 import com.example.dinamicfeature.baseApp.commons.BaseFragment
 import com.example.dinamicfeature.databinding.FragmentBasicDataBinding
 import com.example.dinamicfeature.domain.models.ProfileBasicDataUsers
+import com.example.extension.countFilledFields
+import com.example.extension.getStringByName
 import com.example.extension.hideKeyboard
 import com.google.android.material.datepicker.MaterialDatePicker
 import kotlinx.coroutines.launch
@@ -39,8 +41,6 @@ class BasicDataFragment : BaseFragment(R.layout.fragment_basic_data) {
 
   override fun initView(view: View) {
     setViewBinding(view)
-
-
   }
 
   override fun setViewBinding(view: View) {
@@ -60,6 +60,8 @@ class BasicDataFragment : BaseFragment(R.layout.fragment_basic_data) {
       data.street = binding.editEstado.text.toString()
       data.nickname = binding.editName.text.toString()
       data.country = country
+      val filledCount = countFilledFields(binding.editCidade.text.toString(), binding.editEstado.text.toString(), binding.editName.text.toString(),selectedDateVar,null)
+      data.countFilledFields = filledCount
       viewModel.saveRegisterDb(data)
     }
 
@@ -71,8 +73,6 @@ class BasicDataFragment : BaseFragment(R.layout.fragment_basic_data) {
       findNavController().navigateUp()
     }
 
-    val nome = editName.text.toString()
-    val selectedDateText = editData.text.toString()
 
     val spinnerCountries = editPais
     val countryNames = resources.getStringArray(R.array.country_names)
@@ -114,13 +114,6 @@ class BasicDataFragment : BaseFragment(R.layout.fragment_basic_data) {
       datePicker.show(requireActivity().supportFragmentManager, "ReminderDatePicker")
     }
 
-    if (nome.isEmpty() || selectedDateText.isEmpty()) {
-      // Um ou mais campos estão vazios
-      // Realize ações apropriadas, como exibir uma mensagem de erro
-    } else {
-      // Todos os campos estão preenchidos
-      // Continue com o processamento dos dados
-    }
   }
 
   private fun setCollectors() {
@@ -136,10 +129,9 @@ class BasicDataFragment : BaseFragment(R.layout.fragment_basic_data) {
           viewModel.getDataRegister.collect { result ->
             if (result != null) {
               if (result.nickname != null) binding.editName.setText(result.nickname.toString())
-                binding.editData.setText(result.selectedDate)
-                binding.editCidade.setText(result.city)
-               binding.editEstado.setText(result.street)
-
+              binding.editData.setText(result.selectedDate)
+              binding.editCidade.setText(result.city)
+              binding.editEstado.setText(result.street)
 
               selectedDateVar = result.selectedDate ?: ""
               countryDefault = result.country.toString()

@@ -75,6 +75,10 @@
     <string name="PROVISIONING_WIFI_MODAL_TITLE">Wi-Fi</string>
     <string name="PROVISIONING_WIFI_MODAL_EXPLANATION">Para continuar precisamos que o Wi-Fi esteja ligado</string>
 
+    <string name="mural">Um relacionamento sério</string>
+    <string name="mural_amizade">Só amizade</string>
+
+
     <string name="mulherNameHome">Thais, 35</string>
     <string name="mulher2NameHome">Monica, 27</string>
     <string name="mulher3NameHome">Silvia, 35</string>

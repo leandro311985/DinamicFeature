@@ -1,15 +1,12 @@
 package com.example.dinamicfeature.presentation.home.presentation
 
 import android.os.Bundle
-import android.view.MotionEvent
 import android.view.View
 import androidx.core.view.isVisible
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.dinamicfeature.R
 import com.example.dinamicfeature.baseApp.commons.BaseFragment
 import com.example.dinamicfeature.databinding.FragmentHomeBinding
@@ -43,6 +40,10 @@ class HomeFragments : BaseFragment(R.layout.fragment_home), HomeListener, HomeVi
   }
 
   private fun setElements() = binding.apply {
+    containerToolbar.icToolbarMenu.isVisible = true
+    containerToolbar.icToolbarMenu.setOnClickListener {
+      findNavController().navigate(HomeFragmentsDirections.actionNavigationHomeFragmentToConfigFragment())
+    }
     containerToolbar.title.text = "Home"
     containerToolbar.imgBack.isVisible = false
     containerTimeLine.iconeMenu4.setOnClickListener {
@@ -86,31 +87,7 @@ class HomeFragments : BaseFragment(R.layout.fragment_home), HomeListener, HomeVi
           viewModel.listHomeGrade.collect { result ->
             binding.rcHome.isVisible = true
             binding.viewPager.isVisible = false
-            if (data == null) {
-              upDateList(result as MutableList<PersonsFake>)
-            } else if (data.masculino == true) {
-              val type = "man"
-              val list1 = result.filter { it.type == type }
-              upDateList(list1 as MutableList<PersonsFake>)
-
-            } else if (data.feminino == true) {
-              val type = "femi"
-
-              val list2 = result.filter { it.type == type }
-              upDateList(list2 as MutableList<PersonsFake>)
-
-            } else if (data.lgbtqa == true) {
-              val type = "lgbtqa"
-              val list3 = result.filter { it.type == type }
-              upDateList(list3 as MutableList<PersonsFake>)
-
-            } else if (data.masculino == true && data.feminino == true) {
-              val list4 = result.filter { data.masculino == true && data.feminino == true }
-              upDateList(list4 as MutableList<PersonsFake>)
-
-            } else {
-              upDateList(result as MutableList<PersonsFake>)
-            }
+            upDateList(result as MutableList<PersonsFake>)
             loading(false)
           }
         }
@@ -119,29 +96,7 @@ class HomeFragments : BaseFragment(R.layout.fragment_home), HomeListener, HomeVi
           viewModel.listHomeNormal.collect { result ->
             binding.rcHome.isVisible = false
             binding.viewPager.isVisible = true
-            if (data.masculino == true) {
-              val type = "man"
-              val list1 = result.filter { it.type == type }
-              upDateListNormal(list1 as MutableList<PersonsFake>)
-
-            } else if (data.feminino == true) {
-              val type = "femi"
-
-              val list2 = result.filter { it.type == type }
-              upDateListNormal(list2 as MutableList<PersonsFake>)
-
-            } else if (data.lgbtqa == true) {
-              val type = "lgbtqa"
-              val list3 = result.filter { it.type == type }
-              upDateListNormal(list3 as MutableList<PersonsFake>)
-
-            } else if (data.masculino == true && data.feminino == true) {
-              val list4 = result.filter { data.masculino == true && data.feminino == true }
-              upDateListNormal(list4 as MutableList<PersonsFake>)
-
-            } else {
-              upDateListNormal(result as MutableList<PersonsFake>)
-            }
+            upDateListNormal(result as MutableList<PersonsFake>)
             loading(false)
           }
         }
@@ -166,13 +121,11 @@ class HomeFragments : BaseFragment(R.layout.fragment_home), HomeListener, HomeVi
   }
 
   override fun onItemClick(personsFake: PersonsFake, positionInt: Int) {
-    findNavController().navigate(HomeFragmentsDirections.actionHomeFragmentListToFragmentDetail(personsFake))
+    findNavController().navigate(HomeFragmentsDirections.actionHomeFragmentListToFragmentDetail(positionInt))
   }
 
-  override fun onItemClickListenerViewPager(personsFake: PersonsFake) {
-    val nextPage = binding.viewPager.currentItem + 1
-    if (nextPage < adapterViewPager.itemCount) {
-      binding.viewPager.currentItem = nextPage
-    }
+  override fun onItemClickListenerViewPager(position: Int) {
+    findNavController().navigate(HomeFragmentsDirections.actionHomeFragmentListToFragmentDetail(position))
   }
 }
+

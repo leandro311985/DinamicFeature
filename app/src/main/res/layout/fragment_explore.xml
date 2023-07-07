@@ -251,7 +251,7 @@
                     style="@style/Potlid_normal_18sp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Destaques"
+                    android:text="Só amizade"
                     android:textColor="@color/DEFAULT_TEXT_REGISTER" />
 
                 <TextView

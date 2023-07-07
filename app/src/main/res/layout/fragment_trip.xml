@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/DEFAULT_60DP">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/banner"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/DEFAULT_150DP"
+            android:scaleType="fitXY"
+            android:src="@drawable/trip1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/banner2"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/DEFAULT_150DP"
+            android:layout_marginTop="@dimen/DEFAULT_10DP"
+            android:scaleType="fitXY"
+            android:src="@drawable/trip2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/banner" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/banner3"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/DEFAULT_150DP"
+            android:layout_marginTop="@dimen/DEFAULT_10DP"
+            android:scaleType="fitXY"
+            android:src="@drawable/trip3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/banner2" />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.core.widget.NestedScrollView>

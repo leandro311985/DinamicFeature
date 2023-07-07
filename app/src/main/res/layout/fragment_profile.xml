@@ -2,7 +2,8 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <include
         android:id="@+id/loading_container_profile"
@@ -25,12 +26,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/imageProfile"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/imageProfileViewPage"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:itemCount="1"
+        tools:listitem="@layout/item_photo_profile"
         android:layout_width="@dimen/DEFAULT_0DP"
         android:layout_height="@dimen/DEFAULT_250DP"
-        android:scaleType="centerCrop"
-        android:src="@drawable/ic_person"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/container_toolbar_profile" />
@@ -53,7 +55,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/imageProfile" />
+        app:layout_constraintTop_toBottomOf="@id/imageProfileViewPage" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/caed1"
@@ -178,8 +180,8 @@
                 android:layout_height="match_parent"
                 android:layout_marginTop="@dimen/DEFAULT_10DP"
                 android:gravity="center"
-                style="@style/Potlid_normal_14sp"
-                android:text="564"
+                style="@style/Potlid_normal_14sp_bold"
+                android:text="64"
                 android:textColor="@color/DEFAULT_AZUL_APP_4" />
         </androidx.cardview.widget.CardView>
 
@@ -210,8 +212,8 @@
                 android:layout_height="match_parent"
                 android:layout_marginTop="@dimen/DEFAULT_10DP"
                 android:gravity="center"
-                style="@style/Potlid_normal_14sp"
-                android:text="92"
+                style="@style/Potlid_normal_14sp_bold"
+                android:text="42"
                 android:textColor="@color/DEFAULT_AZUL_APP_4" />
         </androidx.cardview.widget.CardView>
 
@@ -240,7 +242,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="@dimen/DEFAULT_10DP"
-                style="@style/Potlid_normal_14sp"
+                style="@style/Potlid_normal_14sp_bold"
                 android:gravity="center"
                 android:text="107"
                 android:textColor="@color/DEFAULT_AZUL_APP_4" />

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/DEFAULT_60DP">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/banner"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/DEFAULT_150DP"
+            android:scaleType="fitXY"
+            android:src="@drawable/chefe"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/banner2"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/DEFAULT_150DP"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="@dimen/DEFAULT_10DP"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:scaleType="fitXY"
+            app:layout_constraintTop_toBottomOf="@id/banner"
+            android:src="@drawable/chefe2"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/banner3"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/DEFAULT_250DP"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="@dimen/DEFAULT_10DP"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:scaleType="fitXY"
+            app:layout_constraintTop_toBottomOf="@id/banner2"
+            android:src="@drawable/chefe3"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/banner4"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/DEFAULT_250DP"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="@dimen/DEFAULT_10DP"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:scaleType="fitXY"
+            app:layout_constraintTop_toBottomOf="@id/banner3"
+            android:src="@drawable/chefe4"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</androidx.core.widget.NestedScrollView>

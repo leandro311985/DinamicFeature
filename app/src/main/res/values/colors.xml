@@ -17,6 +17,8 @@
 
     <color name="DEFAULT_BLACK">#FF000000</color>
     <color name="DEFAULT_WHITE">#FFFFFFFF</color>
+    <color name="tab_text_selected">#5A93E1</color>
+    <color name="tab_text_unselected">#FFFFFFFF</color>
     <color name="DEFAULT_AMARELO">#DAA520</color>
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>

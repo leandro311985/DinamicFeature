@@ -1,6 +1,7 @@
 package com.example.dinamicfeature.presentation.profile.presentation
 
 import android.content.res.Resources
+import android.graphics.drawable.Drawable
 import android.location.Address
 import android.location.Geocoder
 import android.os.Bundle
@@ -11,13 +12,16 @@ import androidx.core.view.isVisible
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.dinamicfeature.R
 import com.example.dinamicfeature.baseApp.commons.BaseFragment
 import com.example.dinamicfeature.databinding.FragmentProfileBinding
 import com.example.dinamicfeature.domain.models.Profile
 import com.example.dinamicfeature.domain.models.UserFirebase
+import com.example.dinamicfeature.presentation.home.presentation.PhotoPagerAdapter
 import com.example.dinamicfeature.presentation.profile.presentation.adapter.ProfileAdapter
+import com.example.dinamicfeature.presentation.profile.presentation.adapter.ProfileImageAdapter
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.ktx.database
@@ -45,7 +49,7 @@ class ProfileFragment : BaseFragment(R.layout.fragment_profile) {
     setViewBinding(view)
     binding.containerToolbarProfile.title.text = "Meu Perfil"
     binding.containerToolbarProfile.icToolbarMenu.isVisible = true
-    binding.containerToolbarProfile.icToolbarMenu.setImageDrawable(resources.getDrawable(R.drawable.baseline_logout_24))
+    setElements()
     viewModel.getLocation()
     viewModel.getMyList()
     setLoading(true)
@@ -65,7 +69,7 @@ class ProfileFragment : BaseFragment(R.layout.fragment_profile) {
 
   private fun setLoading(isVisible: Boolean) = binding.apply {
     loadingContainerProfile.loadingContainer.isVisible = isVisible
-    imageProfile.isVisible = !isVisible
+    imageProfileViewPage.isVisible = !isVisible
     rcTimeLine.isVisible = !isVisible
     cardView1.isVisible = !isVisible
     cardView2.isVisible = !isVisible
@@ -74,27 +78,32 @@ class ProfileFragment : BaseFragment(R.layout.fragment_profile) {
     containerUser.logoImageView.isVisible = !isVisible
     containerUser.name.isVisible = !isVisible
     containerUser.iconeLocation.isVisible = !isVisible
+    caed1.isVisible = !isVisible
+    card2.isVisible = !isVisible
+    caed3.isVisible = !isVisible
+    card4.isVisible = !isVisible
   }
 
   private fun getPhotoFirebase(userId:String){
     database = Firebase.database.reference
     database.child("users").child(userId).get().addOnSuccessListener {
-      setElements(it.value.toString())
+//      setElements(it.value.toString())
     }.addOnFailureListener{
       Log.e("firebase", "Error getting data", it)
     }
   }
 
-  private fun setElements(photo: String) = binding.apply {
+  private fun setElements() = binding.apply {
 
-    if (photo.isEmpty()) {
-      return@apply
-    } else {
+    containerToolbarProfile.icToolbarMenu.setOnClickListener {
+      findNavController().navigate(ProfileFragmentDirections.actionNavigationProfileFragmentToConfigFragment())
+    }
 
-      Picasso.get()
-        .load(photo)
-        .placeholder(R.drawable.profile3)
-        .into(imageProfile)
+    val photo = listOf(R.drawable.profile3, R.drawable.profile, R.drawable.profile1)
+    imageProfileViewPage.apply {
+      layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+      val adapterViewPager = ProfileImageAdapter(requireContext(), photo)
+      imageProfileViewPage.adapter = adapterViewPager
     }
   }
 

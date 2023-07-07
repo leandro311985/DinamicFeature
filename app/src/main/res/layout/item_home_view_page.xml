@@ -9,7 +9,6 @@
         android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="@dimen/DEFAULT_60DP"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -19,7 +18,7 @@
             android:id="@+id/constraintLayout"
             android:layout_width="@dimen/DEFAULT_180DP"
             android:layout_height="300dp"
-            android:elevation="@dimen/DEFAULT_20DP"
+            android:elevation="@dimen/DEFAULT_100DP"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent">
 
@@ -100,11 +99,11 @@
             android:layout_marginTop="@dimen/DEFAULT_10DP"
             app:ci_width="@dimen/DEFAULT_15DP"
             app:ci_height="@dimen/DEFAULT_3DP"
-            app:ci_drawable="@drawable/indicator"
+            app:ci_drawable="@drawable/indicatorwhite"
             app:ci_margin="10dp"
             app:ci_orientation="horizontal"
-            app:ci_gravity="start|center"
-            app:ci_drawable_unselected="@drawable/indicatorwhite"
+            app:ci_gravity="center"
+            app:ci_drawable_unselected="@drawable/indicator"
             android:elevation="@dimen/DEFAULT_10DP"
             android:layout_width="match_parent"
             android:layout_height="@dimen/DEFAULT_20DP"/>
@@ -114,20 +113,22 @@
             android:layout_width="@dimen/DEFAULT_24DP"
             android:layout_height="@dimen/DEFAULT_24DP"
             android:layout_marginEnd="@dimen/DEFAULT_40DP"
-            android:layout_marginBottom="@dimen/DEFAULT_40DP"
-            android:src="@drawable/ic_next"
-            app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
-            app:layout_constraintEnd_toEndOf="parent" />
+            android:elevation="@dimen/DEFAULT_50DP"
+            android:src="@drawable/ic_nex_whitet"
+            app:layout_constraintBottom_toTopOf="@+id/name_view_pager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/innerIndicator" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/previus"
             android:layout_width="@dimen/DEFAULT_24DP"
             android:layout_height="@dimen/DEFAULT_24DP"
             android:layout_marginStart="@dimen/DEFAULT_40DP"
-            android:layout_marginBottom="@dimen/DEFAULT_40DP"
-            android:src="@drawable/ic_next"
-            app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
-            app:layout_constraintStart_toStartOf="parent" />
+            android:elevation="@dimen/DEFAULT_50DP"
+            android:src="@drawable/ic_nex_whitet"
+            app:layout_constraintBottom_toTopOf="@+id/name_view_pager"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/innerIndicator" />
 
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/mainViewPager2"
@@ -153,8 +154,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/DEFAULT_20DP"
+            android:layout_marginBottom="@dimen/DEFAULT_10DP"
             android:maxLines="2"
-            android:layout_marginBottom="@dimen/DEFAULT_80DP"
             android:text="@string/mulherEnd"
             android:textColor="@color/DEFAULT_WHITE"
             app:layout_constraintBottom_toBottomOf="parent"

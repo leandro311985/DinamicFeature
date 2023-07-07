@@ -67,13 +67,26 @@
         android:label="@string/title_profile"
         tools:layout="@layout/fragment_profile">
 
+<!--        <action-->
+<!--            android:id="@+id/navigation_profile_to_finish"-->
+<!--            app:destination="@id/navigation_Logout"-->
+<!--            app:enterAnim="@anim/slide_in_right"-->
+<!--            app:exitAnim="@anim/slide_out_left"-->
+<!--            app:popEnterAnim="@anim/slide_in_left"-->
+<!--            app:popExitAnim="@anim/slide_out_right"-->
+<!--            app:popUpTo="@id/navigation_profile"-->
+<!--            app:popUpToInclusive="true"/>-->
+
         <action
-            android:id="@+id/login_login_to_navigation_profile"
-            app:destination="@id/navigation_profile"
+            android:id="@+id/action_navigation_profile_fragment_to_config_fragment"
+            app:destination="@id/navigation_Config_fragment"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right" />
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/navigation_profile"
+            app:popUpToInclusive="true"
+            />
 
 
     </fragment>
@@ -178,7 +191,7 @@
 
         <argument
             android:name="position"
-            app:argType="com.example.dinamicfeature.domain.models.PersonsFake" />
+            app:argType="integer" />
 
 
     </fragment>
@@ -272,7 +285,7 @@
     <fragment
         android:id="@+id/navigation_Logout"
         android:name="com.example.dinamicfeature.presentation.login.presentation.logout.LogoutFragment"
-        android:label="ProfileGeralFragment"
+        android:label="@string/logout"
         tools:layout="@layout/fragment_logout">
     </fragment>
 
@@ -289,6 +302,15 @@
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right" />
+
+        <action
+            android:id="@+id/action_navigation_home_fragment_to_config_fragment"
+            app:destination="@id/navigation_Config_fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            />
     </fragment>
 
     <fragment
@@ -296,6 +318,15 @@
         android:name="com.example.dinamicfeature.presentation.favorite.FavoritesFragments"
         android:label="favorites"
         tools:layout="@layout/fragment_favorites">
+
+        <action
+            android:id="@+id/action_navigation_favorites_fragment_to_config_fragment"
+            app:destination="@id/navigation_Config_fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            />
     </fragment>
 
     <fragment
@@ -303,6 +334,15 @@
         android:name="com.example.dinamicfeature.presentation.shop.ShopFragment"
         android:label="shop"
         tools:layout="@layout/fragment_shop">
+
+        <action
+            android:id="@+id/action_navigation_shop_fragment_to_config_fragment"
+            app:destination="@id/navigation_Config_fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            />
     </fragment>
 
     <fragment

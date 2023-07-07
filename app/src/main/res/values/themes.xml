@@ -14,7 +14,6 @@
 
     </style>
 
-
     <!--  Progress Button  -->
     <style name="Widget.App.ProgressButtonView" parent="">
         <item name="android:theme">@style/ThemeOverlay.App.ProgressButtonView</item>

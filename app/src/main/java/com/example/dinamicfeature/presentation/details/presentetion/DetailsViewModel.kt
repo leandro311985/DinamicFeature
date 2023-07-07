@@ -19,7 +19,7 @@ class DetailsViewModel(
   private val saveListFakeDataUseCase: SaveMyListFakeUseCase
   ) : BaseViewModel() {
 
-  private val _getPersonFake = MutableSharedFlow<PersonsFake?>()
+  private val _getPersonFake = MutableSharedFlow<List<PersonsFake>>()
   val getPersonFake = _getPersonFake.asSharedFlow()
 
   private val _listPerson = MutableSharedFlow<List<PersonsFake?>>()
@@ -27,9 +27,9 @@ class DetailsViewModel(
 
   fun getPersonFake() {
     viewModelScope.launch {
-      val result = getPersonFakeUseCase()
-      delay(1000)
-      _getPersonFake.emit(result)
+      val result = getPersonUseCase()
+      delay(500)
+      _getPersonFake.emit(result as List<PersonsFake>)
     }
   }
 

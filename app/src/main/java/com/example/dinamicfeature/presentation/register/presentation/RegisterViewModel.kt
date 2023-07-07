@@ -66,7 +66,7 @@ class RegisterViewModel(
 
   fun getRegisterUser() {
     viewModelScope.launch {
-      delay(1000)
+      delay(500)
       val result = getRegisterUseCase()
       _getDataRegister.emit(result)
     }

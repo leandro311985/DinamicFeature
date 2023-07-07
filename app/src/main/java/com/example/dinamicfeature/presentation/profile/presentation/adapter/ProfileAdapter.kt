@@ -27,7 +27,6 @@ class ProfileAdapter(private val profiles: List<Profile>) : RecyclerView.Adapter
   }
 
   inner class ProfileViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-//    val profileIcon: AppCompatImageView = itemView.findViewById(R.id.profileIcon)
     val profileNameTextView: TextView = itemView.findViewById(R.id.startName)
     val startDescriptionTitle: TextView = itemView.findViewById(R.id.startDescriptionTitle)
     val startTitleData: TextView = itemView.findViewById(R.id.startTitleData)

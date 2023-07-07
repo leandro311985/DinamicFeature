@@ -18,7 +18,6 @@
             android:layout_marginEnd="@dimen/DEFAULT_12DP"
             android:scaleType="centerCrop"
             android:elevation="@dimen/DEFAULT_10DP"
-            android:src="@drawable/bolinha_verde"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 

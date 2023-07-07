@@ -2,7 +2,6 @@ package com.example.dinamicfeature.presentation.register.presentation
 
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
@@ -62,12 +61,13 @@ class ProfileGeneralFragment : BaseFragment(R.layout.fragment_geral_profile) {
       checkedId.map {
         val chip: Chip? = group.findViewById(it)
         if (chip?.isChecked == true) {
+          data.countFilledFields = 2
           when (chip.text.toString()) {
-            "Homen" -> logicDataType(1)
-            "Mulher" -> logicDataType(2)
-            "LGBTQIA+" -> logicDataType(3)
-            "Homens e Mulheres" -> logicDataType(5)
-            "Todos os gêneros" -> logicDataType(8)
+            "Homen" -> data.type = "man"
+            "Mulher" -> data.type = "femi"
+            "LGBTQIA+" -> data.type = "lgbtqa"
+            "Homens e Mulheres" -> data.type = "hm"
+            "Todos os gêneros" -> data.type = "todos"
           }
         }
       }
@@ -86,37 +86,9 @@ class ProfileGeneralFragment : BaseFragment(R.layout.fragment_geral_profile) {
     }
   }
 
-  private fun logicDataType(id:Int){
-    when (id) {
-      1 -> {
-        data.masculino = true
-        data.feminino = false
-        data.lgbtqa = false
-      }
-      2 -> {
-        data.masculino = false
-        data.lgbtqa = false
-        data.feminino = true
-      }
-      3 ->{
-        data.masculino = false
-        data.feminino = false
-        data.lgbtqa = true
-      }
-      5 ->{
-        data.masculino = true
-        data.feminino = true
-        data.lgbtqa = false
-      }
-      8 ->{
-        data.masculino = true
-        data.feminino = true
-        data.lgbtqa = true
-      }
-    }
-  }
 
   private fun saveData() {
+
     viewModel.saveRegisterDbProfileGeneralData(data)
   }
 
@@ -133,9 +105,11 @@ class ProfileGeneralFragment : BaseFragment(R.layout.fragment_geral_profile) {
         launch {
           viewModel.getDataProfileGeneralData.collect { result ->
             if (result != null) {
-              binding.chip2.isChecked = result.masculino?:false
-              binding.chip3.isChecked = result.feminino?:false
-              binding.chip4.isChecked = result.lgbtqa?:false
+              when(result.type){
+                "man"->  binding.chip2.isChecked =true
+                "femi"-> binding.chip3.isChecked = true
+                "lgbtqa"-> binding.chip4.isChecked = true
+              }
             }
           }
         }

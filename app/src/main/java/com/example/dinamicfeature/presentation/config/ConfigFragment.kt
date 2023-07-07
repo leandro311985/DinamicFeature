@@ -37,6 +37,9 @@ class ConfigFragment : BaseFragment(R.layout.fragment_config), ConfigListener {
   private fun setElements() = binding.apply {
     containerToolbarConfig.title.text = "Configuração"
     containerToolbarConfig.backgraund.setBackgroundColor(resources.getColor(R.color.DEFAULT_GRAY_APP))
+    containerToolbarConfig.imgBack.setOnClickListener {
+      findNavController().navigateUp()
+    }
   }
 
   private fun setCollectors() {

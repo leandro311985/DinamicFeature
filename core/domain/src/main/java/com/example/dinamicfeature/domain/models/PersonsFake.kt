@@ -7,7 +7,9 @@ data class PersonsFake(
   var image: List<String>,
   var name: String,
   var end: String,
+  var mural: String,
   var type: String,
   var like: Boolean,
-  var km: String
+  var km: String,
+  var isAuthenticate:Boolean
 ) : Serializable

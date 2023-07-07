@@ -35,7 +35,7 @@ val userUseCaseModule = module {
   single { GetRegisterGeneralDataUseCase(get()) }
   single { SaveRegisterUseCase(get()) }
   single { SavePeopleFakeUseCase(get()) }
-  single { GetPersonUseCase(get()) }
+  single { GetPersonUseCase(get(),get()) }
   single { GetPersonHomeUseCase(get()) }
   single { SaveListLikeUseCase(get()) }
   single { GetPeopleFakeUseCase(get()) }
