@@ -20,7 +20,7 @@
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right"
             app:popUpTo="@id/splash_fragment"
-            app:popUpToInclusive="true"/>
+            app:popUpToInclusive="true" />
 
         <action
             android:id="@+id/action_splash_to_profile"
@@ -30,7 +30,7 @@
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right"
             app:popUpTo="@id/splash_fragment"
-            app:popUpToInclusive="true"/>
+            app:popUpToInclusive="true" />
 
 
     </fragment>
@@ -49,7 +49,7 @@
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right"
             app:popUpTo="@id/navigation_login"
-            app:popUpToInclusive="true"/>
+            app:popUpToInclusive="true" />
 
         <action
             android:id="@+id/login_fragment_to_navigation_create"
@@ -67,16 +67,6 @@
         android:label="@string/title_profile"
         tools:layout="@layout/fragment_profile">
 
-<!--        <action-->
-<!--            android:id="@+id/navigation_profile_to_finish"-->
-<!--            app:destination="@id/navigation_Logout"-->
-<!--            app:enterAnim="@anim/slide_in_right"-->
-<!--            app:exitAnim="@anim/slide_out_left"-->
-<!--            app:popEnterAnim="@anim/slide_in_left"-->
-<!--            app:popExitAnim="@anim/slide_out_right"-->
-<!--            app:popUpTo="@id/navigation_profile"-->
-<!--            app:popUpToInclusive="true"/>-->
-
         <action
             android:id="@+id/action_navigation_profile_fragment_to_config_fragment"
             app:destination="@id/navigation_Config_fragment"
@@ -85,8 +75,7 @@
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right"
             app:popUpTo="@id/navigation_profile"
-            app:popUpToInclusive="true"
-            />
+            app:popUpToInclusive="true" />
 
 
     </fragment>
@@ -105,6 +94,14 @@
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right" />
 
+        <action
+            android:id="@+id/action_create_fragment_edit_photo"
+            app:destination="@id/navigation_edit_photo"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
     </fragment>
 
     <fragment
@@ -115,15 +112,216 @@
 
         <action
             android:id="@+id/action_success_to_profile"
-            app:destination="@id/navigation_init_fragment"
+            app:destination="@id/navigation_new_step1"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right"
             app:popUpTo="@id/navigation_success"
-            app:popUpToInclusive="true"/>
+            app:popUpToInclusive="true" />
 
     </fragment>
+
+
+    <fragment
+        android:id="@+id/navigation_new_step1"
+        android:name="com.example.dinamicfeature.presentation.journey.presentation.InitJourneyFragment"
+        android:label="InitJourneyFragment"
+        tools:layout="@layout/fragment_journey">
+
+
+        <action
+            android:id="@+id/action_init_fragment_to_register_fragment"
+            app:destination="@id/navigation_new_step2"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/navigation_new_step1"
+            app:popUpToInclusive="true" />
+
+        <action
+            android:id="@+id/action_init_fragment_to_profile"
+            app:destination="@id/navigation_profile"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/navigation_new_step1"
+            app:popUpToInclusive="true" />
+
+        <action
+            android:id="@+id/action_init_fragment_to_mapa"
+            app:destination="@id/navigation_webView"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/navigation_new_step1"
+            app:popUpToInclusive="true" />
+
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_new_step2"
+        android:name="com.example.dinamicfeature.presentation.journey.presentation.StepOneFragment"
+        android:label="step4"
+        tools:layout="@layout/fragment_step1">
+
+        <action
+            android:id="@+id/action_step4_to_navigation_step5"
+            app:destination="@id/navigation_new_step3"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_new_step3"
+        android:name="com.example.dinamicfeature.presentation.journey.presentation.StepTwoFragment"
+        android:label="step5"
+        tools:layout="@layout/fragment_step2">
+
+        <action
+            android:id="@+id/action_step5_to_navigation_init"
+            app:destination="@id/navigation_Register_fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_Register_fragment"
+        android:name="com.example.dinamicfeature.presentation.journey.presentation.RegisterFragment"
+        android:label="@string/register"
+        tools:layout="@layout/fragment_register">
+
+        <action
+            android:id="@+id/action_register_to_navigation_basic"
+            app:destination="@id/navigation_basic_data"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+        <action
+            android:id="@+id/action_register_to_profile_fisico"
+            app:destination="@id/navigation_Profile_fisico"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+        <action
+            android:id="@+id/action_register_to_profile_geral"
+            app:destination="@id/navigation_Profile_geral"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+        <action
+            android:id="@+id/action_register_to_avatar"
+            app:destination="@id/navigation_avatar_panel"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/navigation_avatar_panel"
+        android:name="com.example.dinamicfeature.presentation.journey.presentation.AvatarPainelFragment"
+        android:label="step1"
+        tools:layout="@layout/fragment_painel_avatar">
+
+        <action
+            android:id="@+id/action_step1_to_navigation_step2"
+            app:destination="@id/navigation_step2"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_step2"
+        android:name="com.example.dinamicfeature.presentation.journey.presentation.AvatarNickNameFragment"
+        android:label="step2"
+        tools:layout="@layout/fragment_nick_name_avatar">
+
+        <argument
+            android:name="avatar"
+            app:argType="string" />
+
+        <action
+            android:id="@+id/action_step2_to_navigation_step3"
+            app:destination="@id/navigation_step3"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_step3"
+        android:name="com.example.dinamicfeature.presentation.journey.presentation.AvatarIterectionFragment"
+        android:label="step3"
+        tools:layout="@layout/fragment_avatar_iterction">
+
+        <action
+            android:id="@+id/action_navigation_step3_to_navigation_step4"
+            app:destination="@id/navigation_choose_test"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_choose_test"
+        android:name="com.example.dinamicfeature.presentation.journey.presentation.ChooseTestFragment"
+        android:label="@string/title_choose_test"
+        tools:layout="@layout/fragment_choose_test">
+
+        <action
+            android:id="@+id/action_navigation_choose_test_to_choose"
+            app:destination="@id/navigation_choose"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_choose"
+        android:name="com.example.dinamicfeature.presentation.journey.presentation.ChooseFragment"
+        android:label="@string/title_choose"
+        tools:layout="@layout/fragment_choose">
+
+        <action
+            android:id="@+id/action_choose_fragment_to_Home"
+            app:destination="@id/navigation_home_fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+    </fragment>
+
 
     <fragment
         android:id="@+id/navigation_search_people"
@@ -196,90 +394,40 @@
 
     </fragment>
 
-    <fragment
-        android:id="@+id/navigation_Register_fragment"
-        android:name="com.example.dinamicfeature.presentation.register.presentation.RegisterFragment"
-        android:label="@string/register"
-        tools:layout="@layout/fragment_register">
-
-        <action
-            android:id="@+id/action_register_to_navigation_basic"
-            app:destination="@id/navigation_basic_data"
-            app:enterAnim="@anim/slide_in_right"
-            app:exitAnim="@anim/slide_out_left"
-            app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right" />
-
-        <action
-            android:id="@+id/action_register_to_profile_fisico"
-            app:destination="@id/navigation_Profile_fisico"
-            app:enterAnim="@anim/slide_in_right"
-            app:exitAnim="@anim/slide_out_left"
-            app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right" />
-
-        <action
-            android:id="@+id/action_register_to_profile_geral"
-            app:destination="@id/navigation_Profile_geral"
-            app:enterAnim="@anim/slide_in_right"
-            app:exitAnim="@anim/slide_out_left"
-            app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right" />
 
 
 
-    </fragment>
-
-    <fragment
-        android:id="@+id/navigation_init_fragment"
-        android:name="com.example.dinamicfeature.presentation.register.presentation.InitJourneyFragment"
-        android:label="InitJourneyFragment"
-        tools:layout="@layout/fragment_journey">
-
-
-        <action
-            android:id="@+id/action_init_fragment_to_register_fragment"
-            app:destination="@id/navigation_Register_fragment"
-            app:enterAnim="@anim/slide_in_right"
-            app:exitAnim="@anim/slide_out_left"
-            app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right"
-            app:popUpTo="@id/navigation_init_fragment"
-            app:popUpToInclusive="true"/>
-
-        <action
-            android:id="@+id/action_init_fragment_to_profile"
-            app:destination="@id/navigation_profile"
-            app:enterAnim="@anim/slide_in_right"
-            app:exitAnim="@anim/slide_out_left"
-            app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right"
-            app:popUpTo="@id/navigation_init_fragment"
-            app:popUpToInclusive="true"/>
-
-
-    </fragment>
 
     <fragment
         android:id="@+id/navigation_basic_data"
-        android:name="com.example.dinamicfeature.presentation.register.presentation.BasicDataFragment"
+        android:name="com.example.dinamicfeature.presentation.journey.presentation.BasicDataFragment"
         android:label="BasicDataFragment"
         tools:layout="@layout/fragment_basic_data">
 
     </fragment>
 
     <fragment
+        android:id="@+id/navigation_edit_photo"
+        android:name="com.example.dinamicfeature.presentation.login.presentation.createAccount.EditPhotoFragment"
+        android:label="Edit_photo"
+        tools:layout="@layout/fragment_edit_photo">
+
+    </fragment>
+
+    <fragment
         android:id="@+id/navigation_Profile_fisico"
-        android:name="com.example.dinamicfeature.presentation.register.presentation.PhysicalProfileFragment"
+        android:name="com.example.dinamicfeature.presentation.journey.presentation.PhysicalProfileFragment"
         android:label="PhysicalProfileFragment"
         tools:layout="@layout/fragment_physical_profile">
+
     </fragment>
 
     <fragment
         android:id="@+id/navigation_Profile_geral"
-        android:name="com.example.dinamicfeature.presentation.register.presentation.ProfileGeneralFragment"
+        android:name="com.example.dinamicfeature.presentation.journey.presentation.ProfileGeneralFragment"
         android:label="ProfileGeralFragment"
         tools:layout="@layout/fragment_geral_profile">
+
     </fragment>
 
     <fragment
@@ -287,6 +435,7 @@
         android:name="com.example.dinamicfeature.presentation.login.presentation.logout.LogoutFragment"
         android:label="@string/logout"
         tools:layout="@layout/fragment_logout">
+
     </fragment>
 
     <fragment
@@ -309,8 +458,7 @@
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right"
-            />
+            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
 
     <fragment
@@ -325,8 +473,7 @@
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right"
-            />
+            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
 
     <fragment
@@ -341,13 +488,12 @@
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right"
-            />
+            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
 
     <fragment
         android:id="@+id/navigation_explorer_fragment"
-        android:name="com.example.dinamicfeature.presentation.explore.ExploreFragment"
+        android:name="com.example.dinamicfeature.presentation.explore.MainExploreFragment"
         android:label="explore"
         tools:layout="@layout/fragment_explore">
 
@@ -357,8 +503,7 @@
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right"
-            />
+            app:popExitAnim="@anim/slide_out_right" />
 
     </fragment>
 
@@ -376,7 +521,7 @@
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right"
             app:popUpTo="@id/navigation_Config_fragment"
-            app:popUpToInclusive="true"/>
+            app:popUpToInclusive="true" />
 
         <action
             android:id="@+id/action_Config_fragment_to_register"
@@ -386,7 +531,7 @@
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right"
             app:popUpTo="@id/navigation_Config_fragment"
-            app:popUpToInclusive="true"/>
+            app:popUpToInclusive="true" />
 
         <action
             android:id="@+id/action_Config_fragment_to_searchSetting"
@@ -396,17 +541,37 @@
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right"
             app:popUpTo="@id/navigation_Config_fragment"
-            app:popUpToInclusive="true"/>
+            app:popUpToInclusive="true" />
+
 
         <action
-            android:id="@+id/action_Config_fragment_to_avatar"
-            app:destination="@id/navigation_avatar_fragment"
+            android:id="@+id/action_Config_fragment_to_sair"
+            app:destination="@id/navigation_Logout"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right"
             app:popUpTo="@id/navigation_Config_fragment"
-            app:popUpToInclusive="true"/>
+            app:popUpToInclusive="true" />
+
+        <action
+            android:id="@+id/action_Config_fragment_to_webview"
+            app:destination="@id/navigation_webView"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/navigation_Config_fragment"
+            app:popUpToInclusive="true" />
+
+        <action
+            android:id="@+id/action_navigation_choose_test"
+            app:destination="@id/navigation_new_step1"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
 
     </fragment>
 
@@ -414,15 +579,13 @@
         android:id="@+id/navigation_searchSetting_fragment"
         android:name="com.example.dinamicfeature.presentation.searchSetting.SearchSettingFragment"
         android:label="searchSetting"
-        tools:layout="@layout/fragment_search_setting">
-    </fragment>
+        tools:layout="@layout/fragment_search_setting"/>
 
     <fragment
-        android:id="@+id/navigation_avatar_fragment"
-        android:name="com.example.dinamicfeature.presentation.avatar.AvatarFragment"
-        android:label="avatar"
-        tools:layout="@layout/fragment_avatar">
-    </fragment>
+        android:id="@+id/navigation_webView"
+        android:name="com.example.dinamicfeature.presentation.webView.GenericWebViewFragment"
+        android:label="genericWebView"
+        tools:layout="@layout/fragment_generic_web_view"/>
 
 
 </navigation>

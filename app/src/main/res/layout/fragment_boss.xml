@@ -10,6 +10,7 @@
         android:layout_marginBottom="@dimen/DEFAULT_60DP">
 
         <androidx.appcompat.widget.AppCompatImageView
+            android:layout_marginTop="@dimen/DEFAULT_10DP"
             android:id="@+id/banner"
             android:layout_width="match_parent"
             android:layout_height="@dimen/DEFAULT_150DP"

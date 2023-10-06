@@ -22,21 +22,12 @@
             app:layout_constraintBottom_toBottomOf="@id/container"
             app:layout_constraintStart_toStartOf="parent" />
 
-        <include
-            android:id="@+id/container_toolbar_explore"
-            layout="@layout/item_toolbar_list_people"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/DEFAULT_TOOLBAR"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/container_macths"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf="@id/container_toolbar_explore">
+            app:layout_constraintTop_toTopOf="parent">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/container_linear_line"
@@ -54,10 +45,10 @@
                     style="@style/Potlid_normal_18sp"
                     android:layout_width="@dimen/DEFAULT_120DP"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/DEFAULT_20DP"
-                    android:text="Perto de voçê"
-                    android:maxLines="1"
                     android:layout_marginStart="@dimen/DEFAULT_10DP"
+                    android:layout_marginTop="@dimen/DEFAULT_20DP"
+                    android:maxLines="1"
+                    android:text="Perto de voçê"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -66,8 +57,8 @@
                     style="@style/Potlid_normal_14sp"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="Localização"
                     android:maxLines="1"
+                    android:text="Localização"
                     app:layout_constraintEnd_toStartOf="@id/view"
                     app:layout_constraintStart_toStartOf="@id/nameExplorer"
                     app:layout_constraintTop_toBottomOf="@id/nameExplorer" />
@@ -99,8 +90,8 @@
                     style="@style/Potlid_normal_14sp"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/DEFAULT_8DP"
                     android:layout_marginEnd="@dimen/DEFAULT_20DP"
+                    android:layout_marginBottom="@dimen/DEFAULT_8DP"
                     android:maxLines="2"
                     android:text="Até 20km\nSão paulo"
                     android:textColor="@color/DEFAULT_ORANGE_APP"

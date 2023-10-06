@@ -13,6 +13,7 @@
             android:id="@+id/banner"
             android:layout_width="match_parent"
             android:layout_height="@dimen/DEFAULT_150DP"
+            android:layout_marginTop="@dimen/DEFAULT_10DP"
             android:scaleType="fitXY"
             android:src="@drawable/trip1"
             app:layout_constraintEnd_toEndOf="parent"

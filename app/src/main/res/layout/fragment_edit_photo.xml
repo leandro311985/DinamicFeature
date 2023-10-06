@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <include
+        android:id="@+id/container_toolbar"
+        layout="@layout/item_toolbar"
+        android:layout_width="@dimen/DEFAULT_0DP"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <GridLayout
+        android:id="@+id/grid"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/DEFAULT_150DP"
+        android:layout_gravity="center"
+        android:layout_margin="16dp"
+        android:columnCount="3"
+        app:layout_constraintTop_toBottomOf="@+id/container_toolbar"
+        tools:layout_editor_absoluteX="16dp">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardView1"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/DEFAULT_140DP"
+            android:layout_columnWeight="1"
+            android:clickable="true"
+            android:focusable="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/DEFAULT_10DP"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:id="@+id/img1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/carregarfotos" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardView2"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/DEFAULT_140DP"
+            android:layout_columnWeight="1"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:clickable="true"
+            android:focusable="true"
+
+           >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/DEFAULT_10DP"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/carregarfotos" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardView3"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/DEFAULT_140DP"
+            android:layout_columnWeight="1"
+            android:clickable="true"
+            android:focusable="true"
+
+           >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/DEFAULT_10DP"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/carregarfotos" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </GridLayout>
+
+    <GridLayout
+        android:id="@+id/grid2"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/DEFAULT_150DP"
+        android:layout_gravity="center"
+        android:layout_margin="16dp"
+        android:columnCount="3"
+        app:layout_constraintTop_toBottomOf="@+id/grid"
+        tools:layout_editor_absoluteX="16dp">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardView4"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/DEFAULT_140DP"
+            android:layout_columnWeight="1"
+            android:clickable="true"
+            android:focusable="true"
+
+           >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/DEFAULT_10DP"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/carregarfotos" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardView5"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/DEFAULT_140DP"
+            android:layout_columnWeight="1"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:clickable="true"
+            android:focusable="true"
+
+           >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/DEFAULT_10DP"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/carregarfotos" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardView6"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/DEFAULT_140DP"
+            android:layout_columnWeight="1"
+            android:clickable="true"
+            android:focusable="true"
+           >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/DEFAULT_10DP"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/carregarfotos" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </GridLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        style="@style/Potlid_normal_orange_16sp"
+        android:text="Carregar mínimo de 3 fotos"
+        app:layout_constraintEnd_toEndOf="@+id/grid2"
+        app:layout_constraintStart_toStartOf="@+id/grid2"
+        app:layout_constraintTop_toBottomOf="@+id/grid2" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        style="@style/Potlid_normal_14sp"
+        android:text="* Toaque para editar fotos, arraste para reodernar"
+        app:layout_constraintEnd_toEndOf="@+id/grid2"
+        app:layout_constraintStart_toStartOf="@+id/grid2"
+        app:layout_constraintTop_toBottomOf="@+id/text" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/next_button"
+        style="@style/Potlid_normal_18sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/DEFAULT_60DP"
+        android:layout_marginHorizontal="@dimen/DEFAULT_32DP"
+        android:background="@color/DEFAULT_AZUL_APP_4"
+        android:text="@string/confirm_register"
+        android:textColor="@color/DEFAULT_WHITE"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

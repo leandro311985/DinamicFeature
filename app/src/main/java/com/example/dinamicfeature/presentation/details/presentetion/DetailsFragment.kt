@@ -12,7 +12,11 @@ import com.example.dinamicfeature.baseApp.commons.BaseFragment
 import com.example.dinamicfeature.databinding.FragmentDetailsBinding
 import com.example.dinamicfeature.domain.models.MyPersonsFake
 import com.example.dinamicfeature.domain.models.PersonsFake
+import android.graphics.Bitmap
+import android.graphics.Matrix
+import com.example.extension.getStringByName
 import kotlinx.coroutines.launch
+import org.imaginativeworld.whynotimagecarousel.model.CarouselItem
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
@@ -53,48 +57,19 @@ class DetailsFragment : BaseFragment(R.layout.fragment_details), DetailsViewPage
 
   private fun setElements() = binding.apply {
 
-//    binding.nameUser.text = personsFake.name.let { context?.getStringByName(it) }
-//    context?.getDrawableByName(personsFake.image[0])?.let { Picasso.get().load(it).into(binding.imageViewPhoto) }
     back.setOnClickListener {
       findNavController().navigateUp()
-
     }
-//    floatingActionButtonLike.setOnClickListener {
-//      val text = getString(R.string.snack_like, context?.getStringByName(personsFake.name))
-//      if (it.isClickable) {
-//        requireContext().createSnackbar(
-//          floatingActionButtonLike,
-//          text,
-//          Snackbar.LENGTH_LONG
-//        )
-//
-//        val list = MyPersonsFake(personsFake, negative = false, likeTo = true, matchs = false, talvez = false, myLikes = false)
-//        viewModel.saveLikeList(list)
-//      }
-//    }
-//    floatingActionButtonCancel.setOnClickListener {
-//      if (it.isClickable) {
-//        val list = MyPersonsFake(personsFake, false, false, false, false, false)
-//        requireContext().createSnackbar(
-//          floatingActionButtonLike,
-//          getText(R.string.snack_like).toString(),
-//          Snackbar.LENGTH_LONG
-//        )
-//      }
-//    }
-//    floatingActionTalvez.setOnClickListener {
-//      if (it.isClickable) {
-//        val text = getString(R.string.snack_talvez, context?.getStringByName(personsFake.name))
-//
-//        val list = MyPersonsFake(personsFake, negative = false, likeTo = false, matchs = false, talvez = true, myLikes = false)
-//        requireContext().createSnackbar(
-//          floatingActionButtonLike,
-//          text,
-//          Snackbar.LENGTH_LONG
-//        )
-//        viewModel.saveLikeList(list)
-//      }
-//    }
+
+    seta.setOnClickListener {
+      if (details.visibility == View.VISIBLE) {
+        details.visibility = View.GONE
+        seta.setImageResource(R.drawable.seta)
+      } else {
+        details.visibility = View.VISIBLE
+        seta.setImageResource(R.drawable.seta_inversa)
+      }
+    }
   }
 
   private fun setCollectors() {
@@ -108,9 +83,19 @@ class DetailsFragment : BaseFragment(R.layout.fragment_details), DetailsViewPage
               adapter = adapterDetail
               val desiredPosition = personsFake
               currentItem = desiredPosition
+              isUserInputEnabled = false
 
+              binding.nameUser.text = context.getStringByName(data[personsFake].name)
 
             }
+            val list = mutableListOf<CarouselItem>()
+            list.add(CarouselItem(R.drawable.lugares1))
+            list.add(CarouselItem(R.drawable.lugares2))
+            list.add(CarouselItem(R.drawable.lugares3))
+            list.add(CarouselItem(R.drawable.lugares4))
+            list.add(CarouselItem(R.drawable.lugares5))
+            binding.imageCorresel.registerLifecycle(lifecycle)
+            binding.imageCorresel.setData(list)
           }
         }
 
@@ -119,17 +104,17 @@ class DetailsFragment : BaseFragment(R.layout.fragment_details), DetailsViewPage
   }
 
   override fun onItemClickListenerViewPager(personsFake: PersonsFake, myPersonsFake: MyPersonsFake?, isFloatActionButtom: Boolean) {
-    when (isFloatActionButtom) {
-      true -> {
-        myPersonsFake?.let { viewModel.saveLikeList(it) }
-      }
-
-      false -> {
-        val nextPage = binding.viewPagePhoto.currentItem + 1
-        if (nextPage < adapterDetail.itemCount) {
-          binding.viewPagePhoto.currentItem = nextPage
-        }
-      }
-    }
+//    when (isFloatActionButtom) {
+//      true -> {
+//        myPersonsFake?.let { viewModel.saveLikeList(it) }
+//      }
+//
+//      false -> {
+//        val nextPage = binding.viewPagePhoto.currentItem + 1
+//        if (nextPage < adapterDetail.itemCount) {
+//          binding.viewPagePhoto.currentItem = nextPage
+//        }
+//      }
+//    }
   }
 }

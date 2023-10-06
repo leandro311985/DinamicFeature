@@ -102,6 +102,17 @@ class MainActivity : BaseActivity() {
     topLevelDestination.add(getString(R.string.title_PhysicalProfileFragment))
     topLevelDestination.add(getString(R.string.title_ProfileGeralFragment))
     topLevelDestination.add(getString(R.string.title_ListPeopleResult))
+    topLevelDestination.add(getString(R.string.logout))
+    topLevelDestination.add(getString(R.string.title_choose))
+    topLevelDestination.add(getString(R.string.title_choose_test))
+    topLevelDestination.add("config")
+    topLevelDestination.add("step1")
+    topLevelDestination.add("avatar")
+    topLevelDestination.add("Edit_photo")
+    topLevelDestination.add("step2")
+    topLevelDestination.add("step3")
+    topLevelDestination.add("step4")
+    topLevelDestination.add("step5")
   }
 
   private fun setupNavigation() {

@@ -12,6 +12,8 @@ class ConfigViewModel : BaseViewModel() {
     ConfigData("Boots","8") ,ConfigData("Política de privacidade","9") ,ConfigData("Empresa","10") ,
     ConfigData("Contas conectadas","11") ,ConfigData("Ajuda","12") ,ConfigData("Informações e termos","13") ,
     ConfigData("Pausar","14") ,ConfigData("conta","15") ,ConfigData("Modo noturno","16") ,ConfigData("Excluir conta","17") ,
+    ConfigData("Teste","18"),
+    ConfigData("Sair","19"),
     )
 
 

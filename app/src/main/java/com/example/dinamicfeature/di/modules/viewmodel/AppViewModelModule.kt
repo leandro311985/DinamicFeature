@@ -12,7 +12,7 @@ import com.example.dinamicfeature.presentation.login.presentation.logout.LogoutV
 import com.example.dinamicfeature.presentation.login.presentation.splash.SplashViewModel
 import com.example.dinamicfeature.presentation.mysignature.MySignatureViewModel
 import com.example.dinamicfeature.presentation.profile.presentation.ProfileViewModel
-import com.example.dinamicfeature.presentation.register.presentation.RegisterViewModel
+import com.example.dinamicfeature.presentation.journey.presentation.RegisterViewModel
 import com.example.dinamicfeature.presentation.searchpeople.presentation.SearchViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module

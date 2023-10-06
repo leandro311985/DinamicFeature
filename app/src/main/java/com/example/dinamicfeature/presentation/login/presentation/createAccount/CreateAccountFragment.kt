@@ -1,12 +1,8 @@
 package com.example.dinamicfeature.presentation.login.presentation.createAccount
 
-import android.Manifest
-import android.content.pm.PackageManager
-import android.net.Uri
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import androidx.lifecycle.Lifecycle
@@ -26,7 +22,6 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
-import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -34,8 +29,7 @@ class CreateAccountFragment : BaseFragment(R.layout.fragment_create_account) {
 
   private lateinit var binding: FragmentCreateAccountBinding
   private val viewModel: CreateAccountViewModel by viewModel()
-  private lateinit var imageFlow: MutableStateFlow<String?>
-  private var uri_Imagem: Uri? = null
+
   private var userData: UserFirebase? = null
   private var auth: FirebaseAuth? = null
   private lateinit var database: DatabaseReference
@@ -54,7 +48,6 @@ class CreateAccountFragment : BaseFragment(R.layout.fragment_create_account) {
 
   override fun setViewBinding(view: View) {
     binding = FragmentCreateAccountBinding.bind(view)
-    imageFlow = MutableStateFlow(null)
     auth = FirebaseAuth.getInstance()
 
   }
@@ -77,45 +70,6 @@ class CreateAccountFragment : BaseFragment(R.layout.fragment_create_account) {
   }
 
 
-  private fun checkPermission() {
-    if (ContextCompat.checkSelfPermission(
-        requireContext(),
-        Manifest.permission.READ_EXTERNAL_STORAGE
-      ) == PackageManager.PERMISSION_GRANTED
-    ) {
-      openGallery()
-    } else {
-      requestGalleryPermission()
-    }
-  }
-
-  private fun requestGalleryPermission() {
-    requestPermissionLauncher.launch(Manifest.permission.READ_EXTERNAL_STORAGE)
-  }
-
-  private fun openGallery() {
-    getContentLauncher.launch("image/*")
-  }
-
-  private val requestPermissionLauncher = registerForActivityResult(
-    ActivityResultContracts.RequestPermission()
-  ) { isGranted: Boolean ->
-    if (isGranted) {
-      openGallery()
-    } else {
-      // A permissão foi negada pelo usuário
-      // Lide com isso de acordo com os requisitos do seu aplicativo
-    }
-  }
-
-  private val getContentLauncher = registerForActivityResult(
-    ActivityResultContracts.GetContent()
-  ) { uri ->
-    uri_Imagem = uri
-    val imagePath = uri.toString()
-    imageFlow.value = imagePath
-  }
-
   private fun register() = binding.apply {
     registerButton.setOnClickListener {
       loading(true)
@@ -128,7 +82,7 @@ class CreateAccountFragment : BaseFragment(R.layout.fragment_create_account) {
     }
 
     descriptionImageView.setOnClickListener {
-      checkPermission()
+      findNavController().navigate(CreateAccountFragmentDirections.actionCreateFragmentEditPhoto())
     }
 
     backTextView.setOnClickListener {
@@ -196,23 +150,18 @@ class CreateAccountFragment : BaseFragment(R.layout.fragment_create_account) {
               is UiState.Loading -> {
 
               }
+
               is UiState.Failure -> {
 
               }
+
               is UiState.Success -> {
                 viewModel.getDataUser()
               }
             }
           }
         }
-        launch {
-          imageFlow.collect { imagePath ->
-            imagePath?.let { uri ->
-              binding.logoImageView.setImageURI(Uri.parse(uri))
 
-            }
-          }
-        }
         launch {
           viewModel.success.collect { imagePath ->
             loading(false)
@@ -229,16 +178,8 @@ class CreateAccountFragment : BaseFragment(R.layout.fragment_create_account) {
         launch {
           viewModel.userData.collect { dataUser ->
             userData = dataUser
-            if (uri_Imagem != null) {
-              viewModel.savePhoto(uri_Imagem, userData?.id ?: "", {
-                viewModel.savePhotoDb(it)
-                savePhotoFirebase(userData?.id ?: "", it.toString())
-              }, {
-                Toast.makeText(requireContext(), it?.message, Toast.LENGTH_SHORT).show()
-              })
-            } else {
-              findNavController().navigate(R.id.action_create_login_fragment_to_success)
-            }
+            findNavController().navigate(R.id.action_create_login_fragment_to_success)
+
           }
         }
       }

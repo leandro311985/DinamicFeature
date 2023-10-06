@@ -29,5 +29,6 @@ class FragmentSuccess : BaseFragment(R.layout.fragment_success) {
     binding.textOk.setOnClickListener {
       findNavController().navigate(R.id.action_success_to_profile)
     }
+
   }
 }

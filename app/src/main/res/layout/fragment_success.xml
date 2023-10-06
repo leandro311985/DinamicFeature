@@ -17,9 +17,10 @@
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/appCompatImageView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="260dp"
+            android:layout_height="250dp"
             android:scaleType="centerCrop"
+            android:elevation="@dimen/DEFAULT_50DP"
             android:src="@drawable/ic_logo_success_one"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

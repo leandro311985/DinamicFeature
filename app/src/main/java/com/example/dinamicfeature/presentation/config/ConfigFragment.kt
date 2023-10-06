@@ -76,12 +76,14 @@ class ConfigFragment : BaseFragment(R.layout.fragment_config), ConfigListener {
       "9" -> {}
       "10" -> {}
       "11" -> {}
-      "12" -> findNavController().navigate(ConfigFragmentDirections.actionConfigFragmentToAvatar())
+      "12" -> ""
       "13" -> {}
       "14" -> {}
       "15" -> {}
       "16" -> {}
       "17" -> {}
+      "18" -> findNavController().navigate(ConfigFragmentDirections.actionNavigationChooseTest())
+      "19" -> findNavController().navigate(ConfigFragmentDirections.actionConfigFragmentToSair())
     }
   }
 }

@@ -20,6 +20,15 @@ fun Context.getDrawableByName(stringName: String): Int {
   return this.resources.getIdentifier(stringName, "drawable", this.packageName);
 }
 
+fun String.setEllipsis(maxSizeText: Int): String {
+
+  var finalText = this
+  if(this.length > maxSizeText)
+    finalText = "${this.substring(0, maxSizeText)}..."
+
+  return finalText
+}
+
 
 fun Context.createSnackbar(
   parent: View,

@@ -32,6 +32,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="@dimen/DEFAULT_60DP"
         app:layout_constraintTop_toBottomOf="@id/container_toolbar_config" />
 
 

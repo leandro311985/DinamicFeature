@@ -44,7 +44,6 @@ class ExploreFragment : BaseFragment(R.layout.fragment_explore) {
 
   private fun loading(isVisible: Boolean) = binding.apply {
     loadingContaineExplorerr.loadingContainer.isVisible = isVisible
-    containerToolbarExplore.backgraund.isVisible = !isVisible
     containerMacths.isVisible = !isVisible
     containerMensages.isVisible = !isVisible
     rcLive.isVisible = !isVisible
@@ -61,14 +60,7 @@ class ExploreFragment : BaseFragment(R.layout.fragment_explore) {
   }
 
   private fun setElements() = binding.apply{
-    containerToolbarExplore.icToolbarMenu.isVisible = true
-    containerToolbarExplore.icToolbarMenu.setOnClickListener {
-      findNavController().navigate(ExploreFragmentDirections.actionNavigationExplorerFragmentToConfigFragment())
-    }
-    containerToolbarExplore.title.text = "Explorar"
-    containerToolbarExplore.imgBack.setOnClickListener {
-      findNavController().navigateUp()
-    }
+
   }
 
   private fun setCollectors() {

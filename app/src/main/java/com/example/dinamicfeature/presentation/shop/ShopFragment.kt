@@ -20,6 +20,11 @@ class ShopFragment : BaseFragment(R.layout.fragment_shop) {
     initView(view)
   }
 
+  override fun onResume() {
+    super.onResume()
+    setViewPage()
+  }
+
   override fun initView(view: View) {
     setViewBinding(view)
     setElements()

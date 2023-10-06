@@ -7,6 +7,7 @@ import android.graphics.Canvas
 import android.support.annotation.StringRes
 import android.view.View
 import android.view.inputmethod.InputMethodManager
+import android.widget.Button
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.runBlocking
 
@@ -58,6 +59,13 @@ fun View.getBitmap(): Bitmap {
   draw(canvas)
   canvas.save()
   return bmp
+}
+
+fun Button.setOnClickWithId(clickListener: (Int) -> Unit) {
+  this.setOnClickListener {
+    val buttonId = this.id
+    clickListener(buttonId)
+  }
 }
 
 

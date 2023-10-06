@@ -57,6 +57,11 @@
         <item name="android:textColor">@color/DEFAULT_TEXT_REGISTER</item>
     </style>
 
+    <style name="Potlid_normal_18sp_bold" parent="Potlid_font_bold">
+        <item name="android:textSize">@dimen/DEFAULT_18SP</item>
+        <item name="android:textColor">@color/DEFAULT_TEXT_REGISTER</item>
+    </style>
+
     <style name="Potlid_normal_14sp_text_black" parent="Potlid_font">
         <item name="android:textSize">@dimen/DEFAULT_14SP</item>
         <item name="android:textColor">@color/DEFAULT_BLACK</item>

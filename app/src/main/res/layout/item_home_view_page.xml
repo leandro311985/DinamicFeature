@@ -9,104 +9,27 @@
         android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraintLayout"
-            android:layout_width="@dimen/DEFAULT_180DP"
-            android:layout_height="300dp"
-            android:elevation="@dimen/DEFAULT_100DP"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/floating_action_button"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_margin="16dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/btn_seguir_app_potlid" />
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/floating_action_button1"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_margin="16dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/floating_action_button"
-                app:srcCompat="@drawable/ic_botao_msg" />
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/floating_action_button_cancel"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_margin="16dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/floating_action_button1"
-                app:srcCompat="@drawable/btn_flash_notes_app_potlid" />
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/floating_action_talvez"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_margin="16dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/floating_action_button_cancel"
-                app:srcCompat="@drawable/btn_talvez_app_potlid" />
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/floating_action_button_like"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_margin="16dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/floating_action_talvez"
-                app:srcCompat="@drawable/btn_like_app_potlid" />
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/floating_action_button_dislike"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_margin="16dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/floating_action_button_like"
-                app:layout_constraintTop_toBottomOf="@id/floating_action_talvez"
-                app:srcCompat="@drawable/btn_negative_app_potlid" />
-
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/floating_action_button_update"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_margin="16dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/floating_action_button_dislike"
-                app:layout_constraintTop_toBottomOf="@id/floating_action_talvez"
-                app:srcCompat="@drawable/btn_update" />
-
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <me.relex.circleindicator.CircleIndicator3
             android:id="@+id/innerIndicator"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/DEFAULT_20DP"
             android:layout_marginTop="@dimen/DEFAULT_10DP"
-            app:ci_width="@dimen/DEFAULT_15DP"
-            app:ci_height="@dimen/DEFAULT_3DP"
+            android:elevation="@dimen/DEFAULT_10DP"
             app:ci_drawable="@drawable/indicatorwhite"
+            app:ci_drawable_unselected="@drawable/indicator"
+            app:ci_gravity="center"
+            app:ci_height="@dimen/DEFAULT_3DP"
             app:ci_margin="10dp"
             app:ci_orientation="horizontal"
-            app:ci_gravity="center"
-            app:ci_drawable_unselected="@drawable/indicator"
-            android:elevation="@dimen/DEFAULT_10DP"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/DEFAULT_20DP"/>
+            app:ci_width="@dimen/DEFAULT_15DP"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/next"
@@ -115,6 +38,7 @@
             android:layout_marginEnd="@dimen/DEFAULT_40DP"
             android:elevation="@dimen/DEFAULT_50DP"
             android:src="@drawable/ic_nex_whitet"
+            android:visibility="invisible"
             app:layout_constraintBottom_toTopOf="@+id/name_view_pager"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/innerIndicator" />
@@ -126,6 +50,7 @@
             android:layout_marginStart="@dimen/DEFAULT_40DP"
             android:elevation="@dimen/DEFAULT_50DP"
             android:src="@drawable/ic_nex_whitet"
+            android:visibility="invisible"
             app:layout_constraintBottom_toTopOf="@+id/name_view_pager"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/innerIndicator" />
@@ -156,10 +81,22 @@
             android:layout_marginStart="@dimen/DEFAULT_20DP"
             android:layout_marginBottom="@dimen/DEFAULT_10DP"
             android:maxLines="2"
-            android:text="@string/mulherEnd"
+            android:text="#Baladeira"
+            app:layout_constraintTop_toBottomOf="@id/end_view_pager2"
+            android:textColor="@color/DEFAULT_WHITE"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/end_view_pager2"
+            style="@style/Potlid_normal_14sp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/DEFAULT_20DP"
+            android:layout_marginBottom="@dimen/DEFAULT_30DP"
+            android:maxLines="2"
+            android:text="#veterinaria"
             android:textColor="@color/DEFAULT_WHITE"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/constraintLayout"
             app:layout_constraintStart_toStartOf="parent" />
 
         <androidx.appcompat.widget.AppCompatTextView
@@ -167,15 +104,13 @@
             style="@style/Potlid_normal_18sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/name_hint"
-            android:textColor="@color/DEFAULT_WHITE"
             android:layout_marginStart="@dimen/DEFAULT_20DP"
             android:layout_marginBottom="@dimen/DEFAULT_0DP"
-            app:layout_constraintBottom_toTopOf="@id/end_view_pager"
+            android:text="@string/name_hint"
+            android:textColor="@color/DEFAULT_AMARELO"
+            app:layout_constraintBottom_toTopOf="@id/end_view_pager2"
             app:layout_constraintStart_toStartOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

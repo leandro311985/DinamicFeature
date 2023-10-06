@@ -58,20 +58,32 @@
         android:textColorHint="@color/DEFAULT_AZUL_APP_6"
         app:layout_constraintTop_toBottomOf="@id/email_edit_text" />
 
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/forgotPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Potlid_normal_18sp_bold"
+        android:textColor="@color/DEFAULT_AZUL_APP_6"
+        android:text="Esqueceu a senha?"
+        android:layout_marginTop="@dimen/DEFAULT_20DP"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/password_edit_text" />
+
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/login_button"
         style="@style/Widget.App.ProgressButtonView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/DEFAULT_50DP"
-        android:layout_marginTop="@dimen/DEFAULT_50DP"
+        android:layout_marginTop="@dimen/DEFAULT_20DP"
         android:layout_marginEnd="@dimen/DEFAULT_50DP"
         android:background="@color/DEFAULT_AZUL_APP_4"
         android:text="LOGIN"
         android:textColor="@color/DEFAULT_WHITE"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/password_edit_text" />
+        app:layout_constraintTop_toBottomOf="@id/forgotPassword" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/login_social_button"

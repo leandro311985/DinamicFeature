@@ -16,7 +16,7 @@ android {
         minSdk 24
         targetSdk 33
         versionCode 1
-        versionName "1.0"
+        versionName "1.1"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -45,6 +45,9 @@ dependencies {
     api(project(":commons:baseApp"))
     implementation project(path: ':core:repository')
     implementation project(path: ':core:domain')
+
+    implementation 'org.imaginativeworld.whynotimagecarousel:whynotimagecarousel:2.1.0'
+
 
 
 }

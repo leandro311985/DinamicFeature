@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/salmao">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/logo_image_view"
+            android:layout_width="@dimen/DEFAULT_50DP"
+            android:layout_height="@dimen/DEFAULT_50DP"
+            android:layout_marginStart="@dimen/DEFAULT_30DP"
+            android:layout_marginTop="@dimen/DEFAULT_10DP"
+            android:src="@drawable/norris"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text"
+            style="@style/Potlid_font_bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Story"
+            android:layout_marginStart="@dimen/DEFAULT_35DP"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/logo_image_view" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/banner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/banner_2_story"
+            android:padding="@dimen/DEFAULT_10DP"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/banner2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/banner_3"
+            android:padding="@dimen/DEFAULT_10DP"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/banner"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/banner3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/banner_1_story"
+            android:padding="@dimen/DEFAULT_10DP"
+            android:layout_marginBottom="@dimen/DEFAULT_60DP"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/banner2"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

@@ -44,7 +44,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:tabGravity="center"
-                app:tabMode="fixed" />
+                app:tabMode="auto" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

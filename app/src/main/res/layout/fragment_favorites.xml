@@ -46,7 +46,7 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <TextView
-                    style="@style/Potlid_normal_18sp"
+                    style="@style/Potlid_normal_18sp_bold"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Matchs"
@@ -90,7 +90,7 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <androidx.appcompat.widget.AppCompatTextView
-                    style="@style/Potlid_normal_18sp"
+                    style="@style/Potlid_normal_18sp_bold"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Mensagens"
@@ -128,7 +128,7 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <TextView
-                    style="@style/Potlid_normal_18sp"
+                    style="@style/Potlid_normal_18sp_bold"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Curtiram você"
@@ -172,7 +172,7 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <TextView
-                    style="@style/Potlid_normal_18sp"
+                    style="@style/Potlid_normal_18sp_bold"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Minhas Curtidas"
@@ -218,7 +218,7 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <TextView
-                    style="@style/Potlid_normal_18sp"
+                    style="@style/Potlid_normal_18sp_bold"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Talvez"

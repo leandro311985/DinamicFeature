@@ -10,12 +10,14 @@ import androidx.navigation.fragment.findNavController
 import com.example.dinamicfeature.R
 import com.example.dinamicfeature.baseApp.commons.BaseFragment
 import com.example.dinamicfeature.databinding.FragmentHomeBinding
+import com.example.dinamicfeature.domain.models.MyPersonsFake
 import com.example.dinamicfeature.domain.models.PersonsFake
 import com.example.dinamicfeature.domain.models.ProfileGeneralData
 import kotlinx.coroutines.launch
+import org.imaginativeworld.whynotimagecarousel.model.CarouselItem
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class HomeFragments : BaseFragment(R.layout.fragment_home), HomeListener, HomeViewPagerListener {
+class HomeFragments : BaseFragment(R.layout.fragment_home), HomeListener, HomeViewPagerListener,HomeColapseListener {
 
   private lateinit var binding: FragmentHomeBinding
   private val viewModel: HomeViewModel by viewModel()
@@ -62,6 +64,14 @@ class HomeFragments : BaseFragment(R.layout.fragment_home), HomeListener, HomeVi
 
   private fun getData() {
     viewModel.getRegisterUserGeneralData()
+    val list = mutableListOf<CarouselItem>()
+    list.add(CarouselItem(R.drawable.lugares1))
+    list.add(CarouselItem(R.drawable.lugares2))
+    list.add(CarouselItem(R.drawable.lugares3))
+    list.add(CarouselItem(R.drawable.lugares4))
+    list.add(CarouselItem(R.drawable.lugares5))
+    binding.containerDetails.imageCorresel.registerLifecycle(lifecycle)
+    binding.containerDetails.imageCorresel.setData(list)
   }
 
 
@@ -86,7 +96,9 @@ class HomeFragments : BaseFragment(R.layout.fragment_home), HomeListener, HomeVi
         launch {
           viewModel.listHomeGrade.collect { result ->
             binding.rcHome.isVisible = true
-            binding.viewPager.isVisible = false
+            binding.slider.isVisible = false
+            binding.containerDetails.details.isVisible = false
+
             upDateList(result as MutableList<PersonsFake>)
             loading(false)
           }
@@ -95,7 +107,8 @@ class HomeFragments : BaseFragment(R.layout.fragment_home), HomeListener, HomeVi
         launch {
           viewModel.listHomeNormal.collect { result ->
             binding.rcHome.isVisible = false
-            binding.viewPager.isVisible = true
+            binding.slider.isVisible = true
+            binding.containerDetails.details.isVisible = false
             upDateListNormal(result as MutableList<PersonsFake>)
             loading(false)
           }
@@ -113,10 +126,9 @@ class HomeFragments : BaseFragment(R.layout.fragment_home), HomeListener, HomeVi
   }
 
   private fun upDateListNormal(personsFake: List<PersonsFake>) {
-    binding.viewPager.apply {
-      adapterViewPager = PhotoPagerAdapter(this@HomeFragments, requireContext(), personsFake)
-      binding.viewPager.adapter = adapterViewPager
-
+    binding.slider.apply {
+      adapterViewPager = PhotoPagerAdapter(this@HomeFragments,this@HomeFragments, requireContext(), personsFake)
+      binding.slider.adapter = adapterViewPager
     }
   }
 
@@ -124,8 +136,22 @@ class HomeFragments : BaseFragment(R.layout.fragment_home), HomeListener, HomeVi
     findNavController().navigate(HomeFragmentsDirections.actionHomeFragmentListToFragmentDetail(positionInt))
   }
 
-  override fun onItemClickListenerViewPager(position: Int) {
-    findNavController().navigate(HomeFragmentsDirections.actionHomeFragmentListToFragmentDetail(position))
+  override fun onItemClickListenerViewPager(personsFake: PersonsFake?, myPersonsFake: MyPersonsFake?, isFloatActionButtom:Boolean?, position:Int) {
+    when (isFloatActionButtom) {
+      true -> {
+        myPersonsFake?.let { viewModel.saveLikeList(it) }
+      }
+
+      false -> {
+        findNavController().navigate(HomeFragmentsDirections.actionHomeFragmentListToFragmentDetail(position))
+      }
+
+      else -> {}
+    }
+  }
+
+  override fun onItemClickListenerViewPager(isColapseButtom: Boolean?) {
+    binding.containerDetails.details.isVisible = isColapseButtom == true
   }
 }
 

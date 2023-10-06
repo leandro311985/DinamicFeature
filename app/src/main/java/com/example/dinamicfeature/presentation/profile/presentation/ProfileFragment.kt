@@ -1,7 +1,5 @@
 package com.example.dinamicfeature.presentation.profile.presentation
 
-import android.content.res.Resources
-import android.graphics.drawable.Drawable
 import android.location.Address
 import android.location.Geocoder
 import android.os.Bundle
@@ -19,16 +17,15 @@ import com.example.dinamicfeature.baseApp.commons.BaseFragment
 import com.example.dinamicfeature.databinding.FragmentProfileBinding
 import com.example.dinamicfeature.domain.models.Profile
 import com.example.dinamicfeature.domain.models.UserFirebase
-import com.example.dinamicfeature.presentation.home.presentation.PhotoPagerAdapter
 import com.example.dinamicfeature.presentation.profile.presentation.adapter.ProfileAdapter
 import com.example.dinamicfeature.presentation.profile.presentation.adapter.ProfileImageAdapter
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
-import com.squareup.picasso.Picasso
 import java.util.*
 import kotlinx.coroutines.launch
+import org.imaginativeworld.whynotimagecarousel.model.CarouselItem
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class ProfileFragment : BaseFragment(R.layout.fragment_profile) {
@@ -84,11 +81,10 @@ class ProfileFragment : BaseFragment(R.layout.fragment_profile) {
     card4.isVisible = !isVisible
   }
 
-  private fun getPhotoFirebase(userId:String){
+  private fun getPhotoFirebase(userId: String) {
     database = Firebase.database.reference
     database.child("users").child(userId).get().addOnSuccessListener {
-//      setElements(it.value.toString())
-    }.addOnFailureListener{
+    }.addOnFailureListener {
       Log.e("firebase", "Error getting data", it)
     }
   }
@@ -99,11 +95,14 @@ class ProfileFragment : BaseFragment(R.layout.fragment_profile) {
       findNavController().navigate(ProfileFragmentDirections.actionNavigationProfileFragmentToConfigFragment())
     }
 
-    val photo = listOf(R.drawable.profile3, R.drawable.profile, R.drawable.profile1)
     imageProfileViewPage.apply {
-      layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-      val adapterViewPager = ProfileImageAdapter(requireContext(), photo)
-      imageProfileViewPage.adapter = adapterViewPager
+      val list = mutableListOf<CarouselItem>()
+      list.add(CarouselItem(R.drawable.profile3))
+      list.add(CarouselItem(R.drawable.profile))
+      list.add(CarouselItem(R.drawable.profile1))
+
+      registerLifecycle(lifecycle)
+      setData(list)
     }
   }
 
@@ -140,18 +139,18 @@ class ProfileFragment : BaseFragment(R.layout.fragment_profile) {
 
         launch {
           viewModel.location.collect { location ->
-            getNeighborhoodFromLocation(location.latitude?:0.0,location.longitude?:0.0)
+            getNeighborhoodFromLocation(location.latitude ?: 0.0, location.longitude ?: 0.0)
           }
         }
 
         launch {
           viewModel.myListLikeSize.collect { size ->
-           binding.sizeLike.text = size.toString()
+            binding.sizeLike.text = size.toString()
           }
         }
         launch {
           viewModel.myListHomeTalvez.collect { size ->
-           binding.infoTextNumber3.text = size.toString()
+            binding.infoTextNumber3.text = size.toString()
           }
         }
       }

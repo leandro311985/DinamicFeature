@@ -82,6 +82,8 @@
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip2"
                 app:chipBackgroundColor="@color/chip_selector"
+                app:chipStrokeColor="@color/DEFAULT_AZUL_APP"
+                app:chipStrokeWidth="2dp"
                 style="@style/Widget.MaterialComponents.Chip.Choice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -89,6 +91,8 @@
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip3"
+                app:chipStrokeColor="@color/DEFAULT_AZUL_APP"
+                app:chipStrokeWidth="2dp"
                 app:chipBackgroundColor="@color/chip_selector"
                 style="@style/Widget.MaterialComponents.Chip.Choice"
                 android:layout_width="wrap_content"
@@ -97,6 +101,8 @@
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip4"
+                app:chipStrokeColor="@color/DEFAULT_AZUL_APP"
+                app:chipStrokeWidth="2dp"
                 app:chipBackgroundColor="@color/chip_selector"
                 style="@style/Widget.MaterialComponents.Chip.Choice"
                 android:layout_width="wrap_content"
@@ -105,6 +111,8 @@
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip5"
+                app:chipStrokeColor="@color/DEFAULT_AZUL_APP"
+                app:chipStrokeWidth="2dp"
                 app:chipBackgroundColor="@color/chip_selector"
                 style="@style/Widget.MaterialComponents.Chip.Choice"
                 android:layout_width="wrap_content"
@@ -113,6 +121,8 @@
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip6"
+                app:chipStrokeColor="@color/DEFAULT_AZUL_APP"
+                app:chipStrokeWidth="2dp"
                 app:chipBackgroundColor="@color/chip_selector"
                 style="@style/Widget.MaterialComponents.Chip.Choice"
                 android:layout_width="wrap_content"
@@ -121,6 +131,8 @@
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip7"
+                app:chipStrokeColor="@color/DEFAULT_AZUL_APP"
+                app:chipStrokeWidth="2dp"
                 app:chipBackgroundColor="@color/chip_selector"
                 style="@style/Widget.MaterialComponents.Chip.Choice"
                 android:layout_width="wrap_content"
@@ -155,6 +167,8 @@
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chipAp2"
+                app:chipStrokeColor="@color/DEFAULT_AZUL_APP"
+                app:chipStrokeWidth="2dp"
                 style="@style/Widget.MaterialComponents.Chip.Choice"
                 app:chipBackgroundColor="@color/chip_selector"
                 android:layout_width="wrap_content"
@@ -163,6 +177,8 @@
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chipAp3"
+                app:chipStrokeColor="@color/DEFAULT_AZUL_APP"
+                app:chipStrokeWidth="2dp"
                 style="@style/Widget.MaterialComponents.Chip.Choice"
                 app:chipBackgroundColor="@color/chip_selector"
                 android:layout_width="wrap_content"
@@ -171,6 +187,8 @@
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip4Ap"
+                app:chipStrokeColor="@color/DEFAULT_AZUL_APP"
+                app:chipStrokeWidth="2dp"
                 style="@style/Widget.MaterialComponents.Chip.Choice"
                 app:chipBackgroundColor="@color/chip_selector"
                 android:layout_width="wrap_content"
@@ -179,6 +197,8 @@
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/chip5Ap"
+                app:chipStrokeColor="@color/DEFAULT_AZUL_APP"
+                app:chipStrokeWidth="2dp"
                 style="@style/Widget.MaterialComponents.Chip.Choice"
                 app:chipBackgroundColor="@color/chip_selector"
                 android:layout_width="wrap_content"

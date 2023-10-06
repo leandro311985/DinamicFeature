@@ -12,8 +12,9 @@
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/banner"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/DEFAULT_150DP"
-            android:scaleType="fitXY"
+            android:layout_marginTop="@dimen/DEFAULT_10DP"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
             android:src="@drawable/saude1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

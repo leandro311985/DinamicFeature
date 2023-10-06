@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/back"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/DEFAULT_10DP"
+            android:layout_marginTop="@dimen/DEFAULT_10DP"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" >
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/back_navigaiton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/DEFAULT_10DP"
+                android:src="@drawable/baseline_arrow_back_ios_new_24"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txt_title"
+            style="@style/Potlid_normal_14sp_bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Por qual motivo se inscreveu no POTLID?"
+            android:textSize="@dimen/DEFAULT_24DP"
+            android:layout_marginStart="@dimen/DEFAULT_20DP"
+            android:layout_marginTop="@dimen/DEFAULT_20DP"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/back" />
+
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chip_group_filter"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:singleSelection="true"
+            android:layout_marginStart="@dimen/DEFAULT_20DP"
+            android:layout_marginEnd="@dimen/DEFAULT_60DP"
+            android:layout_marginTop="@dimen/DEFAULT_20DP"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_title">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip2"
+                app:chipStrokeColor="@color/DEFAULT_AZUL_APP"
+                app:chipStrokeWidth="2dp"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                app:chipBackgroundColor="@color/chip_selector"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="App confíavel" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip3"
+                app:chipStrokeColor="@color/DEFAULT_AZUL_APP"
+                app:chipStrokeWidth="2dp"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                app:chipBackgroundColor="@color/chip_selector"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Influencer nas redes sociais" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip4"
+                app:chipStrokeColor="@color/DEFAULT_AZUL_APP"
+                app:chipStrokeWidth="2dp"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                app:chipBackgroundColor="@color/chip_selector"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cansado de outros Apps" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip5"
+                app:chipStrokeColor="@color/DEFAULT_AZUL_APP"
+                app:chipStrokeWidth="2dp"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                app:chipBackgroundColor="@color/chip_selector"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Recomendações de pessoas" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip6"
+                app:chipStrokeColor="@color/DEFAULT_AZUL_APP"
+                app:chipStrokeWidth="2dp"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                app:chipBackgroundColor="@color/chip_selector"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Google" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip7"
+                app:chipStrokeColor="@color/DEFAULT_AZUL_APP"
+                app:chipStrokeWidth="2dp"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                app:chipBackgroundColor="@color/chip_selector"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Influencer" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip8"
+                app:chipStrokeColor="@color/DEFAULT_AZUL_APP"
+                app:chipStrokeWidth="2dp"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                app:chipBackgroundColor="@color/chip_selector"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Indicação" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip9"
+                app:chipStrokeColor="@color/DEFAULT_AZUL_APP"
+                app:chipStrokeWidth="2dp"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                app:chipBackgroundColor="@color/chip_selector"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Blog" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip10"
+                app:chipStrokeColor="@color/DEFAULT_AZUL_APP"
+                app:chipStrokeWidth="2dp"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                app:chipBackgroundColor="@color/chip_selector"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Parceria do Appc/ outra marca" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip11"
+                app:chipStrokeColor="@color/DEFAULT_AZUL_APP"
+                app:chipStrokeWidth="2dp"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                app:chipBackgroundColor="@color/chip_selector"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Outros" />
+        </com.google.android.material.chip.ChipGroup>
+
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/btn_cancel"
+            android:layout_width="@dimen/DEFAULT_0DP"
+            android:layout_height="@dimen/DEFAULT_60DP"
+            android:layout_marginTop="@dimen/DEFAULT_40DP"
+            android:background="@drawable/btn_save"
+            android:gravity="center"
+            android:layout_marginEnd="@dimen/DEFAULT_5DP"
+            app:layout_constraintEnd_toStartOf="@id/btn_save"
+            app:layout_constraintStart_toStartOf="@id/chip_group_filter"
+            app:layout_constraintTop_toBottomOf="@id/chip_group_filter" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/btn_save"
+            android:layout_width="@dimen/DEFAULT_0DP"
+            android:layout_height="@dimen/DEFAULT_60DP"
+            android:layout_marginTop="@dimen/DEFAULT_40DP"
+            android:layout_marginStart="@dimen/DEFAULT_5DP"
+            android:background="@drawable/btn_save_2"
+            android:gravity="center"
+            app:layout_constraintStart_toEndOf="@id/btn_cancel"
+            app:layout_constraintEnd_toEndOf="@id/chip_group_filter"
+            app:layout_constraintTop_toBottomOf="@id/chip_group_filter" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.core.widget.NestedScrollView>

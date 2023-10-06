@@ -26,11 +26,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.recyclerview.widget.RecyclerView
+    <org.imaginativeworld.whynotimagecarousel.ImageCarousel
         android:id="@+id/imageProfileViewPage"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:itemCount="1"
-        tools:listitem="@layout/item_photo_profile"
         android:layout_width="@dimen/DEFAULT_0DP"
         android:layout_height="@dimen/DEFAULT_250DP"
         app:layout_constraintEnd_toEndOf="parent"

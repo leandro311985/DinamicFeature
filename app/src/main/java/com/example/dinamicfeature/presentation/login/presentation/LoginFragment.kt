@@ -48,6 +48,7 @@ class LoginFragment : BaseFragment(R.layout.fragment_login) {
     loginSocialButton.isVisible = !isVisible
     forgotPasswordTextView.isVisible = !isVisible
     divider.isVisible = !isVisible
+    forgotPassword.isVisible = !isVisible
   }
 
   private fun checkIsLogged() {

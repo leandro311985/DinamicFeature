@@ -11,8 +11,9 @@
         android:layout_width="@dimen/DEFAULT_24DP"
         android:layout_height="@dimen/DEFAULT_24DP"
         android:src="@drawable/baseline_arrow_back_ios_new_24"
+        app:layout_constraintBottom_toBottomOf="@+id/title"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/title" />
 
     <TextView
         android:id="@+id/title"
